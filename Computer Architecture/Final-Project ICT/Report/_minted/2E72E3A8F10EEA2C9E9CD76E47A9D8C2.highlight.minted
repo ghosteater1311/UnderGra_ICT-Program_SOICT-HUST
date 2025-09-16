@@ -1,0 +1,7 @@
+\begin{MintedVerbatim}[commandchars=\\\{\}]
+\PYG{+w}{    }\PYG{c+c1}{\PYGZsh{} Calculate pixel data for display on Bitmap Display}
+\PYG{+w}{    }\PYG{n+nl}{pixel\PYGZus{}calculate:}
+\PYG{+w}{        }\PYG{n+nf}{li}\PYG{+w}{    }\PYG{n+no}{s10}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{3}\PYG{+w}{       }\PYG{c+c1}{\PYGZsh{} Each pixel is 3 bytes (RGB format)}
+\PYG{+w}{        }\PYG{n+nf}{mul}\PYG{+w}{   }\PYG{n+no}{s7}\PYG{p}{,}\PYG{+w}{ }\PYG{n+no}{t4}\PYG{p}{,}\PYG{+w}{ }\PYG{n+no}{s10}\PYG{+w}{  }\PYG{c+c1}{\PYGZsh{} Calculate RowSize (Not include padding)}
+\PYG{+w}{        }\PYG{n+nf}{mul}\PYG{+w}{   }\PYG{n+no}{s8}\PYG{p}{,}\PYG{+w}{ }\PYG{n+no}{s7}\PYG{p}{,}\PYG{+w}{ }\PYG{n+no}{t5}\PYG{+w}{   }\PYG{c+c1}{\PYGZsh{} Calculate PixelData = RowSize x Height}
+\end{MintedVerbatim}

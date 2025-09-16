@@ -1,0 +1,11 @@
+\begin{MintedVerbatim}[commandchars=\\\{\}]
+\PYG{+w}{    }\PYG{n+nl}{display:}
+\PYG{+w}{        }\PYG{n+nl}{loop\PYGZus{}rows:}
+\PYG{+w}{            }\PYG{n+nf}{addi}\PYG{+w}{ }\PYG{n+no}{s1}\PYG{p}{,}\PYG{+w}{ }\PYG{n+no}{s1}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{\PYGZhy{}1}\PYG{+w}{ }\PYG{c+c1}{\PYGZsh{} Decrease the row counter}
+\PYG{+w}{            }\PYG{n+nf}{blt}\PYG{+w}{  }\PYG{n+no}{s1}\PYG{p}{,}\PYG{+w}{ }\PYG{n+no}{zero}\PYG{p}{,}\PYG{+w}{ }\PYG{n+no}{end}\PYG{+w}{ }\PYG{c+c1}{\PYGZsh{} Branch If all rows of the image processed \PYGZhy{}\PYGZgt{} jump to end}
+\PYG{+w}{            }\PYG{n+nf}{mul}\PYG{+w}{ }\PYG{n+no}{s9}\PYG{p}{,}\PYG{+w}{ }\PYG{n+no}{s1}\PYG{p}{,}\PYG{+w}{ }\PYG{n+no}{s7}\PYG{+w}{ }\PYG{c+c1}{\PYGZsh{} Calculate the offset to the current row\PYGZsq{}s pixel data}
+\PYG{+w}{            }\PYG{n+nf}{la}\PYG{+w}{  }\PYG{n+no}{t3}\PYG{p}{,}\PYG{+w}{ }\PYG{n+no}{main\PYGZus{}mem}\PYG{+w}{ }\PYG{c+c1}{\PYGZsh{} Get the address of the image header to access each pixel}
+\PYG{+w}{            }\PYG{n+nf}{add}\PYG{+w}{ }\PYG{n+no}{t3}\PYG{p}{,}\PYG{+w}{ }\PYG{n+no}{t3}\PYG{p}{,}\PYG{+w}{ }\PYG{n+no}{s9}\PYG{+w}{ }\PYG{c+c1}{\PYGZsh{} Get the begin address of the pixel data of the current row}
+\PYG{+w}{            }\PYG{n+nf}{addi}\PYG{+w}{ }\PYG{n+no}{s4}\PYG{p}{,}\PYG{+w}{ }\PYG{n+no}{s2}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{0}\PYG{+w}{ }\PYG{c+c1}{\PYGZsh{} Reset the width of the row after access each columns (aka pixels)}
+\PYG{+w}{            }\PYG{n+nf}{addi}\PYG{+w}{ }\PYG{n+no}{s5}\PYG{p}{,}\PYG{+w}{ }\PYG{n+no}{t3}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{0}\PYG{+w}{ }\PYG{c+c1}{\PYGZsh{} Init pointer to process each pixels in the row}
+\end{MintedVerbatim}

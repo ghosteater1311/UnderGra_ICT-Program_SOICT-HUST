@@ -1,0 +1,6 @@
+\begin{MintedVerbatim}[commandchars=\\\{\}]
+\PYG{+w}{    }\PYG{n+nf}{li}\PYG{+w}{ }\PYG{n+no}{a7}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{8}\PYG{+w}{            }\PYG{c+c1}{\PYGZsh{} Service number for input string}
+\PYG{+w}{    }\PYG{n+nf}{la}\PYG{+w}{ }\PYG{n+no}{a0}\PYG{p}{,}\PYG{+w}{ }\PYG{n+no}{input\PYGZus{}buffer}\PYG{+w}{ }\PYG{c+c1}{\PYGZsh{} Address hold the file path}
+\PYG{+w}{    }\PYG{n+nf}{li}\PYG{+w}{ }\PYG{n+no}{a1}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{256}\PYG{+w}{          }\PYG{c+c1}{\PYGZsh{} Length of path input	}
+\PYG{+w}{    }\PYG{n+nf}{ecall}\PYG{+w}{               }\PYG{c+c1}{\PYGZsh{} System Call}
+\end{MintedVerbatim}

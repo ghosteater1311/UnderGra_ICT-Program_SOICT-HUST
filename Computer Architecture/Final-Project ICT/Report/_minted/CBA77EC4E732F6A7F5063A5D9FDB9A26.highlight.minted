@@ -1,0 +1,26 @@
+\begin{MintedVerbatim}[commandchars=\\\{\}]
+\PYG{c+c1}{\PYGZsh{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}}
+\PYG{c+c1}{\PYGZsh{} Algorithm for displaying:                                                                    |}
+\PYG{c+c1}{\PYGZsh{}                                                                                              |}
+\PYG{c+c1}{\PYGZsh{} s2 = width of the image.                                                                     |}
+\PYG{c+c1}{\PYGZsh{} s1 = height of the image.                                                                    |}
+\PYG{c+c1}{\PYGZsh{}                                                                                              |}
+\PYG{c+c1}{\PYGZsh{} Loop from bottom up for each rows.                                                           |}
+\PYG{c+c1}{\PYGZsh{} This purpose is to access first row of bitmap image.                                         |}
+\PYG{c+c1}{\PYGZsh{}                                                                                              |}
+\PYG{c+c1}{\PYGZsh{} For each rows, loop from left to right to access each columns refers for each pixels.        |}
+\PYG{c+c1}{\PYGZsh{} For each columns (aka pixels) in the row, process the color and display immediately to the   |}
+\PYG{c+c1}{\PYGZsh{} display.                                                                                     |}
+\PYG{c+c1}{\PYGZsh{}                                                                                              |}
+\PYG{c+c1}{\PYGZsh{} The default color format of bitmap image it\PYGZsq{}s BGR.                                           |}
+\PYG{c+c1}{\PYGZsh{} Implementation of pixel in a row of bitmap image: [B1 G1 R1] [B2 G2 R2] [B3 G3 R3] ...       |}
+\PYG{c+c1}{\PYGZsh{} To display image on Bitmap Display, we need to convert BGR color format into RGB color format|}
+\PYG{c+c1}{\PYGZsh{} It means convert 0x00BBGGRR \PYGZhy{}\PYGZgt{} 0x00RRGGBB.                                                   |}
+\PYG{c+c1}{\PYGZsh{} Each value on the hexadecimal value it\PYGZsq{}s 4 bit.                                              |}
+\PYG{c+c1}{\PYGZsh{}                                                                                              |}
+\PYG{c+c1}{\PYGZsh{} To do that, we use shift left logic and bitwise operation to evaluate the exactly value of   |}
+\PYG{c+c1}{\PYGZsh{} the color refers to RGB format to display the image with right color as accurately as        |                                                                            |}
+\PYG{c+c1}{\PYGZsh{} possible.                                                                                    |}
+\PYG{c+c1}{\PYGZsh{}                                                                                              |}
+\PYG{c+c1}{\PYGZsh{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}}
+\end{MintedVerbatim}

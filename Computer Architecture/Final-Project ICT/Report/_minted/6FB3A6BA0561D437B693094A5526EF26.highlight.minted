@@ -1,0 +1,7 @@
+\begin{MintedVerbatim}[commandchars=\\\{\}]
+\PYG{+w}{    }\PYG{c+c1}{\PYGZsh{} Get file input}
+\PYG{+w}{    }\PYG{n+nl}{get\PYGZus{}input:}
+\PYG{+w}{        }\PYG{n+nf}{li}\PYG{+w}{ }\PYG{n+no}{a7}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{4}\PYG{+w}{            }\PYG{c+c1}{\PYGZsh{} Service number to print string}
+\PYG{+w}{        }\PYG{n+nf}{la}\PYG{+w}{ }\PYG{n+no}{a0}\PYG{p}{,}\PYG{+w}{ }\PYG{n+no}{input\PYGZus{}prompt}\PYG{+w}{ }\PYG{c+c1}{\PYGZsh{} Address of input\PYGZus{}prompt}
+\PYG{+w}{        }\PYG{n+nf}{ecall}\PYG{+w}{               }\PYG{c+c1}{\PYGZsh{} System Call}
+\end{MintedVerbatim}

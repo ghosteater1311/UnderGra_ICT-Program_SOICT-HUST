@@ -1,0 +1,7 @@
+\begin{MintedVerbatim}[commandchars=\\\{\}]
+\PYG{+w}{    }\PYG{c+c1}{\PYGZsh{} Exit the Program}
+\PYG{+w}{    }\PYG{n+nl}{exit:}
+\PYG{+w}{        }\PYG{n+nf}{li}\PYG{+w}{ }\PYG{n+no}{a0}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{0}\PYG{+w}{        }\PYG{c+c1}{\PYGZsh{} Load exit code (0)}
+\PYG{+w}{        }\PYG{n+nf}{li}\PYG{+w}{ }\PYG{n+no}{a7}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{10}\PYG{+w}{       }\PYG{c+c1}{\PYGZsh{} Service number for exit program}
+\PYG{+w}{        }\PYG{n+nf}{ecall}\PYG{+w}{           }\PYG{c+c1}{\PYGZsh{} System Call}
+\end{MintedVerbatim}

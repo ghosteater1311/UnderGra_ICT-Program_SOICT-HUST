@@ -1,0 +1,6 @@
+\begin{MintedVerbatim}[commandchars=\\\{\}]
+\PYG{+w}{    }\PYG{c+c1}{\PYGZsh{} Get begin position of pixel data}
+\PYG{+w}{    }\PYG{n+nl}{get\PYGZus{}position:}
+\PYG{+w}{        }\PYG{n+nf}{addi}\PYG{+w}{ }\PYG{n+no}{t3}\PYG{p}{,}\PYG{+w}{ }\PYG{n+no}{t2}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{10}\PYG{+w}{   }\PYG{c+c1}{\PYGZsh{} Move to the address of the pixel data offset in the header}
+\PYG{+w}{        }\PYG{n+nf}{lw}\PYG{+w}{   }\PYG{n+no}{t6}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{0}\PYG{p}{(}\PYG{n+no}{t3}\PYG{p}{)}\PYG{+w}{    }\PYG{c+c1}{\PYGZsh{} Load the starting position of pixel data}
+\end{MintedVerbatim}

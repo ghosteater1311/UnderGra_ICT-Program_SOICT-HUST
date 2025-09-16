@@ -1,0 +1,5 @@
+\begin{MintedVerbatim}[commandchars=\\\{\}]
+\PYG{+w}{    }\PYG{n+nl}{error\PYGZus{}scale:}\PYG{+w}{ }\PYG{n+na}{.asciz}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}Invalid image scale (512x512)!\PYGZbs{}n\PYGZdq{}}
+\PYG{+w}{    }\PYG{n+nl}{error\PYGZus{}format:}\PYG{+w}{ }\PYG{n+na}{.asciz}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}Invalid image format (.bmp)!\PYGZbs{}n\PYGZdq{}}
+\PYG{+w}{    }\PYG{n+nl}{error\PYGZus{}open:}\PYG{+w}{ }\PYG{n+na}{.asciz}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}Cannot find the file!\PYGZdq{}}
+\end{MintedVerbatim}

@@ -1,0 +1,7 @@
+\begin{MintedVerbatim}[commandchars=\\\{\}]
+\PYG{+w}{    }\PYG{c+c1}{\PYGZsh{} Initial Bitmap Display for output}
+\PYG{+w}{    }\PYG{n+nl}{init:}
+\PYG{+w}{        }\PYG{n+nf}{li}\PYG{+w}{ }\PYG{n+no}{a3}\PYG{p}{,}\PYG{+w}{ }\PYG{n+no}{BITMAP\PYGZus{}DISPLAY}\PYG{+w}{  }\PYG{c+c1}{\PYGZsh{} Load the Bitmap Display base address}
+\PYG{+w}{        }\PYG{n+nf}{addi}\PYG{+w}{ }\PYG{n+no}{s1}\PYG{p}{,}\PYG{+w}{ }\PYG{n+no}{t5}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{0}\PYG{+w}{         }\PYG{c+c1}{\PYGZsh{} Height of the image}
+\PYG{+w}{        }\PYG{n+nf}{addi}\PYG{+w}{ }\PYG{n+no}{s2}\PYG{p}{,}\PYG{+w}{ }\PYG{n+no}{t4}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{0}\PYG{+w}{         }\PYG{c+c1}{\PYGZsh{} Width of the image}
+\end{MintedVerbatim}

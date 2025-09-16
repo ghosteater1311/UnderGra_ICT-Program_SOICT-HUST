@@ -1,0 +1,10 @@
+\begin{MintedVerbatim}[commandchars=\\\{\}]
+\PYG{+w}{    }\PYG{c+c1}{\PYGZsh{} Read the pixel data}
+\PYG{+w}{    }\PYG{n+nl}{read\PYGZus{}pixel:}
+\PYG{+w}{        }\PYG{n+nf}{la}\PYG{+w}{   }\PYG{n+no}{a1}\PYG{p}{,}\PYG{+w}{ }\PYG{n+no}{main\PYGZus{}mem}\PYG{+w}{   }\PYG{c+c1}{\PYGZsh{} Load address of main\PYGZus{}mem to store pixel data}
+\PYG{+w}{        }\PYG{n+nf}{addi}\PYG{+w}{   }\PYG{n+no}{a0}\PYG{p}{,}\PYG{+w}{ }\PYG{n+no}{t0}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{0}\PYG{+w}{    }\PYG{c+c1}{\PYGZsh{} Load file descriptor}
+\PYG{+w}{        }\PYG{n+nf}{addi}\PYG{+w}{   }\PYG{n+no}{a2}\PYG{p}{,}\PYG{+w}{ }\PYG{n+no}{s8}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{0}\PYG{+w}{    }\PYG{c+c1}{\PYGZsh{} Specify the total size of pixel data}
+\PYG{+w}{        }\PYG{n+nf}{li}\PYG{+w}{   }\PYG{n+no}{a7}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{63}\PYG{+w}{         }\PYG{c+c1}{\PYGZsh{} Service number for read file}
+\PYG{+w}{        }\PYG{n+nf}{ecall}\PYG{+w}{               }\PYG{c+c1}{\PYGZsh{} System Call}
+\PYG{+w}{        }\PYG{n+nf}{blt}\PYG{+w}{  }\PYG{n+no}{a0}\PYG{p}{,}\PYG{+w}{ }\PYG{n+no}{s8}\PYG{p}{,}\PYG{+w}{ }\PYG{n+no}{end}\PYG{+w}{    }\PYG{c+c1}{\PYGZsh{} Branch If read fails \PYGZhy{}\PYGZgt{} jump to end}
+\end{MintedVerbatim}

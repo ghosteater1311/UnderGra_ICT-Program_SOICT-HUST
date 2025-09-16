@@ -1,0 +1,16 @@
+\begin{MintedVerbatim}[commandchars=\\\{\}]
+\PYG{+w}{    }\PYG{n+nl}{loop\PYGZus{}cols:}
+\PYG{+w}{            }\PYG{n+nf}{beq}\PYG{+w}{ }\PYG{n+no}{s4}\PYG{p}{,}\PYG{+w}{ }\PYG{n+no}{zero}\PYG{p}{,}\PYG{+w}{ }\PYG{n+no}{next\PYGZus{}row}\PYG{+w}{ }\PYG{c+c1}{\PYGZsh{} Branch if all pixels in a row processed \PYGZhy{}\PYGZgt{} jump to next row}
+\PYG{+w}{            }\PYG{n+nf}{lbu}\PYG{+w}{ }\PYG{n+no}{t1}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{0}\PYG{p}{(}\PYG{n+no}{s5}\PYG{p}{)}\PYG{+w}{     }\PYG{c+c1}{\PYGZsh{} Get the B value 0xBB}
+\PYG{+w}{            }\PYG{n+nf}{lbu}\PYG{+w}{ }\PYG{n+no}{t2}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{1}\PYG{p}{(}\PYG{n+no}{s5}\PYG{p}{)}\PYG{+w}{     }\PYG{c+c1}{\PYGZsh{} Get the G value 0xGG}
+\PYG{+w}{            }\PYG{n+nf}{lbu}\PYG{+w}{ }\PYG{n+no}{s11}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{2}\PYG{p}{(}\PYG{n+no}{s5}\PYG{p}{)}\PYG{+w}{    }\PYG{c+c1}{\PYGZsh{} Get the R value 0xRR}
+\PYG{+w}{            }\PYG{n+nf}{slli}\PYG{+w}{ }\PYG{n+no}{s11}\PYG{p}{,}\PYG{+w}{ }\PYG{n+no}{s11}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{16}\PYG{+w}{ }\PYG{c+c1}{\PYGZsh{} Shift left logical s10 = 0x000000RR \PYGZhy{}\PYGZgt{} 0x00RR0000}
+\PYG{+w}{            }\PYG{n+nf}{slli}\PYG{+w}{ }\PYG{n+no}{t2}\PYG{p}{,}\PYG{+w}{ }\PYG{n+no}{t2}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{8}\PYG{+w}{    }\PYG{c+c1}{\PYGZsh{} Shift left logical t2 = 0x000000GG \PYGZhy{}\PYGZgt{} 0x0000GG00}
+\PYG{+w}{            }\PYG{n+nf}{or}\PYG{+w}{   }\PYG{n+no}{s11}\PYG{p}{,}\PYG{+w}{ }\PYG{n+no}{s11}\PYG{p}{,}\PYG{+w}{ }\PYG{n+no}{t2}\PYG{+w}{ }\PYG{c+c1}{\PYGZsh{} Logical OR: s10 or t2 \PYGZhy{}\PYGZgt{} 0x00RRGG00}
+\PYG{+w}{            }\PYG{n+nf}{or}\PYG{+w}{   }\PYG{n+no}{s11}\PYG{p}{,}\PYG{+w}{ }\PYG{n+no}{s11}\PYG{p}{,}\PYG{+w}{ }\PYG{n+no}{t1}\PYG{+w}{ }\PYG{c+c1}{\PYGZsh{} Logical OR: s10 or t1 \PYGZhy{}\PYGZgt{} 0x00RRGGBB}
+\PYG{+w}{            }\PYG{n+nf}{sw}\PYG{+w}{  }\PYG{n+no}{s11}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{0}\PYG{p}{(}\PYG{n+no}{a3}\PYG{p}{)}\PYG{+w}{ }\PYG{c+c1}{\PYGZsh{} Store the value into Bitmap Display to display}
+\PYG{+w}{            }\PYG{n+nf}{addi}\PYG{+w}{ }\PYG{n+no}{a3}\PYG{p}{,}\PYG{+w}{ }\PYG{n+no}{a3}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{4}\PYG{+w}{ }\PYG{c+c1}{\PYGZsh{} Move to the next pixel on Bitmap Display (each 4 bytes)}
+\PYG{+w}{            }\PYG{n+nf}{addi}\PYG{+w}{ }\PYG{n+no}{s5}\PYG{p}{,}\PYG{+w}{ }\PYG{n+no}{s5}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{3}\PYG{+w}{ }\PYG{c+c1}{\PYGZsh{} Move to the next pixel on image after process 3 byte RGB format}
+\PYG{+w}{            }\PYG{n+nf}{addi}\PYG{+w}{ }\PYG{n+no}{s4}\PYG{p}{,}\PYG{+w}{ }\PYG{n+no}{s4}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{\PYGZhy{}1}\PYG{+w}{ }\PYG{c+c1}{\PYGZsh{} Decrease the pixel counter of the image}
+\PYG{+w}{            }\PYG{n+nf}{j}\PYG{+w}{ }\PYG{n+no}{loop\PYGZus{}cols}\PYG{+w}{     }\PYG{c+c1}{\PYGZsh{} Jump to next pixel}
+\end{MintedVerbatim}

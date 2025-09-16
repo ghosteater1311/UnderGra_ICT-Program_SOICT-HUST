@@ -1,0 +1,10 @@
+\begin{MintedVerbatim}[commandchars=\\\{\}]
+\PYG{+w}{    }\PYG{c+c1}{\PYGZsh{} Move the pointer to the position of begin pixel data}
+\PYG{+w}{    }\PYG{n+nl}{file\PYGZus{}seek:}
+\PYG{+w}{        }\PYG{n+nf}{addi}\PYG{+w}{   }\PYG{n+no}{a0}\PYG{p}{,}\PYG{+w}{ }\PYG{n+no}{t0}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{0}\PYG{+w}{   }\PYG{c+c1}{\PYGZsh{} Load file descriptor	}
+\PYG{+w}{        }\PYG{n+nf}{addi}\PYG{+w}{   }\PYG{n+no}{a1}\PYG{p}{,}\PYG{+w}{ }\PYG{n+no}{t6}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{0}\PYG{+w}{   }\PYG{c+c1}{\PYGZsh{} Load the pixel data offset}
+\PYG{+w}{        }\PYG{n+nf}{li}\PYG{+w}{   }\PYG{n+no}{a2}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{0}\PYG{+w}{         }\PYG{c+c1}{\PYGZsh{} Specify SEEK\PYGZus{}SET (absolute positioning)}
+\PYG{+w}{        }\PYG{n+nf}{li}\PYG{+w}{   }\PYG{n+no}{a7}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{62}\PYG{+w}{        }\PYG{c+c1}{\PYGZsh{} Service number for seek}
+\PYG{+w}{        }\PYG{n+nf}{ecall}\PYG{+w}{              }\PYG{c+c1}{\PYGZsh{} System Call}
+\PYG{+w}{        }\PYG{n+nf}{blt}\PYG{+w}{  }\PYG{n+no}{a0}\PYG{p}{,}\PYG{+w}{ }\PYG{n+no}{zero}\PYG{p}{,}\PYG{+w}{ }\PYG{n+no}{end}\PYG{+w}{ }\PYG{c+c1}{\PYGZsh{} Branch If seek fails \PYGZhy{}\PYGZgt{} jump to end}
+\end{MintedVerbatim}

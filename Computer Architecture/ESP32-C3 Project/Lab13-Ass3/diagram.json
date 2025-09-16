@@ -1,0 +1,41 @@
+{
+  "version": 1,
+  "author": "Nguyễn Đức Anh",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "board-esp32-c3-devkitm-1", "id": "esp", "top": 0, "left": 0, "attrs": {} },
+    {
+      "type": "wokwi-7segment",
+      "id": "sevseg1",
+      "top": 24.18,
+      "left": -138.92,
+      "attrs": { "color": "red" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": -63.25,
+      "left": -38.4,
+      "attrs": { "value": "1000" }
+    }
+  ],
+  "connections": [
+    [ "esp:TX", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX", "$serialMonitor:TX", "", [] ],
+    [ "sevseg1:B", "esp:1", "green", [ "v-47.16", "h28.8", "v19.2" ] ],
+    [ "sevseg1:A", "esp:0", "green", [ "v-66.36", "h57.6", "v105.6" ] ],
+    [ "sevseg1:COM.2", "r1:1", "green", [ "h0", "v-85.56" ] ],
+    [ "r1:2", "esp:3V3.1", "green", [ "v38.4", "h-39.6", "v48" ] ],
+    [ "sevseg1:C", "esp:2", "green", [ "v38.4", "h86.4", "v-86.4" ] ],
+    [ "sevseg1:D", "esp:3", "green", [ "v67.2", "h86.4", "v-105.6" ] ],
+    [ "sevseg1:E", "esp:4", "green", [ "v86.4", "h259.2", "v-67.2" ] ],
+    [ "sevseg1:F", "esp:5", "green", [ "v-47.16", "h-38.4", "v240", "h326.4", "v9.6" ] ],
+    [
+      "sevseg1:G",
+      "esp:6",
+      "green",
+      [ "v-37.56", "h-9.6", "v0", "h-9.6", "v211.2", "h297.6", "v-105.6" ]
+    ]
+  ],
+  "dependencies": {}
+}

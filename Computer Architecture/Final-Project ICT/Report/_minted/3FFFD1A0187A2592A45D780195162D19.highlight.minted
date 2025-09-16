@@ -1,0 +1,10 @@
+\begin{MintedVerbatim}[commandchars=\\\{\}]
+\PYG{+w}{    }\PYG{c+c1}{\PYGZsh{} Open the file}
+\PYG{+w}{    }\PYG{n+nl}{open\PYGZus{}file:}
+\PYG{+w}{        }\PYG{n+nf}{li}\PYG{+w}{ }\PYG{n+no}{a7}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{1024}\PYG{+w}{              }\PYG{c+c1}{\PYGZsh{} Service number to open the file}
+\PYG{+w}{        }\PYG{n+nf}{la}\PYG{+w}{ }\PYG{n+no}{a0}\PYG{p}{,}\PYG{+w}{ }\PYG{n+no}{input\PYGZus{}buffer}\PYG{+w}{      }\PYG{c+c1}{\PYGZsh{} Load address of the file path}
+\PYG{+w}{        }\PYG{n+nf}{li}\PYG{+w}{ }\PYG{n+no}{a1}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{0}\PYG{+w}{                 }\PYG{c+c1}{\PYGZsh{} Open file in Read\PYGZhy{}only mode}
+\PYG{+w}{        }\PYG{n+nf}{ecall}\PYG{+w}{                    }\PYG{c+c1}{\PYGZsh{} System Call}
+\PYG{+w}{        }\PYG{n+nf}{addi}\PYG{+w}{ }\PYG{n+no}{t0}\PYG{p}{,}\PYG{+w}{ }\PYG{n+no}{a0}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{0}\PYG{+w}{           }\PYG{c+c1}{\PYGZsh{} Store the file descriptor in t0}
+\PYG{+w}{        }\PYG{n+nf}{blt}\PYG{+w}{ }\PYG{n+no}{t0}\PYG{p}{,}\PYG{+w}{ }\PYG{n+no}{zero}\PYG{p}{,}\PYG{+w}{ }\PYG{n+no}{file\PYGZus{}error}\PYG{+w}{ }\PYG{c+c1}{\PYGZsh{} Branch If file descriptor is negative \PYGZhy{}\PYGZgt{} jump to file\PYGZus{}error}
+\end{MintedVerbatim}

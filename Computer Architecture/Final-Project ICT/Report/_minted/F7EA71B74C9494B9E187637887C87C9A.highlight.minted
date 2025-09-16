@@ -1,0 +1,15 @@
+\begin{MintedVerbatim}[commandchars=\\\{\}]
+\PYG{+w}{    }\PYG{c+c1}{\PYGZsh{} Replace \PYGZdq{}\PYGZbs{}n\PYGZdq{} with \PYGZdq{}\PYGZbs{}0\PYGZdq{}}
+\PYG{+w}{        }\PYG{n+nf}{la}\PYG{+w}{ }\PYG{n+no}{t0}\PYG{p}{,}\PYG{+w}{ }\PYG{n+no}{input\PYGZus{}buffer}\PYG{+w}{         }\PYG{c+c1}{\PYGZsh{} Load the starting address of the input\PYGZus{}buffer}
+\PYG{+w}{    }\PYG{n+nl}{remove\PYGZus{}newline:}\PYG{+w}{		}
+\PYG{+w}{        }\PYG{n+nf}{lb}\PYG{+w}{ }\PYG{n+no}{t1}\PYG{p}{,}\PYG{+w}{ }\PYG{p}{(}\PYG{n+no}{t0}\PYG{p}{)}\PYG{+w}{                 }\PYG{c+c1}{\PYGZsh{} Load a byte from the buffer}
+\PYG{+w}{        }\PYG{n+nf}{beq}\PYG{+w}{ }\PYG{n+no}{t1}\PYG{p}{,}\PYG{+w}{ }\PYG{n+no}{zero}\PYG{p}{,}\PYG{+w}{ }\PYG{n+no}{open\PYGZus{}file}\PYG{+w}{     }\PYG{c+c1}{\PYGZsh{} Branch If the byte is \PYGZsq{}\PYGZbs{}0\PYGZsq{} \PYGZhy{}\PYGZgt{} jump to open\PYGZus{}file}
+\PYG{+w}{        }\PYG{n+nf}{li}\PYG{+w}{ }\PYG{n+no}{t2}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{10}\PYG{+w}{                   }\PYG{c+c1}{\PYGZsh{} Load ASCII value of newline (\PYGZsq{}\PYGZbs{}n\PYGZsq{})}
+\PYG{+w}{        }\PYG{n+nf}{beq}\PYG{+w}{ }\PYG{n+no}{t1}\PYG{p}{,}\PYG{+w}{ }\PYG{n+no}{t2}\PYG{p}{,}\PYG{+w}{ }\PYG{n+no}{replace\PYGZus{}newline}\PYG{+w}{ }\PYG{c+c1}{\PYGZsh{} Branch If the byte is \PYGZsq{}\PYGZbs{}n\PYGZdq{} \PYGZhy{}\PYGZgt{} jump to replace\PYGZus{}newline}
+\PYG{+w}{        }\PYG{n+nf}{addi}\PYG{+w}{ }\PYG{n+no}{t0}\PYG{p}{,}\PYG{+w}{ }\PYG{n+no}{t0}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{1}\PYG{+w}{              }\PYG{c+c1}{\PYGZsh{} Move to the next byte}
+\PYG{+w}{        }\PYG{n+nf}{j}\PYG{+w}{ }\PYG{n+no}{remove\PYGZus{}newline}\PYG{+w}{            }\PYG{c+c1}{\PYGZsh{} Repeat the process}
+
+\PYG{+w}{    }\PYG{c+c1}{\PYGZsh{} Replace the character}
+\PYG{+w}{    }\PYG{n+nl}{replace\PYGZus{}newline:}
+\PYG{+w}{        }\PYG{n+nf}{sb}\PYG{+w}{ }\PYG{n+no}{zero}\PYG{p}{,}\PYG{+w}{ }\PYG{p}{(}\PYG{n+no}{t0}\PYG{p}{)}\PYG{+w}{               }\PYG{c+c1}{\PYGZsh{} Replace \PYGZsq{}\PYGZbs{}n\PYGZsq{} with \PYGZsq{}\PYGZbs{}0\PYGZsq{}}
+\end{MintedVerbatim}

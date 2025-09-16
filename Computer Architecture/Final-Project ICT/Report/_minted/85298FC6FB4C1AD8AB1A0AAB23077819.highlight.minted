@@ -1,0 +1,3 @@
+\begin{MintedVerbatim}[commandchars=\\\{\}]
+\PYG{n+nl}{debug\PYGZus{}mem:}\PYG{+w}{ }\PYG{n+na}{.space}\PYG{+w}{ }\PYG{l+m+mi}{1100000}
+\end{MintedVerbatim}

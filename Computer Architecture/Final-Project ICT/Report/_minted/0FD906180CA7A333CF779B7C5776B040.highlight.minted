@@ -1,0 +1,23 @@
+\begin{MintedVerbatim}[commandchars=\\\{\}]
+\PYG{c+c1}{\PYGZsh{} Error Handling}
+\PYG{c+c1}{\PYGZsh{} Open file error handle}
+\PYG{n+nl}{file\PYGZus{}error:}
+\PYG{+w}{    }\PYG{n+nf}{li}\PYG{+w}{ }\PYG{n+no}{a7}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{4}\PYG{+w}{           }\PYG{c+c1}{\PYGZsh{} Service number for print string}
+\PYG{+w}{    }\PYG{n+nf}{la}\PYG{+w}{ }\PYG{n+no}{a0}\PYG{p}{,}\PYG{+w}{ }\PYG{n+no}{error\PYGZus{}open}\PYG{+w}{  }\PYG{c+c1}{\PYGZsh{} Load address of error\PYGZus{}open Message}
+\PYG{+w}{    }\PYG{n+nf}{ecall}\PYG{+w}{              }\PYG{c+c1}{\PYGZsh{} System Call}
+\PYG{+w}{    }\PYG{n+nf}{j}\PYG{+w}{ }\PYG{n+no}{end}\PYG{+w}{              }\PYG{c+c1}{\PYGZsh{} Jump to end}
+
+\PYG{c+c1}{\PYGZsh{} Resolution of image error handle}
+\PYG{n+nl}{resolution\PYGZus{}error:}
+\PYG{+w}{    }\PYG{n+nf}{li}\PYG{+w}{ }\PYG{n+no}{a7}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{4}\PYG{+w}{            }\PYG{c+c1}{\PYGZsh{} Service number for print string}
+\PYG{+w}{    }\PYG{n+nf}{la}\PYG{+w}{ }\PYG{n+no}{a0}\PYG{p}{,}\PYG{+w}{ }\PYG{n+no}{error\PYGZus{}scale}\PYG{+w}{  }\PYG{c+c1}{\PYGZsh{} Load address of error\PYGZus{}scale Message}
+\PYG{+w}{    }\PYG{n+nf}{ecall}\PYG{+w}{               }\PYG{c+c1}{\PYGZsh{} System Call}
+\PYG{+w}{    }\PYG{n+nf}{j}\PYG{+w}{ }\PYG{n+no}{end}\PYG{+w}{               }\PYG{c+c1}{\PYGZsh{} Jump to end}
+
+\PYG{c+c1}{\PYGZsh{} Format file error handle}
+\PYG{n+nl}{format\PYGZus{}error:}
+\PYG{+w}{    }\PYG{n+nf}{li}\PYG{+w}{ }\PYG{n+no}{a7}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{4}\PYG{+w}{            }\PYG{c+c1}{\PYGZsh{} Service number for print string}
+\PYG{+w}{    }\PYG{n+nf}{la}\PYG{+w}{ }\PYG{n+no}{a0}\PYG{p}{,}\PYG{+w}{ }\PYG{n+no}{error\PYGZus{}format}\PYG{+w}{ }\PYG{c+c1}{\PYGZsh{} Load address of error\PYGZus{}format Message}
+\PYG{+w}{    }\PYG{n+nf}{ecall}\PYG{+w}{               }\PYG{c+c1}{\PYGZsh{} System Call}
+\PYG{+w}{    }\PYG{n+nf}{j}\PYG{+w}{ }\PYG{n+no}{end}\PYG{+w}{               }\PYG{c+c1}{\PYGZsh{} Jump to end}
+\end{MintedVerbatim}

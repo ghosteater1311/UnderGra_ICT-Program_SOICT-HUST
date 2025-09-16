@@ -1,0 +1,214 @@
+\begin{MintedVerbatim}[commandchars=\\\{\}]
+\PYG{n+na}{.eqv}\PYG{+w}{ }\PYG{n+no}{BITMAP\PYGZus{}DISPLAY}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{0x10010000}\PYG{+w}{   }\PYG{c+c1}{\PYGZsh{} Memmory address of Bitmap Display}
+
+\PYG{n+na}{.data}
+\PYG{+w}{    }\PYG{c+c1}{\PYGZsh{} Message for user input}
+\PYG{+w}{    }\PYG{n+nl}{input\PYGZus{}prompt:}\PYG{+w}{ }\PYG{n+na}{.asciz}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}Enter location and .bmp image to display (Ex: D:/image/image.bmp): \PYGZdq{}}\PYG{+w}{ 	}
+\PYG{+w}{    }\PYG{c+c1}{\PYGZsh{} Message for resolution error handling}
+\PYG{+w}{    }\PYG{n+nl}{error\PYGZus{}scale:}\PYG{+w}{ }\PYG{n+na}{.asciz}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}Invalid image scale (512x512)!\PYGZbs{}n\PYGZdq{}}\PYG{+w}{	}
+\PYG{+w}{    }\PYG{c+c1}{\PYGZsh{} Message for image format error handling}
+\PYG{+w}{    }\PYG{n+nl}{error\PYGZus{}format:}\PYG{+w}{ }\PYG{n+na}{.asciz}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}Invalid image format (.bmp)!\PYGZbs{}n\PYGZdq{}}\PYG{+w}{	}
+\PYG{+w}{    }\PYG{c+c1}{\PYGZsh{} Storing user input for file path}
+\PYG{+w}{    }\PYG{n+nl}{input\PYGZus{}buffer:}\PYG{+w}{ }\PYG{n+na}{.space}\PYG{+w}{ }\PYG{l+m+mi}{256}\PYG{+w}{ 					}
+\PYG{+w}{    }\PYG{c+c1}{\PYGZsh{} Memmory for debugging or fixing the code (Addition)}
+\PYG{+w}{    }\PYG{n+nl}{debug\PYGZus{}mem:}\PYG{+w}{ }\PYG{n+na}{.space}\PYG{+w}{ }\PYG{l+m+mi}{1100000}\PYG{+w}{					}
+\PYG{+w}{    }\PYG{c+c1}{\PYGZsh{} Memmory to store the file content}
+\PYG{+w}{    }\PYG{n+nl}{main\PYGZus{}mem:}\PYG{+w}{ }\PYG{n+na}{.space}\PYG{+w}{ }\PYG{l+m+mi}{1100000}\PYG{+w}{					}
+\PYG{+w}{    }\PYG{c+c1}{\PYGZsh{} Message for open file error handling}
+\PYG{+w}{    }\PYG{n+nl}{error\PYGZus{}open:}\PYG{+w}{ }\PYG{n+na}{.asciz}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}Cannot find the file!\PYGZdq{}}\PYG{+w}{ 			}
+\PYG{+w}{	}
+\PYG{n+no}{.text}
+\PYG{c+c1}{\PYGZsh{} Main Program}
+\PYG{n+na}{.global}\PYG{+w}{ }\PYG{n+no}{main}
+\PYG{n+nl}{main:}
+
+\PYG{+w}{    }\PYG{c+c1}{\PYGZsh{} Get file input}
+\PYG{+w}{    }\PYG{n+nl}{get\PYGZus{}input:}
+\PYG{+w}{        }\PYG{n+nf}{li}\PYG{+w}{ }\PYG{n+no}{a7}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{4}\PYG{+w}{            }\PYG{c+c1}{\PYGZsh{} Service number to print string}
+\PYG{+w}{        }\PYG{n+nf}{la}\PYG{+w}{ }\PYG{n+no}{a0}\PYG{p}{,}\PYG{+w}{ }\PYG{n+no}{input\PYGZus{}prompt}\PYG{+w}{ }\PYG{c+c1}{\PYGZsh{} Address of input\PYGZus{}prompt}
+\PYG{+w}{        }\PYG{n+nf}{ecall}\PYG{+w}{               }\PYG{c+c1}{\PYGZsh{} System Call}
+
+\PYG{+w}{        }\PYG{n+nf}{li}\PYG{+w}{ }\PYG{n+no}{a7}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{8}\PYG{+w}{            }\PYG{c+c1}{\PYGZsh{} Service number for input string}
+\PYG{+w}{        }\PYG{n+nf}{la}\PYG{+w}{ }\PYG{n+no}{a0}\PYG{p}{,}\PYG{+w}{ }\PYG{n+no}{input\PYGZus{}buffer}\PYG{+w}{ }\PYG{c+c1}{\PYGZsh{} Address hold the file path}
+\PYG{+w}{        }\PYG{n+nf}{li}\PYG{+w}{ }\PYG{n+no}{a1}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{256}\PYG{+w}{          }\PYG{c+c1}{\PYGZsh{} Length of path input	}
+\PYG{+w}{        }\PYG{n+nf}{ecall}\PYG{+w}{               }\PYG{c+c1}{\PYGZsh{} System Call}
+
+\PYG{+w}{    }\PYG{c+c1}{\PYGZsh{} Replace \PYGZdq{}\PYGZbs{}n\PYGZdq{} with \PYGZdq{}\PYGZbs{}0\PYGZdq{}}
+\PYG{+w}{        }\PYG{n+nf}{la}\PYG{+w}{ }\PYG{n+no}{t0}\PYG{p}{,}\PYG{+w}{ }\PYG{n+no}{input\PYGZus{}buffer}\PYG{+w}{         }\PYG{c+c1}{\PYGZsh{} Load the starting address of the input\PYGZus{}buffer}
+\PYG{+w}{    }\PYG{n+nl}{remove\PYGZus{}newline:}\PYG{+w}{		}
+\PYG{+w}{        }\PYG{n+nf}{lb}\PYG{+w}{ }\PYG{n+no}{t1}\PYG{p}{,}\PYG{+w}{ }\PYG{p}{(}\PYG{n+no}{t0}\PYG{p}{)}\PYG{+w}{                 }\PYG{c+c1}{\PYGZsh{} Load a byte from the buffer}
+\PYG{+w}{        }\PYG{n+nf}{beq}\PYG{+w}{ }\PYG{n+no}{t1}\PYG{p}{,}\PYG{+w}{ }\PYG{n+no}{zero}\PYG{p}{,}\PYG{+w}{ }\PYG{n+no}{open\PYGZus{}file}\PYG{+w}{     }\PYG{c+c1}{\PYGZsh{} Branch If the byte is \PYGZsq{}\PYGZbs{}0\PYGZsq{} \PYGZhy{}\PYGZgt{} jump to open\PYGZus{}file}
+\PYG{+w}{        }\PYG{n+nf}{li}\PYG{+w}{ }\PYG{n+no}{t2}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{10}\PYG{+w}{                   }\PYG{c+c1}{\PYGZsh{} Load ASCII value of newline (\PYGZsq{}\PYGZbs{}n\PYGZsq{})}
+\PYG{+w}{        }\PYG{n+nf}{beq}\PYG{+w}{ }\PYG{n+no}{t1}\PYG{p}{,}\PYG{+w}{ }\PYG{n+no}{t2}\PYG{p}{,}\PYG{+w}{ }\PYG{n+no}{replace\PYGZus{}newline}\PYG{+w}{ }\PYG{c+c1}{\PYGZsh{} Branch If the byte is \PYGZsq{}\PYGZbs{}n\PYGZdq{} \PYGZhy{}\PYGZgt{} jump to replace\PYGZus{}newline}
+\PYG{+w}{        }\PYG{n+nf}{addi}\PYG{+w}{ }\PYG{n+no}{t0}\PYG{p}{,}\PYG{+w}{ }\PYG{n+no}{t0}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{1}\PYG{+w}{              }\PYG{c+c1}{\PYGZsh{} Move to the next byte}
+\PYG{+w}{        }\PYG{n+nf}{j}\PYG{+w}{ }\PYG{n+no}{remove\PYGZus{}newline}\PYG{+w}{            }\PYG{c+c1}{\PYGZsh{} Repeat the process}
+
+\PYG{+w}{    }\PYG{c+c1}{\PYGZsh{} Replace the character}
+\PYG{+w}{    }\PYG{n+nl}{replace\PYGZus{}newline:}
+\PYG{+w}{        }\PYG{n+nf}{sb}\PYG{+w}{ }\PYG{n+no}{zero}\PYG{p}{,}\PYG{+w}{ }\PYG{p}{(}\PYG{n+no}{t0}\PYG{p}{)}\PYG{+w}{               }\PYG{c+c1}{\PYGZsh{} Replace \PYGZsq{}\PYGZbs{}n\PYGZsq{} with \PYGZsq{}\PYGZbs{}0\PYGZsq{}}
+
+\PYG{+w}{    }\PYG{c+c1}{\PYGZsh{} Open the file}
+\PYG{+w}{    }\PYG{n+nl}{open\PYGZus{}file:}
+\PYG{+w}{        }\PYG{n+nf}{li}\PYG{+w}{ }\PYG{n+no}{a7}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{1024}\PYG{+w}{              }\PYG{c+c1}{\PYGZsh{} Service number to open the file}
+\PYG{+w}{        }\PYG{n+nf}{la}\PYG{+w}{ }\PYG{n+no}{a0}\PYG{p}{,}\PYG{+w}{ }\PYG{n+no}{input\PYGZus{}buffer}\PYG{+w}{      }\PYG{c+c1}{\PYGZsh{} Load address of the file path}
+\PYG{+w}{        }\PYG{n+nf}{li}\PYG{+w}{ }\PYG{n+no}{a1}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{0}\PYG{+w}{                 }\PYG{c+c1}{\PYGZsh{} Open file in Read\PYGZhy{}only mode}
+\PYG{+w}{        }\PYG{n+nf}{ecall}\PYG{+w}{                    }\PYG{c+c1}{\PYGZsh{} System Call}
+\PYG{+w}{        }\PYG{n+nf}{addi}\PYG{+w}{ }\PYG{n+no}{t0}\PYG{p}{,}\PYG{+w}{ }\PYG{n+no}{a0}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{0}\PYG{+w}{           }\PYG{c+c1}{\PYGZsh{} Store the file descriptor in t0}
+\PYG{+w}{        }\PYG{n+nf}{blt}\PYG{+w}{ }\PYG{n+no}{t0}\PYG{p}{,}\PYG{+w}{ }\PYG{n+no}{zero}\PYG{p}{,}\PYG{+w}{ }\PYG{n+no}{file\PYGZus{}error}\PYG{+w}{ }\PYG{c+c1}{\PYGZsh{} Branch If file descriptor is negative \PYGZhy{}\PYGZgt{} jump to file\PYGZus{}error}
+
+\PYG{+w}{    }\PYG{c+c1}{\PYGZsh{} Read the file header}
+\PYG{+w}{    }\PYG{n+nl}{read\PYGZus{}file:}
+\PYG{+w}{        }\PYG{n+nf}{li}\PYG{+w}{   }\PYG{n+no}{t1}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{54}\PYG{+w}{             }\PYG{c+c1}{\PYGZsh{} BMP file header size is 54 bytes}
+\PYG{+w}{        }\PYG{n+nf}{la}\PYG{+w}{   }\PYG{n+no}{a1}\PYG{p}{,}\PYG{+w}{ }\PYG{n+no}{main\PYGZus{}mem}\PYG{+w}{       }\PYG{c+c1}{\PYGZsh{} Load address of main\PYGZus{}mem to store the file header}
+\PYG{+w}{        }\PYG{n+nf}{addi}\PYG{+w}{   }\PYG{n+no}{a0}\PYG{p}{,}\PYG{+w}{ }\PYG{n+no}{t0}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{0}\PYG{+w}{        }\PYG{c+c1}{\PYGZsh{} Load file descriptor}
+\PYG{+w}{        }\PYG{n+nf}{addi}\PYG{+w}{   }\PYG{n+no}{a2}\PYG{p}{,}\PYG{+w}{ }\PYG{n+no}{t1}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{0}\PYG{+w}{        }\PYG{c+c1}{\PYGZsh{} Specify the length of bytes to read}
+\PYG{+w}{        }\PYG{n+nf}{li}\PYG{+w}{   }\PYG{n+no}{a7}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{63}\PYG{+w}{             }\PYG{c+c1}{\PYGZsh{} Load syscall number for \PYGZdq{}read file\PYGZdq{}}
+\PYG{+w}{        }\PYG{n+nf}{ecall}\PYG{+w}{                   }\PYG{c+c1}{\PYGZsh{} System Call}
+\PYG{+w}{        }\PYG{n+nf}{blt}\PYG{+w}{  }\PYG{n+no}{a0}\PYG{p}{,}\PYG{+w}{ }\PYG{n+no}{t1}\PYG{p}{,}\PYG{+w}{ }\PYG{n+no}{file\PYGZus{}error}\PYG{+w}{ }\PYG{c+c1}{\PYGZsh{} Branch If read fails \PYGZhy{}\PYGZgt{} jump to file\PYGZus{}error handling}
+
+\PYG{+w}{    }\PYG{c+c1}{\PYGZsh{} Check file format}
+\PYG{+w}{    }\PYG{n+nl}{check\PYGZus{}file\PYGZus{}format:}
+\PYG{+w}{        }\PYG{n+nf}{la}\PYG{+w}{   }\PYG{n+no}{t2}\PYG{p}{,}\PYG{+w}{ }\PYG{n+no}{main\PYGZus{}mem}\PYG{+w}{         }\PYG{c+c1}{\PYGZsh{} Load address of the file header in memory}
+\PYG{+w}{        }\PYG{n+nf}{lbu}\PYG{+w}{  }\PYG{n+no}{t3}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{0}\PYG{p}{(}\PYG{n+no}{t2}\PYG{p}{)}\PYG{+w}{            }\PYG{c+c1}{\PYGZsh{} Load the first byte of the header}
+\PYG{+w}{        }\PYG{n+nf}{lbu}\PYG{+w}{  }\PYG{n+no}{t4}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{1}\PYG{p}{(}\PYG{n+no}{t2}\PYG{p}{)}\PYG{+w}{            }\PYG{c+c1}{\PYGZsh{} Load the second byte of the header}
+\PYG{+w}{        }\PYG{n+nf}{li}\PYG{+w}{   }\PYG{n+no}{t5}\PYG{p}{,}\PYG{+w}{ }\PYG{err}{\PYGZsq{}}\PYG{n+no}{B}\PYG{err}{\PYGZsq{}}\PYG{+w}{              }\PYG{c+c1}{\PYGZsh{} ASCII value for \PYGZsq{}B\PYGZsq{}}
+\PYG{+w}{        }\PYG{n+nf}{bne}\PYG{+w}{  }\PYG{n+no}{t3}\PYG{p}{,}\PYG{+w}{ }\PYG{n+no}{t5}\PYG{p}{,}\PYG{+w}{ }\PYG{n+no}{format\PYGZus{}error}\PYG{+w}{ }\PYG{c+c1}{\PYGZsh{} Branch If first byte is not \PYGZsq{}B\PYGZsq{} \PYGZhy{}\PYGZgt{} jump to format\PYGZus{}error}
+\PYG{+w}{        }\PYG{n+nf}{li}\PYG{+w}{   }\PYG{n+no}{t5}\PYG{p}{,}\PYG{+w}{ }\PYG{err}{\PYGZsq{}}\PYG{n+no}{M}\PYG{err}{\PYGZsq{}}\PYG{+w}{              }\PYG{c+c1}{\PYGZsh{} ASCII value for \PYGZsq{}M\PYGZsq{}}
+\PYG{+w}{        }\PYG{n+nf}{bne}\PYG{+w}{  }\PYG{n+no}{t4}\PYG{p}{,}\PYG{+w}{ }\PYG{n+no}{t5}\PYG{p}{,}\PYG{+w}{ }\PYG{n+no}{format\PYGZus{}error}\PYG{+w}{ }\PYG{c+c1}{\PYGZsh{} Branch If second byte is not \PYGZsq{}M\PYGZsq{} \PYGZhy{}\PYGZgt{} jump to format\PYGZus{}error}
+
+\PYG{+w}{    }\PYG{c+c1}{\PYGZsh{} Check image resolution}
+\PYG{+w}{    }\PYG{n+nl}{check\PYGZus{}image\PYGZus{}res:}
+\PYG{+w}{        }\PYG{n+nf}{addi}\PYG{+w}{ }\PYG{n+no}{t3}\PYG{p}{,}\PYG{+w}{ }\PYG{n+no}{t2}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{18}\PYG{+w}{     }\PYG{c+c1}{\PYGZsh{} Move to the address of the width field in the header}
+\PYG{+w}{        }\PYG{n+nf}{lw}\PYG{+w}{   }\PYG{n+no}{t4}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{0}\PYG{p}{(}\PYG{n+no}{t3}\PYG{p}{)}\PYG{+w}{      }\PYG{c+c1}{\PYGZsh{} Load the width of the image}
+\PYG{+w}{        }\PYG{n+nf}{addi}\PYG{+w}{ }\PYG{n+no}{t3}\PYG{p}{,}\PYG{+w}{ }\PYG{n+no}{t2}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{22}\PYG{+w}{     }\PYG{c+c1}{\PYGZsh{} Move to the address of the height field in the header}
+\PYG{+w}{        }\PYG{n+nf}{lw}\PYG{+w}{   }\PYG{n+no}{t5}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{0}\PYG{p}{(}\PYG{n+no}{t3}\PYG{p}{)}\PYG{+w}{      }\PYG{c+c1}{\PYGZsh{} Load the height of the image}
+
+\PYG{+w}{        }\PYG{n+nf}{li}\PYG{+w}{ }\PYG{n+no}{t6}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{512}\PYG{+w}{                   }\PYG{c+c1}{\PYGZsh{} Maximum scale for the image allowed is 512x512}
+\PYG{+w}{        }\PYG{n+nf}{bgt}\PYG{+w}{ }\PYG{n+no}{t4}\PYG{p}{,}\PYG{+w}{ }\PYG{n+no}{t6}\PYG{p}{,}\PYG{+w}{ }\PYG{n+no}{resolution\PYGZus{}error}\PYG{+w}{ }\PYG{c+c1}{\PYGZsh{} Branch If width is invalid \PYGZhy{}\PYGZgt{} jump to resolution\PYGZus{}error}
+\PYG{+w}{        }\PYG{n+nf}{bgt}\PYG{+w}{ }\PYG{n+no}{t5}\PYG{p}{,}\PYG{+w}{ }\PYG{n+no}{t6}\PYG{p}{,}\PYG{+w}{ }\PYG{n+no}{resolution\PYGZus{}error}\PYG{+w}{ }\PYG{c+c1}{\PYGZsh{} Branch If height is invalid \PYGZhy{}\PYGZgt{} jump to resolution\PYGZus{}error}
+\PYG{+w}{    	}
+\PYG{+w}{    }\PYG{c+c1}{\PYGZsh{} Get begin position of pixel data}
+\PYG{+w}{    }\PYG{n+nl}{get\PYGZus{}position:}
+\PYG{+w}{        }\PYG{n+nf}{addi}\PYG{+w}{ }\PYG{n+no}{t3}\PYG{p}{,}\PYG{+w}{ }\PYG{n+no}{t2}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{10}\PYG{+w}{   }\PYG{c+c1}{\PYGZsh{} Move to the address of the pixel data offset in the header}
+\PYG{+w}{        }\PYG{n+nf}{lw}\PYG{+w}{   }\PYG{n+no}{t6}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{0}\PYG{p}{(}\PYG{n+no}{t3}\PYG{p}{)}\PYG{+w}{    }\PYG{c+c1}{\PYGZsh{} Load the starting position of pixel data}
+
+\PYG{+w}{    }\PYG{c+c1}{\PYGZsh{} Move the pointer to the position of begin pixel data}
+\PYG{+w}{    }\PYG{n+nl}{file\PYGZus{}seek:}
+\PYG{+w}{        }\PYG{n+nf}{addi}\PYG{+w}{   }\PYG{n+no}{a0}\PYG{p}{,}\PYG{+w}{ }\PYG{n+no}{t0}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{0}\PYG{+w}{   }\PYG{c+c1}{\PYGZsh{} Load file descriptor	}
+\PYG{+w}{        }\PYG{n+nf}{addi}\PYG{+w}{   }\PYG{n+no}{a1}\PYG{p}{,}\PYG{+w}{ }\PYG{n+no}{t6}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{0}\PYG{+w}{   }\PYG{c+c1}{\PYGZsh{} Load the pixel data offset}
+\PYG{+w}{        }\PYG{n+nf}{li}\PYG{+w}{   }\PYG{n+no}{a2}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{0}\PYG{+w}{         }\PYG{c+c1}{\PYGZsh{} Specify SEEK\PYGZus{}SET (absolute positioning)}
+\PYG{+w}{        }\PYG{n+nf}{li}\PYG{+w}{   }\PYG{n+no}{a7}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{62}\PYG{+w}{        }\PYG{c+c1}{\PYGZsh{} Service number for seek}
+\PYG{+w}{        }\PYG{n+nf}{ecall}\PYG{+w}{              }\PYG{c+c1}{\PYGZsh{} System Call}
+\PYG{+w}{        }\PYG{n+nf}{blt}\PYG{+w}{  }\PYG{n+no}{a0}\PYG{p}{,}\PYG{+w}{ }\PYG{n+no}{zero}\PYG{p}{,}\PYG{+w}{ }\PYG{n+no}{end}\PYG{+w}{ }\PYG{c+c1}{\PYGZsh{} Branch If seek fails \PYGZhy{}\PYGZgt{} jump to end		}
+
+\PYG{+w}{    }\PYG{c+c1}{\PYGZsh{} Calculate pixel data for display on Bitmap Display}
+\PYG{+w}{    }\PYG{n+nl}{pixel\PYGZus{}calculate:}
+\PYG{+w}{        }\PYG{n+nf}{li}\PYG{+w}{    }\PYG{n+no}{s10}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{3}\PYG{+w}{       }\PYG{c+c1}{\PYGZsh{} Each pixel is 3 bytes (RGB format)}
+\PYG{+w}{        }\PYG{n+nf}{mul}\PYG{+w}{   }\PYG{n+no}{s7}\PYG{p}{,}\PYG{+w}{ }\PYG{n+no}{t4}\PYG{p}{,}\PYG{+w}{ }\PYG{n+no}{s10}\PYG{+w}{  }\PYG{c+c1}{\PYGZsh{} Calculate RowSize (Not include padding)}
+\PYG{+w}{        }\PYG{n+nf}{mul}\PYG{+w}{   }\PYG{n+no}{s8}\PYG{p}{,}\PYG{+w}{ }\PYG{n+no}{s7}\PYG{p}{,}\PYG{+w}{ }\PYG{n+no}{t5}\PYG{+w}{   }\PYG{c+c1}{\PYGZsh{} Calculate PixelData = RowSize x Height}
+
+\PYG{+w}{    }\PYG{c+c1}{\PYGZsh{} Read the pixel data}
+\PYG{+w}{    }\PYG{n+nl}{read\PYGZus{}pixel:}
+\PYG{+w}{        }\PYG{n+nf}{la}\PYG{+w}{   }\PYG{n+no}{a1}\PYG{p}{,}\PYG{+w}{ }\PYG{n+no}{main\PYGZus{}mem}\PYG{+w}{   }\PYG{c+c1}{\PYGZsh{} Load address of main\PYGZus{}mem to store pixel data}
+\PYG{+w}{        }\PYG{n+nf}{addi}\PYG{+w}{   }\PYG{n+no}{a0}\PYG{p}{,}\PYG{+w}{ }\PYG{n+no}{t0}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{0}\PYG{+w}{    }\PYG{c+c1}{\PYGZsh{} Load file descriptor}
+\PYG{+w}{        }\PYG{n+nf}{addi}\PYG{+w}{   }\PYG{n+no}{a2}\PYG{p}{,}\PYG{+w}{ }\PYG{n+no}{s8}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{0}\PYG{+w}{    }\PYG{c+c1}{\PYGZsh{} Specify the total size of pixel data}
+\PYG{+w}{        }\PYG{n+nf}{li}\PYG{+w}{   }\PYG{n+no}{a7}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{63}\PYG{+w}{         }\PYG{c+c1}{\PYGZsh{} Service number for read file}
+\PYG{+w}{        }\PYG{n+nf}{ecall}\PYG{+w}{               }\PYG{c+c1}{\PYGZsh{} System Call}
+\PYG{+w}{        }\PYG{n+nf}{blt}\PYG{+w}{  }\PYG{n+no}{a0}\PYG{p}{,}\PYG{+w}{ }\PYG{n+no}{s8}\PYG{p}{,}\PYG{+w}{ }\PYG{n+no}{end}\PYG{+w}{    }\PYG{c+c1}{\PYGZsh{} Branch If read fails \PYGZhy{}\PYGZgt{} jump to end}
+
+\PYG{+w}{    }\PYG{c+c1}{\PYGZsh{} Initial Bitmap Display for output}
+\PYG{+w}{    }\PYG{n+nl}{init:}
+\PYG{+w}{        }\PYG{n+nf}{li}\PYG{+w}{ }\PYG{n+no}{a3}\PYG{p}{,}\PYG{+w}{ }\PYG{n+no}{BITMAP\PYGZus{}DISPLAY}\PYG{+w}{  }\PYG{c+c1}{\PYGZsh{} Load the Bitmap Display base address}
+\PYG{+w}{        }\PYG{n+nf}{addi}\PYG{+w}{ }\PYG{n+no}{s1}\PYG{p}{,}\PYG{+w}{ }\PYG{n+no}{t5}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{0}\PYG{+w}{         }\PYG{c+c1}{\PYGZsh{} Height of the image}
+\PYG{+w}{        }\PYG{n+nf}{addi}\PYG{+w}{ }\PYG{n+no}{s2}\PYG{p}{,}\PYG{+w}{ }\PYG{n+no}{t4}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{0}\PYG{+w}{         }\PYG{c+c1}{\PYGZsh{} Width of the image}
+
+\PYG{c+c1}{\PYGZsh{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}}
+\PYG{c+c1}{\PYGZsh{} Algorithm for displaying:                                                                    |}
+\PYG{c+c1}{\PYGZsh{}                                                                                              |}
+\PYG{c+c1}{\PYGZsh{} s2 = width of the image.                                                                     |}
+\PYG{c+c1}{\PYGZsh{} s1 = height of the image.                                                                    |}
+\PYG{c+c1}{\PYGZsh{}                                                                                              |}
+\PYG{c+c1}{\PYGZsh{} Loop from bottom up for each rows.                                                           |}
+\PYG{c+c1}{\PYGZsh{} This purpose is to access first row of bitmap image.                                         |}
+\PYG{c+c1}{\PYGZsh{}                                                                                              |}
+\PYG{c+c1}{\PYGZsh{} For each rows, loop from left to right to access each columns refers for each pixels.        |}
+\PYG{c+c1}{\PYGZsh{} For each columns (aka pixels) in the row, process the color and display immediately to the   |}
+\PYG{c+c1}{\PYGZsh{} display.                                                                                     |}
+\PYG{c+c1}{\PYGZsh{}                                                                                              |}
+\PYG{c+c1}{\PYGZsh{} The default color format of bitmap image it\PYGZsq{}s BGR.                                           |}
+\PYG{c+c1}{\PYGZsh{} Implementation of pixel in a row of bitmap image: [B1 G1 R1] [B2 G2 R2] [B3 G3 R3] ...       |}
+\PYG{c+c1}{\PYGZsh{} To display image on Bitmap Display, we need to convert BGR color format into RGB color format|}
+\PYG{c+c1}{\PYGZsh{} It means convert 0x00BBGGRR \PYGZhy{}\PYGZgt{} 0x00RRGGBB.                                                   |}
+\PYG{c+c1}{\PYGZsh{} Each value on the hexadecimal value it\PYGZsq{}s 4 bit.                                              |}
+\PYG{c+c1}{\PYGZsh{}                                                                                              |}
+\PYG{c+c1}{\PYGZsh{} To do that, we use shift left logic and bitwise operation to evaluate the exactly value of   |}
+\PYG{c+c1}{\PYGZsh{} the color refers to RGB format to display the image with right color as accurately as        |                                                                            |}
+\PYG{c+c1}{\PYGZsh{} possible.                                                                                    |}
+\PYG{c+c1}{\PYGZsh{}                                                                                              |}
+\PYG{c+c1}{\PYGZsh{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}}
+
+\PYG{+w}{    }\PYG{c+c1}{\PYGZsh{} Algorithm implement}
+\PYG{+w}{    }\PYG{n+nl}{display:}
+\PYG{+w}{        }\PYG{n+nl}{loop\PYGZus{}rows:}
+\PYG{+w}{            }\PYG{n+nf}{addi}\PYG{+w}{ }\PYG{n+no}{s1}\PYG{p}{,}\PYG{+w}{ }\PYG{n+no}{s1}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{\PYGZhy{}1}\PYG{+w}{ }\PYG{c+c1}{\PYGZsh{} Decrease the row counter}
+\PYG{+w}{            }\PYG{n+nf}{blt}\PYG{+w}{  }\PYG{n+no}{s1}\PYG{p}{,}\PYG{+w}{ }\PYG{n+no}{zero}\PYG{p}{,}\PYG{+w}{ }\PYG{n+no}{end}\PYG{+w}{ }\PYG{c+c1}{\PYGZsh{} Branch If all rows of the image processed \PYGZhy{}\PYGZgt{} jump to end}
+\PYG{+w}{            }\PYG{n+nf}{mul}\PYG{+w}{ }\PYG{n+no}{s9}\PYG{p}{,}\PYG{+w}{ }\PYG{n+no}{s1}\PYG{p}{,}\PYG{+w}{ }\PYG{n+no}{s7}\PYG{+w}{ }\PYG{c+c1}{\PYGZsh{} Calculate the offset to the current row\PYGZsq{}s pixel data}
+\PYG{+w}{            }\PYG{n+nf}{la}\PYG{+w}{  }\PYG{n+no}{t3}\PYG{p}{,}\PYG{+w}{ }\PYG{n+no}{main\PYGZus{}mem}\PYG{+w}{ }\PYG{c+c1}{\PYGZsh{} Get the address of the image header to access each pixel}
+\PYG{+w}{            }\PYG{n+nf}{add}\PYG{+w}{ }\PYG{n+no}{t3}\PYG{p}{,}\PYG{+w}{ }\PYG{n+no}{t3}\PYG{p}{,}\PYG{+w}{ }\PYG{n+no}{s9}\PYG{+w}{ }\PYG{c+c1}{\PYGZsh{} Get the begin address of the pixel data of the current row}
+\PYG{+w}{            }\PYG{n+nf}{addi}\PYG{+w}{ }\PYG{n+no}{s4}\PYG{p}{,}\PYG{+w}{ }\PYG{n+no}{s2}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{0}\PYG{+w}{ }\PYG{c+c1}{\PYGZsh{} Reset the width of the row after access each columns (aka pixels)}
+\PYG{+w}{            }\PYG{n+nf}{addi}\PYG{+w}{ }\PYG{n+no}{s5}\PYG{p}{,}\PYG{+w}{ }\PYG{n+no}{t3}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{0}\PYG{+w}{ }\PYG{c+c1}{\PYGZsh{} Init pointer to process each pixels in the row}
+
+\PYG{+w}{        }\PYG{n+nl}{loop\PYGZus{}cols:}
+\PYG{+w}{            }\PYG{n+nf}{beq}\PYG{+w}{ }\PYG{n+no}{s4}\PYG{p}{,}\PYG{+w}{ }\PYG{n+no}{zero}\PYG{p}{,}\PYG{+w}{ }\PYG{n+no}{next\PYGZus{}row}\PYG{+w}{ }\PYG{c+c1}{\PYGZsh{} Branch if all pixels in a row processed \PYGZhy{}\PYGZgt{} jump to next row}
+\PYG{+w}{            }\PYG{n+nf}{lbu}\PYG{+w}{ }\PYG{n+no}{t1}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{0}\PYG{p}{(}\PYG{n+no}{s5}\PYG{p}{)}\PYG{+w}{     }\PYG{c+c1}{\PYGZsh{} Get the B value 0xBB}
+\PYG{+w}{            }\PYG{n+nf}{lbu}\PYG{+w}{ }\PYG{n+no}{t2}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{1}\PYG{p}{(}\PYG{n+no}{s5}\PYG{p}{)}\PYG{+w}{     }\PYG{c+c1}{\PYGZsh{} Get the G value 0xGG}
+\PYG{+w}{            }\PYG{n+nf}{lbu}\PYG{+w}{ }\PYG{n+no}{s11}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{2}\PYG{p}{(}\PYG{n+no}{s5}\PYG{p}{)}\PYG{+w}{    }\PYG{c+c1}{\PYGZsh{} Get the R value 0xRR}
+\PYG{+w}{            }\PYG{n+nf}{slli}\PYG{+w}{ }\PYG{n+no}{s11}\PYG{p}{,}\PYG{+w}{ }\PYG{n+no}{s11}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{16}\PYG{+w}{ }\PYG{c+c1}{\PYGZsh{} Shift left logical s10 = 0x000000RR \PYGZhy{}\PYGZgt{} 0x00RR0000}
+\PYG{+w}{            }\PYG{n+nf}{slli}\PYG{+w}{ }\PYG{n+no}{t2}\PYG{p}{,}\PYG{+w}{ }\PYG{n+no}{t2}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{8}\PYG{+w}{    }\PYG{c+c1}{\PYGZsh{} Shift left logical t2 = 0x000000GG \PYGZhy{}\PYGZgt{} 0x0000GG00}
+\PYG{+w}{            }\PYG{n+nf}{or}\PYG{+w}{   }\PYG{n+no}{s11}\PYG{p}{,}\PYG{+w}{ }\PYG{n+no}{s11}\PYG{p}{,}\PYG{+w}{ }\PYG{n+no}{t2}\PYG{+w}{ }\PYG{c+c1}{\PYGZsh{} Logical OR: s10 or t2 \PYGZhy{}\PYGZgt{} 0x00RRGG00}
+\PYG{+w}{            }\PYG{n+nf}{or}\PYG{+w}{   }\PYG{n+no}{s11}\PYG{p}{,}\PYG{+w}{ }\PYG{n+no}{s11}\PYG{p}{,}\PYG{+w}{ }\PYG{n+no}{t1}\PYG{+w}{ }\PYG{c+c1}{\PYGZsh{} Logical OR: s10 or t1 \PYGZhy{}\PYGZgt{} 0x00RRGGBB}
+\PYG{+w}{            }\PYG{n+nf}{sw}\PYG{+w}{  }\PYG{n+no}{s11}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{0}\PYG{p}{(}\PYG{n+no}{a3}\PYG{p}{)}\PYG{+w}{ }\PYG{c+c1}{\PYGZsh{} Store the value into Bitmap Display to display}
+\PYG{+w}{            }\PYG{n+nf}{addi}\PYG{+w}{ }\PYG{n+no}{a3}\PYG{p}{,}\PYG{+w}{ }\PYG{n+no}{a3}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{4}\PYG{+w}{ }\PYG{c+c1}{\PYGZsh{} Move to the next pixel on Bitmap Display (each 4 bytes)}
+\PYG{+w}{            }\PYG{n+nf}{addi}\PYG{+w}{ }\PYG{n+no}{s5}\PYG{p}{,}\PYG{+w}{ }\PYG{n+no}{s5}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{3}\PYG{+w}{ }\PYG{c+c1}{\PYGZsh{} Move to the next pixel on image after process 3 byte RGB format}
+\PYG{+w}{            }\PYG{n+nf}{addi}\PYG{+w}{ }\PYG{n+no}{s4}\PYG{p}{,}\PYG{+w}{ }\PYG{n+no}{s4}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{\PYGZhy{}1}\PYG{+w}{ }\PYG{c+c1}{\PYGZsh{} Decrease the pixel counter of the image}
+\PYG{+w}{            }\PYG{n+nf}{j}\PYG{+w}{ }\PYG{n+no}{loop\PYGZus{}cols}\PYG{+w}{     }\PYG{c+c1}{\PYGZsh{} Jump to next pixel}
+
+\PYG{+w}{        }\PYG{n+nl}{next\PYGZus{}row:}
+\PYG{+w}{            }\PYG{n+nf}{j}\PYG{+w}{ }\PYG{n+no}{loop\PYGZus{}rows}\PYG{+w}{     }\PYG{c+c1}{\PYGZsh{} Jump to next row}
+
+\PYG{n+nl}{end:}
+\PYG{+w}{    }\PYG{c+c1}{\PYGZsh{} Close the file}
+\PYG{+w}{    }\PYG{n+nl}{close\PYGZus{}file:}
+\PYG{+w}{        }\PYG{n+nf}{addi}\PYG{+w}{ }\PYG{n+no}{a0}\PYG{p}{,}\PYG{+w}{ }\PYG{n+no}{t0}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{0}\PYG{+w}{  }\PYG{c+c1}{\PYGZsh{} Load the file descriptor}
+\PYG{+w}{        }\PYG{n+nf}{li}\PYG{+w}{ }\PYG{n+no}{a7}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{57}\PYG{+w}{       }\PYG{c+c1}{\PYGZsh{} Service number for clode the file}
+\PYG{+w}{        }\PYG{n+nf}{ecall}\PYG{+w}{           }\PYG{c+c1}{\PYGZsh{} System Call}
+
+\PYG{+w}{    }\PYG{c+c1}{\PYGZsh{} Exit the Program}
+\PYG{+w}{    }\PYG{n+nl}{exit:}
+\PYG{+w}{        }\PYG{n+nf}{li}\PYG{+w}{ }\PYG{n+no}{a0}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{0}\PYG{+w}{        }\PYG{c+c1}{\PYGZsh{} Load exit code (0)}
+\PYG{+w}{        }\PYG{n+nf}{li}\PYG{+w}{ }\PYG{n+no}{a7}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{10}\PYG{+w}{       }\PYG{c+c1}{\PYGZsh{} Service number for exit program}
+\PYG{+w}{        }\PYG{n+nf}{ecall}\PYG{+w}{           }\PYG{c+c1}{\PYGZsh{} System Call}
+
+\PYG{c+c1}{\PYGZsh{} Error Handling}
+\PYG{c+c1}{\PYGZsh{} Open file error handle}
+\PYG{n+nl}{file\PYGZus{}error:}
+\PYG{+w}{    }\PYG{n+nf}{li}\PYG{+w}{ }\PYG{n+no}{a7}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{4}\PYG{+w}{           }\PYG{c+c1}{\PYGZsh{} Service number for print string}
+\PYG{+w}{    }\PYG{n+nf}{la}\PYG{+w}{ }\PYG{n+no}{a0}\PYG{p}{,}\PYG{+w}{ }\PYG{n+no}{error\PYGZus{}open}\PYG{+w}{  }\PYG{c+c1}{\PYGZsh{} Load address of error\PYGZus{}open Message}
+\PYG{+w}{    }\PYG{n+nf}{ecall}\PYG{+w}{              }\PYG{c+c1}{\PYGZsh{} System Call}
+\PYG{+w}{    }\PYG{n+nf}{j}\PYG{+w}{ }\PYG{n+no}{end}\PYG{+w}{              }\PYG{c+c1}{\PYGZsh{} Jump to end}
+
+\PYG{c+c1}{\PYGZsh{} Resolution of image error handle}
+\PYG{n+nl}{resolution\PYGZus{}error:}
+\PYG{+w}{    }\PYG{n+nf}{li}\PYG{+w}{ }\PYG{n+no}{a7}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{4}\PYG{+w}{            }\PYG{c+c1}{\PYGZsh{} Service number for print string}
+\PYG{+w}{    }\PYG{n+nf}{la}\PYG{+w}{ }\PYG{n+no}{a0}\PYG{p}{,}\PYG{+w}{ }\PYG{n+no}{error\PYGZus{}scale}\PYG{+w}{  }\PYG{c+c1}{\PYGZsh{} Load address of error\PYGZus{}scale Message}
+\PYG{+w}{    }\PYG{n+nf}{ecall}\PYG{+w}{               }\PYG{c+c1}{\PYGZsh{} System Call}
+\PYG{+w}{    }\PYG{n+nf}{j}\PYG{+w}{ }\PYG{n+no}{end}\PYG{+w}{               }\PYG{c+c1}{\PYGZsh{} Jump to end}
+
+\PYG{c+c1}{\PYGZsh{} Format file error handle}
+\PYG{n+nl}{format\PYGZus{}error:}
+\PYG{+w}{    }\PYG{n+nf}{li}\PYG{+w}{ }\PYG{n+no}{a7}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{4}\PYG{+w}{            }\PYG{c+c1}{\PYGZsh{} Service number for print string}
+\PYG{+w}{    }\PYG{n+nf}{la}\PYG{+w}{ }\PYG{n+no}{a0}\PYG{p}{,}\PYG{+w}{ }\PYG{n+no}{error\PYGZus{}format}\PYG{+w}{ }\PYG{c+c1}{\PYGZsh{} Load address of error\PYGZus{}format Message}
+\PYG{+w}{    }\PYG{n+nf}{ecall}\PYG{+w}{               }\PYG{c+c1}{\PYGZsh{} System Call}
+\PYG{+w}{    }\PYG{n+nf}{j}\PYG{+w}{ }\PYG{n+no}{end}\PYG{+w}{               }\PYG{c+c1}{\PYGZsh{} Jump to end}
+
+\end{MintedVerbatim}
