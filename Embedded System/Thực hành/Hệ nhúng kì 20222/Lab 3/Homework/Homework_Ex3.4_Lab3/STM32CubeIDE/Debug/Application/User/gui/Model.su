@@ -1,0 +1,4 @@
+D:/Downloads/OneDrive_1_7-15-2023/MyApplication_D01/MyApplication_D01/TouchGFX/gui/src/model/Model.cpp:4:1:Model::Model()	0	static
+D:/Downloads/OneDrive_1_7-15-2023/MyApplication_D01/MyApplication_D01/TouchGFX/gui/src/model/Model.cpp:9:6:void Model::tick()	0	static
+D:/Downloads/OneDrive_1_7-15-2023/MyApplication_D01/MyApplication_D01/TouchGFX/gui/src/model/Model.cpp:14:6:void Model::update(int16_t)	0	static
+D:/Downloads/OneDrive_1_7-15-2023/MyApplication_D01/MyApplication_D01/TouchGFX/gui/src/model/Model.cpp:19:9:int16_t Model::GetImageX()	0	static

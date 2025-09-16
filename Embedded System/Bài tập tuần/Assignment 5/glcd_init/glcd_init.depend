@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1685359380 source:d:\sdcc\_codeblocks\glcd_init\main.c
+	<mcs51/8052.h>
+	<stdio.h>
+	<math.h>
+	<stdlib.h>
+
+1685379576 source:c:\users\ngola\onedrive - hanoi university of science and technology\documents\giang day\it4210 he nhung\2022-2\vi du\8051 kit v2\sdcc\glcd_init\main.c
+	<mcs51/8052.h>
+	<stdio.h>
+	<math.h>
+	<stdlib.h>
+

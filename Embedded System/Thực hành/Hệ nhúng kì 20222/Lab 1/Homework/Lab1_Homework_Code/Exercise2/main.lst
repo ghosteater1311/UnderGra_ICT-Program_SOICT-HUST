@@ -1,0 +1,1097 @@
+                                      1 ;--------------------------------------------------------
+                                      2 ; File Created by SDCC : free open source ISO C Compiler 
+                                      3 ; Version 4.2.14 #14012 (MINGW64)
+                                      4 ;--------------------------------------------------------
+                                      5 	.module main
+                                      6 	.optsdcc -mmcs51 --model-small
+                                      7 	
+                                      8 ;--------------------------------------------------------
+                                      9 ; Public variables in this module
+                                     10 ;--------------------------------------------------------
+                                     11 	.globl _main
+                                     12 	.globl _ISR1
+                                     13 	.globl _ISR0
+                                     14 	.globl _initExtInterrupt
+                                     15 	.globl _hieu_ung_3
+                                     16 	.globl _hieu_ung_2
+                                     17 	.globl _hieu_ung_1
+                                     18 	.globl _delay_ms
+                                     19 	.globl _TF2
+                                     20 	.globl _EXF2
+                                     21 	.globl _RCLK
+                                     22 	.globl _TCLK
+                                     23 	.globl _EXEN2
+                                     24 	.globl _TR2
+                                     25 	.globl _C_T2
+                                     26 	.globl _CP_RL2
+                                     27 	.globl _T2CON_7
+                                     28 	.globl _T2CON_6
+                                     29 	.globl _T2CON_5
+                                     30 	.globl _T2CON_4
+                                     31 	.globl _T2CON_3
+                                     32 	.globl _T2CON_2
+                                     33 	.globl _T2CON_1
+                                     34 	.globl _T2CON_0
+                                     35 	.globl _PT2
+                                     36 	.globl _ET2
+                                     37 	.globl _CY
+                                     38 	.globl _AC
+                                     39 	.globl _F0
+                                     40 	.globl _RS1
+                                     41 	.globl _RS0
+                                     42 	.globl _OV
+                                     43 	.globl _F1
+                                     44 	.globl _P
+                                     45 	.globl _PS
+                                     46 	.globl _PT1
+                                     47 	.globl _PX1
+                                     48 	.globl _PT0
+                                     49 	.globl _PX0
+                                     50 	.globl _RD
+                                     51 	.globl _WR
+                                     52 	.globl _T1
+                                     53 	.globl _T0
+                                     54 	.globl _INT1
+                                     55 	.globl _INT0
+                                     56 	.globl _TXD
+                                     57 	.globl _RXD
+                                     58 	.globl _P3_7
+                                     59 	.globl _P3_6
+                                     60 	.globl _P3_5
+                                     61 	.globl _P3_4
+                                     62 	.globl _P3_3
+                                     63 	.globl _P3_2
+                                     64 	.globl _P3_1
+                                     65 	.globl _P3_0
+                                     66 	.globl _EA
+                                     67 	.globl _ES
+                                     68 	.globl _ET1
+                                     69 	.globl _EX1
+                                     70 	.globl _ET0
+                                     71 	.globl _EX0
+                                     72 	.globl _P2_7
+                                     73 	.globl _P2_6
+                                     74 	.globl _P2_5
+                                     75 	.globl _P2_4
+                                     76 	.globl _P2_3
+                                     77 	.globl _P2_2
+                                     78 	.globl _P2_1
+                                     79 	.globl _P2_0
+                                     80 	.globl _SM0
+                                     81 	.globl _SM1
+                                     82 	.globl _SM2
+                                     83 	.globl _REN
+                                     84 	.globl _TB8
+                                     85 	.globl _RB8
+                                     86 	.globl _TI
+                                     87 	.globl _RI
+                                     88 	.globl _P1_7
+                                     89 	.globl _P1_6
+                                     90 	.globl _P1_5
+                                     91 	.globl _P1_4
+                                     92 	.globl _P1_3
+                                     93 	.globl _P1_2
+                                     94 	.globl _P1_1
+                                     95 	.globl _P1_0
+                                     96 	.globl _TF1
+                                     97 	.globl _TR1
+                                     98 	.globl _TF0
+                                     99 	.globl _TR0
+                                    100 	.globl _IE1
+                                    101 	.globl _IT1
+                                    102 	.globl _IE0
+                                    103 	.globl _IT0
+                                    104 	.globl _P0_7
+                                    105 	.globl _P0_6
+                                    106 	.globl _P0_5
+                                    107 	.globl _P0_4
+                                    108 	.globl _P0_3
+                                    109 	.globl _P0_2
+                                    110 	.globl _P0_1
+                                    111 	.globl _P0_0
+                                    112 	.globl _TH2
+                                    113 	.globl _TL2
+                                    114 	.globl _RCAP2H
+                                    115 	.globl _RCAP2L
+                                    116 	.globl _T2CON
+                                    117 	.globl _B
+                                    118 	.globl _ACC
+                                    119 	.globl _PSW
+                                    120 	.globl _IP
+                                    121 	.globl _P3
+                                    122 	.globl _IE
+                                    123 	.globl _P2
+                                    124 	.globl _SBUF
+                                    125 	.globl _SCON
+                                    126 	.globl _P1
+                                    127 	.globl _TH1
+                                    128 	.globl _TH0
+                                    129 	.globl _TL1
+                                    130 	.globl _TL0
+                                    131 	.globl _TMOD
+                                    132 	.globl _TCON
+                                    133 	.globl _PCON
+                                    134 	.globl _DPH
+                                    135 	.globl _DPL
+                                    136 	.globl _SP
+                                    137 	.globl _P0
+                                    138 	.globl _delayms
+                                    139 	.globl _hieu_ung_hien_tai
+                                    140 	.globl _k
+                                    141 	.globl _j
+                                    142 	.globl _i
+                                    143 ;--------------------------------------------------------
+                                    144 ; special function registers
+                                    145 ;--------------------------------------------------------
+                                    146 	.area RSEG    (ABS,DATA)
+      000000                        147 	.org 0x0000
+                           000080   148 _P0	=	0x0080
+                           000081   149 _SP	=	0x0081
+                           000082   150 _DPL	=	0x0082
+                           000083   151 _DPH	=	0x0083
+                           000087   152 _PCON	=	0x0087
+                           000088   153 _TCON	=	0x0088
+                           000089   154 _TMOD	=	0x0089
+                           00008A   155 _TL0	=	0x008a
+                           00008B   156 _TL1	=	0x008b
+                           00008C   157 _TH0	=	0x008c
+                           00008D   158 _TH1	=	0x008d
+                           000090   159 _P1	=	0x0090
+                           000098   160 _SCON	=	0x0098
+                           000099   161 _SBUF	=	0x0099
+                           0000A0   162 _P2	=	0x00a0
+                           0000A8   163 _IE	=	0x00a8
+                           0000B0   164 _P3	=	0x00b0
+                           0000B8   165 _IP	=	0x00b8
+                           0000D0   166 _PSW	=	0x00d0
+                           0000E0   167 _ACC	=	0x00e0
+                           0000F0   168 _B	=	0x00f0
+                           0000C8   169 _T2CON	=	0x00c8
+                           0000CA   170 _RCAP2L	=	0x00ca
+                           0000CB   171 _RCAP2H	=	0x00cb
+                           0000CC   172 _TL2	=	0x00cc
+                           0000CD   173 _TH2	=	0x00cd
+                                    174 ;--------------------------------------------------------
+                                    175 ; special function bits
+                                    176 ;--------------------------------------------------------
+                                    177 	.area RSEG    (ABS,DATA)
+      000000                        178 	.org 0x0000
+                           000080   179 _P0_0	=	0x0080
+                           000081   180 _P0_1	=	0x0081
+                           000082   181 _P0_2	=	0x0082
+                           000083   182 _P0_3	=	0x0083
+                           000084   183 _P0_4	=	0x0084
+                           000085   184 _P0_5	=	0x0085
+                           000086   185 _P0_6	=	0x0086
+                           000087   186 _P0_7	=	0x0087
+                           000088   187 _IT0	=	0x0088
+                           000089   188 _IE0	=	0x0089
+                           00008A   189 _IT1	=	0x008a
+                           00008B   190 _IE1	=	0x008b
+                           00008C   191 _TR0	=	0x008c
+                           00008D   192 _TF0	=	0x008d
+                           00008E   193 _TR1	=	0x008e
+                           00008F   194 _TF1	=	0x008f
+                           000090   195 _P1_0	=	0x0090
+                           000091   196 _P1_1	=	0x0091
+                           000092   197 _P1_2	=	0x0092
+                           000093   198 _P1_3	=	0x0093
+                           000094   199 _P1_4	=	0x0094
+                           000095   200 _P1_5	=	0x0095
+                           000096   201 _P1_6	=	0x0096
+                           000097   202 _P1_7	=	0x0097
+                           000098   203 _RI	=	0x0098
+                           000099   204 _TI	=	0x0099
+                           00009A   205 _RB8	=	0x009a
+                           00009B   206 _TB8	=	0x009b
+                           00009C   207 _REN	=	0x009c
+                           00009D   208 _SM2	=	0x009d
+                           00009E   209 _SM1	=	0x009e
+                           00009F   210 _SM0	=	0x009f
+                           0000A0   211 _P2_0	=	0x00a0
+                           0000A1   212 _P2_1	=	0x00a1
+                           0000A2   213 _P2_2	=	0x00a2
+                           0000A3   214 _P2_3	=	0x00a3
+                           0000A4   215 _P2_4	=	0x00a4
+                           0000A5   216 _P2_5	=	0x00a5
+                           0000A6   217 _P2_6	=	0x00a6
+                           0000A7   218 _P2_7	=	0x00a7
+                           0000A8   219 _EX0	=	0x00a8
+                           0000A9   220 _ET0	=	0x00a9
+                           0000AA   221 _EX1	=	0x00aa
+                           0000AB   222 _ET1	=	0x00ab
+                           0000AC   223 _ES	=	0x00ac
+                           0000AF   224 _EA	=	0x00af
+                           0000B0   225 _P3_0	=	0x00b0
+                           0000B1   226 _P3_1	=	0x00b1
+                           0000B2   227 _P3_2	=	0x00b2
+                           0000B3   228 _P3_3	=	0x00b3
+                           0000B4   229 _P3_4	=	0x00b4
+                           0000B5   230 _P3_5	=	0x00b5
+                           0000B6   231 _P3_6	=	0x00b6
+                           0000B7   232 _P3_7	=	0x00b7
+                           0000B0   233 _RXD	=	0x00b0
+                           0000B1   234 _TXD	=	0x00b1
+                           0000B2   235 _INT0	=	0x00b2
+                           0000B3   236 _INT1	=	0x00b3
+                           0000B4   237 _T0	=	0x00b4
+                           0000B5   238 _T1	=	0x00b5
+                           0000B6   239 _WR	=	0x00b6
+                           0000B7   240 _RD	=	0x00b7
+                           0000B8   241 _PX0	=	0x00b8
+                           0000B9   242 _PT0	=	0x00b9
+                           0000BA   243 _PX1	=	0x00ba
+                           0000BB   244 _PT1	=	0x00bb
+                           0000BC   245 _PS	=	0x00bc
+                           0000D0   246 _P	=	0x00d0
+                           0000D1   247 _F1	=	0x00d1
+                           0000D2   248 _OV	=	0x00d2
+                           0000D3   249 _RS0	=	0x00d3
+                           0000D4   250 _RS1	=	0x00d4
+                           0000D5   251 _F0	=	0x00d5
+                           0000D6   252 _AC	=	0x00d6
+                           0000D7   253 _CY	=	0x00d7
+                           0000AD   254 _ET2	=	0x00ad
+                           0000BD   255 _PT2	=	0x00bd
+                           0000C8   256 _T2CON_0	=	0x00c8
+                           0000C9   257 _T2CON_1	=	0x00c9
+                           0000CA   258 _T2CON_2	=	0x00ca
+                           0000CB   259 _T2CON_3	=	0x00cb
+                           0000CC   260 _T2CON_4	=	0x00cc
+                           0000CD   261 _T2CON_5	=	0x00cd
+                           0000CE   262 _T2CON_6	=	0x00ce
+                           0000CF   263 _T2CON_7	=	0x00cf
+                           0000C8   264 _CP_RL2	=	0x00c8
+                           0000C9   265 _C_T2	=	0x00c9
+                           0000CA   266 _TR2	=	0x00ca
+                           0000CB   267 _EXEN2	=	0x00cb
+                           0000CC   268 _TCLK	=	0x00cc
+                           0000CD   269 _RCLK	=	0x00cd
+                           0000CE   270 _EXF2	=	0x00ce
+                           0000CF   271 _TF2	=	0x00cf
+                                    272 ;--------------------------------------------------------
+                                    273 ; overlayable register banks
+                                    274 ;--------------------------------------------------------
+                                    275 	.area REG_BANK_0	(REL,OVR,DATA)
+      000000                        276 	.ds 8
+                                    277 ;--------------------------------------------------------
+                                    278 ; internal ram data
+                                    279 ;--------------------------------------------------------
+                                    280 	.area DSEG    (DATA)
+      000000                        281 _i::
+      000000                        282 	.ds 2
+      000002                        283 _j::
+      000002                        284 	.ds 2
+      000004                        285 _k::
+      000004                        286 	.ds 2
+      000006                        287 _hieu_ung_hien_tai::
+      000006                        288 	.ds 2
+      000008                        289 _delayms::
+      000008                        290 	.ds 2
+      00000A                        291 _delay_ms_ms_65536_1:
+      00000A                        292 	.ds 4
+      00000E                        293 _hieu_ung_2_countled_65537_13:
+      00000E                        294 	.ds 2
+                                    295 ;--------------------------------------------------------
+                                    296 ; overlayable items in internal ram
+                                    297 ;--------------------------------------------------------
+                                    298 ;--------------------------------------------------------
+                                    299 ; Stack segment in internal ram
+                                    300 ;--------------------------------------------------------
+                                    301 	.area SSEG
+      000000                        302 __start__stack:
+      000000                        303 	.ds	1
+                                    304 
+                                    305 ;--------------------------------------------------------
+                                    306 ; indirectly addressable internal ram data
+                                    307 ;--------------------------------------------------------
+                                    308 	.area ISEG    (DATA)
+                                    309 ;--------------------------------------------------------
+                                    310 ; absolute internal ram data
+                                    311 ;--------------------------------------------------------
+                                    312 	.area IABS    (ABS,DATA)
+                                    313 	.area IABS    (ABS,DATA)
+                                    314 ;--------------------------------------------------------
+                                    315 ; bit data
+                                    316 ;--------------------------------------------------------
+                                    317 	.area BSEG    (BIT)
+                                    318 ;--------------------------------------------------------
+                                    319 ; paged external ram data
+                                    320 ;--------------------------------------------------------
+                                    321 	.area PSEG    (PAG,XDATA)
+                                    322 ;--------------------------------------------------------
+                                    323 ; uninitialized external ram data
+                                    324 ;--------------------------------------------------------
+                                    325 	.area XSEG    (XDATA)
+                                    326 ;--------------------------------------------------------
+                                    327 ; absolute external ram data
+                                    328 ;--------------------------------------------------------
+                                    329 	.area XABS    (ABS,XDATA)
+                                    330 ;--------------------------------------------------------
+                                    331 ; initialized external ram data
+                                    332 ;--------------------------------------------------------
+                                    333 	.area XISEG   (XDATA)
+                                    334 	.area HOME    (CODE)
+                                    335 	.area GSINIT0 (CODE)
+                                    336 	.area GSINIT1 (CODE)
+                                    337 	.area GSINIT2 (CODE)
+                                    338 	.area GSINIT3 (CODE)
+                                    339 	.area GSINIT4 (CODE)
+                                    340 	.area GSINIT5 (CODE)
+                                    341 	.area GSINIT  (CODE)
+                                    342 	.area GSFINAL (CODE)
+                                    343 	.area CSEG    (CODE)
+                                    344 ;--------------------------------------------------------
+                                    345 ; interrupt vector
+                                    346 ;--------------------------------------------------------
+                                    347 	.area HOME    (CODE)
+      000000                        348 __interrupt_vect:
+      000000 02r00r00         [24]  349 	ljmp	__sdcc_gsinit_startup
+      000003 02r02rC9         [24]  350 	ljmp	_ISR0
+      000006                        351 	.ds	5
+      00000B 32               [24]  352 	reti
+      00000C                        353 	.ds	7
+      000013 02r02rF4         [24]  354 	ljmp	_ISR1
+                                    355 ;--------------------------------------------------------
+                                    356 ; global & static initialisations
+                                    357 ;--------------------------------------------------------
+                                    358 	.area HOME    (CODE)
+                                    359 	.area GSINIT  (CODE)
+                                    360 	.area GSFINAL (CODE)
+                                    361 	.area GSINIT  (CODE)
+                                    362 	.globl __sdcc_gsinit_startup
+                                    363 	.globl __sdcc_program_startup
+                                    364 	.globl __start__stack
+                                    365 	.globl __mcs51_genXINIT
+                                    366 	.globl __mcs51_genXRAMCLEAR
+                                    367 	.globl __mcs51_genRAMCLEAR
+                                    368 ;	main.c:5: int hieu_ung_hien_tai = 1;  // 3 hiệu ứng tương ứng với 1, 2 và 3
+      000000 75*06 01         [24]  369 	mov	_hieu_ung_hien_tai,#0x01
+      000003 75*07 00         [24]  370 	mov	(_hieu_ung_hien_tai + 1),#0x00
+                                    371 ;	main.c:6: int delayms = 100;          // Thời gian trễ giữa các lần sáng led
+      000006 75*08 64         [24]  372 	mov	_delayms,#0x64
+      000009 75*09 00         [24]  373 	mov	(_delayms + 1),#0x00
+                                    374 	.area GSFINAL (CODE)
+      000000 02r00r16         [24]  375 	ljmp	__sdcc_program_startup
+                                    376 ;--------------------------------------------------------
+                                    377 ; Home
+                                    378 ;--------------------------------------------------------
+                                    379 	.area HOME    (CODE)
+                                    380 	.area HOME    (CODE)
+      000016                        381 __sdcc_program_startup:
+      000016 02r03r1E         [24]  382 	ljmp	_main
+                                    383 ;	return from main will return to caller
+                                    384 ;--------------------------------------------------------
+                                    385 ; code
+                                    386 ;--------------------------------------------------------
+                                    387 	.area CSEG    (CODE)
+                                    388 ;------------------------------------------------------------
+                                    389 ;Allocation info for local variables in function 'delay_ms'
+                                    390 ;------------------------------------------------------------
+                                    391 ;ms                        Allocated with name '_delay_ms_ms_65536_1'
+                                    392 ;------------------------------------------------------------
+                                    393 ;	main.c:9: void delay_ms(long ms) {
+                                    394 ;	-----------------------------------------
+                                    395 ;	 function delay_ms
+                                    396 ;	-----------------------------------------
+      000000                        397 _delay_ms:
+                           000007   398 	ar7 = 0x07
+                           000006   399 	ar6 = 0x06
+                           000005   400 	ar5 = 0x05
+                           000004   401 	ar4 = 0x04
+                           000003   402 	ar3 = 0x03
+                           000002   403 	ar2 = 0x02
+                           000001   404 	ar1 = 0x01
+                           000000   405 	ar0 = 0x00
+      000000 85 82*00         [24]  406 	mov	__mullong_PARM_2,dpl
+      000003 85 83*01         [24]  407 	mov	(__mullong_PARM_2 + 1),dph
+      000006 85 F0*02         [24]  408 	mov	(__mullong_PARM_2 + 2),b
+      000009 F5*03            [12]  409 	mov	(__mullong_PARM_2 + 3),a
+                                    410 ;	main.c:10: ms *= 1000;  // Tính số chu kì máy (1000ckm = 1ms)
+      00000B 90 03 E8         [24]  411 	mov	dptr,#0x03e8
+      00000E E4               [12]  412 	clr	a
+      00000F F5 F0            [12]  413 	mov	b,a
+      000011 12r00r00         [24]  414 	lcall	__mullong
+      000014 AC 82            [24]  415 	mov	r4,dpl
+      000016 AD 83            [24]  416 	mov	r5,dph
+      000018 AE F0            [24]  417 	mov	r6,b
+      00001A FF               [12]  418 	mov	r7,a
+                                    419 ;	main.c:11: while (ms > 0) {
+      00001B                        420 00107$:
+      00001B C3               [12]  421 	clr	c
+      00001C E4               [12]  422 	clr	a
+      00001D 9C               [12]  423 	subb	a,r4
+      00001E E4               [12]  424 	clr	a
+      00001F 9D               [12]  425 	subb	a,r5
+      000020 E4               [12]  426 	clr	a
+      000021 9E               [12]  427 	subb	a,r6
+      000022 74 80            [12]  428 	mov	a,#(0x00 ^ 0x80)
+      000024 8F F0            [24]  429 	mov	b,r7
+      000026 63 F0 80         [24]  430 	xrl	b,#0x80
+      000029 95 F0            [12]  431 	subb	a,b
+      00002B 40 01            [24]  432 	jc	00137$
+      00002D 22               [24]  433 	ret
+      00002E                        434 00137$:
+                                    435 ;	main.c:13: TMOD = TMOD & 0xF0;
+      00002E 53 89 F0         [24]  436 	anl	_TMOD,#0xf0
+                                    437 ;	main.c:15: TMOD = TMOD | 0x01;
+      000031 43 89 01         [24]  438 	orl	_TMOD,#0x01
+                                    439 ;	main.c:16: ET0 = 0;  // Che ngắt Timer 0
+                                    440 ;	assignBit
+      000034 C2 A9            [12]  441 	clr	_ET0
+                                    442 ;	main.c:18: if (ms >= 65536) {
+      000036 C3               [12]  443 	clr	c
+      000037 EE               [12]  444 	mov	a,r6
+      000038 94 01            [12]  445 	subb	a,#0x01
+      00003A EF               [12]  446 	mov	a,r7
+      00003B 64 80            [12]  447 	xrl	a,#0x80
+      00003D 94 80            [12]  448 	subb	a,#0x80
+      00003F 40 0F            [24]  449 	jc	00102$
+                                    450 ;	main.c:20: TH0 = 0;
+                                    451 ;	main.c:21: TL0 = 0;
+                                    452 ;	main.c:22: ms -= 65536;
+      000041 E4               [12]  453 	clr	a
+      000042 F5 8C            [12]  454 	mov	_TH0,a
+      000044 F5 8A            [12]  455 	mov	_TL0,a
+      000046 EE               [12]  456 	mov	a,r6
+      000047 24 FF            [12]  457 	add	a,#0xff
+      000049 FE               [12]  458 	mov	r6,a
+      00004A EF               [12]  459 	mov	a,r7
+      00004B 34 FF            [12]  460 	addc	a,#0xff
+      00004D FF               [12]  461 	mov	r7,a
+      00004E 80 57            [24]  462 	sjmp	00103$
+      000050                        463 00102$:
+                                    464 ;	main.c:25: ms = 65536 - ms;
+      000050 E4               [12]  465 	clr	a
+      000051 C3               [12]  466 	clr	c
+      000052 9C               [12]  467 	subb	a,r4
+      000053 F5*0A            [12]  468 	mov	_delay_ms_ms_65536_1,a
+      000055 E4               [12]  469 	clr	a
+      000056 9D               [12]  470 	subb	a,r5
+      000057 F5*0B            [12]  471 	mov	(_delay_ms_ms_65536_1 + 1),a
+      000059 74 01            [12]  472 	mov	a,#0x01
+      00005B 9E               [12]  473 	subb	a,r6
+      00005C F5*0C            [12]  474 	mov	(_delay_ms_ms_65536_1 + 2),a
+      00005E E4               [12]  475 	clr	a
+      00005F 9F               [12]  476 	subb	a,r7
+      000060 F5*0D            [12]  477 	mov	(_delay_ms_ms_65536_1 + 3),a
+                                    478 ;	main.c:26: TH0 = ms / 256;
+      000062 E4               [12]  479 	clr	a
+      000063 F5*00            [12]  480 	mov	__divslong_PARM_2,a
+      000065 75*01 01         [24]  481 	mov	(__divslong_PARM_2 + 1),#0x01
+      000068 F5*02            [12]  482 	mov	(__divslong_PARM_2 + 2),a
+      00006A F5*03            [12]  483 	mov	(__divslong_PARM_2 + 3),a
+      00006C 85*0A 82         [24]  484 	mov	dpl,_delay_ms_ms_65536_1
+      00006F 85*0B 83         [24]  485 	mov	dph,(_delay_ms_ms_65536_1 + 1)
+      000072 85*0C F0         [24]  486 	mov	b,(_delay_ms_ms_65536_1 + 2)
+      000075 E5*0D            [12]  487 	mov	a,(_delay_ms_ms_65536_1 + 3)
+      000077 12r00r00         [24]  488 	lcall	__divslong
+      00007A A8 82            [24]  489 	mov	r0,dpl
+      00007C 88 8C            [24]  490 	mov	_TH0,r0
+                                    491 ;	main.c:27: TL0 = ms % 256;
+      00007E E4               [12]  492 	clr	a
+      00007F F5*00            [12]  493 	mov	__modslong_PARM_2,a
+      000081 75*01 01         [24]  494 	mov	(__modslong_PARM_2 + 1),#0x01
+      000084 F5*02            [12]  495 	mov	(__modslong_PARM_2 + 2),a
+      000086 F5*03            [12]  496 	mov	(__modslong_PARM_2 + 3),a
+      000088 85*0A 82         [24]  497 	mov	dpl,_delay_ms_ms_65536_1
+      00008B 85*0B 83         [24]  498 	mov	dph,(_delay_ms_ms_65536_1 + 1)
+      00008E 85*0C F0         [24]  499 	mov	b,(_delay_ms_ms_65536_1 + 2)
+      000091 E5*0D            [12]  500 	mov	a,(_delay_ms_ms_65536_1 + 3)
+      000093 12r00r00         [24]  501 	lcall	__modslong
+      000096 A8 82            [24]  502 	mov	r0,dpl
+      000098 A9 83            [24]  503 	mov	r1,dph
+      00009A AA F0            [24]  504 	mov	r2,b
+      00009C FB               [12]  505 	mov	r3,a
+      00009D 88 8A            [24]  506 	mov	_TL0,r0
+                                    507 ;	main.c:28: ms = 0;
+      00009F 7C 00            [12]  508 	mov	r4,#0x00
+      0000A1 7D 00            [12]  509 	mov	r5,#0x00
+      0000A3 7E 00            [12]  510 	mov	r6,#0x00
+      0000A5 7F 00            [12]  511 	mov	r7,#0x00
+      0000A7                        512 00103$:
+                                    513 ;	main.c:30: TF0 = 0;  // Xóa cờ tràn Timer 0
+                                    514 ;	assignBit
+      0000A7 C2 8D            [12]  515 	clr	_TF0
+                                    516 ;	main.c:31: TR0 = 1;  // Khởi động Timer 0
+                                    517 ;	assignBit
+      0000A9 D2 8C            [12]  518 	setb	_TR0
+                                    519 ;	main.c:32: while (TF0 == 0)
+      0000AB                        520 00104$:
+      0000AB 30 8D FD         [24]  521 	jnb	_TF0,00104$
+                                    522 ;	main.c:34: TR0 = 0;  // Dừng Timer 0
+                                    523 ;	assignBit
+      0000AE C2 8C            [12]  524 	clr	_TR0
+                                    525 ;	main.c:36: }
+      0000B0 02r00r1B         [24]  526 	ljmp	00107$
+                                    527 ;------------------------------------------------------------
+                                    528 ;Allocation info for local variables in function 'hieu_ung_1'
+                                    529 ;------------------------------------------------------------
+                                    530 ;hieu_ung_1                Allocated to registers r7 
+                                    531 ;------------------------------------------------------------
+                                    532 ;	main.c:39: void hieu_ung_1() {
+                                    533 ;	-----------------------------------------
+                                    534 ;	 function hieu_ung_1
+                                    535 ;	-----------------------------------------
+      0000B3                        536 _hieu_ung_1:
+                                    537 ;	main.c:40: led = 0xFF;  // Tắt tất cả led
+      0000B3 75 90 FF         [24]  538 	mov	_P1,#0xff
+                                    539 ;	main.c:41: delay_ms(delayms);
+      0000B6 AC*08            [24]  540 	mov	r4,_delayms
+      0000B8 E5*09            [12]  541 	mov	a,(_delayms + 1)
+      0000BA FD               [12]  542 	mov	r5,a
+      0000BB 33               [12]  543 	rlc	a
+      0000BC 95 E0            [12]  544 	subb	a,acc
+      0000BE FE               [12]  545 	mov	r6,a
+      0000BF 8C 82            [24]  546 	mov	dpl,r4
+      0000C1 8D 83            [24]  547 	mov	dph,r5
+      0000C3 8E F0            [24]  548 	mov	b,r6
+      0000C5 12r00r00         [24]  549 	lcall	_delay_ms
+                                    550 ;	main.c:43: unsigned char hieu_ung_1 = 0x03;  // Cho 2 led đầu sáng
+      0000C8 7F 03            [12]  551 	mov	r7,#0x03
+                                    552 ;	main.c:45: for (j = 0; j < 7; j++) {
+      0000CA E4               [12]  553 	clr	a
+      0000CB F5*02            [12]  554 	mov	_j,a
+      0000CD F5*03            [12]  555 	mov	(_j + 1),a
+      0000CF                        556 00107$:
+                                    557 ;	main.c:47: if (hieu_ung_hien_tai != 1) return;
+      0000CF 74 01            [12]  558 	mov	a,#0x01
+      0000D1 B5*06 06         [24]  559 	cjne	a,_hieu_ung_hien_tai,00133$
+      0000D4 14               [12]  560 	dec	a
+      0000D5 B5*07 02         [24]  561 	cjne	a,(_hieu_ung_hien_tai + 1),00133$
+      0000D8 80 01            [24]  562 	sjmp	00102$
+      0000DA                        563 00133$:
+      0000DA 22               [24]  564 	ret
+      0000DB                        565 00102$:
+                                    566 ;	main.c:49: led = ~hieu_ung_1;
+      0000DB EF               [12]  567 	mov	a,r7
+      0000DC F4               [12]  568 	cpl	a
+      0000DD F5 90            [12]  569 	mov	_P1,a
+                                    570 ;	main.c:50: delay_ms(delayms);
+      0000DF AB*08            [24]  571 	mov	r3,_delayms
+      0000E1 E5*09            [12]  572 	mov	a,(_delayms + 1)
+      0000E3 FC               [12]  573 	mov	r4,a
+      0000E4 33               [12]  574 	rlc	a
+      0000E5 95 E0            [12]  575 	subb	a,acc
+      0000E7 FD               [12]  576 	mov	r5,a
+      0000E8 8B 82            [24]  577 	mov	dpl,r3
+      0000EA 8C 83            [24]  578 	mov	dph,r4
+      0000EC 8D F0            [24]  579 	mov	b,r5
+      0000EE C0 07            [24]  580 	push	ar7
+      0000F0 12r00r00         [24]  581 	lcall	_delay_ms
+      0000F3 D0 07            [24]  582 	pop	ar7
+                                    583 ;	main.c:51: hieu_ung_1 = hieu_ung_1 << 1;
+      0000F5 8F 06            [24]  584 	mov	ar6,r7
+      0000F7 EE               [12]  585 	mov	a,r6
+      0000F8 2E               [12]  586 	add	a,r6
+      0000F9 FF               [12]  587 	mov	r7,a
+                                    588 ;	main.c:45: for (j = 0; j < 7; j++) {
+      0000FA 05*02            [12]  589 	inc	_j
+      0000FC E4               [12]  590 	clr	a
+      0000FD B5*02 02         [24]  591 	cjne	a,_j,00134$
+      000100 05*03            [12]  592 	inc	(_j + 1)
+      000102                        593 00134$:
+      000102 C3               [12]  594 	clr	c
+      000103 E5*02            [12]  595 	mov	a,_j
+      000105 94 07            [12]  596 	subb	a,#0x07
+      000107 E5*03            [12]  597 	mov	a,(_j + 1)
+      000109 64 80            [12]  598 	xrl	a,#0x80
+      00010B 94 80            [12]  599 	subb	a,#0x80
+      00010D 40 C0            [24]  600 	jc	00107$
+                                    601 ;	main.c:55: hieu_ung_1 = 0xC0;  // Cho 2 led cuối sáng
+      00010F 7F C0            [12]  602 	mov	r7,#0xc0
+                                    603 ;	main.c:56: for (j = 0; j < 7; j++) {
+      000111 E4               [12]  604 	clr	a
+      000112 F5*02            [12]  605 	mov	_j,a
+      000114 F5*03            [12]  606 	mov	(_j + 1),a
+      000116                        607 00109$:
+                                    608 ;	main.c:58: if (hieu_ung_hien_tai != 1) return;
+      000116 74 01            [12]  609 	mov	a,#0x01
+      000118 B5*06 06         [24]  610 	cjne	a,_hieu_ung_hien_tai,00136$
+      00011B 14               [12]  611 	dec	a
+      00011C B5*07 02         [24]  612 	cjne	a,(_hieu_ung_hien_tai + 1),00136$
+      00011F 80 01            [24]  613 	sjmp	00105$
+      000121                        614 00136$:
+      000121 22               [24]  615 	ret
+      000122                        616 00105$:
+                                    617 ;	main.c:60: led = ~hieu_ung_1;
+      000122 EF               [12]  618 	mov	a,r7
+      000123 F4               [12]  619 	cpl	a
+      000124 F5 90            [12]  620 	mov	_P1,a
+                                    621 ;	main.c:61: delay_ms(delayms);
+      000126 AB*08            [24]  622 	mov	r3,_delayms
+      000128 E5*09            [12]  623 	mov	a,(_delayms + 1)
+      00012A FC               [12]  624 	mov	r4,a
+      00012B 33               [12]  625 	rlc	a
+      00012C 95 E0            [12]  626 	subb	a,acc
+      00012E FD               [12]  627 	mov	r5,a
+      00012F 8B 82            [24]  628 	mov	dpl,r3
+      000131 8C 83            [24]  629 	mov	dph,r4
+      000133 8D F0            [24]  630 	mov	b,r5
+      000135 C0 07            [24]  631 	push	ar7
+      000137 12r00r00         [24]  632 	lcall	_delay_ms
+      00013A D0 07            [24]  633 	pop	ar7
+                                    634 ;	main.c:62: hieu_ung_1 = hieu_ung_1 >> 1;
+      00013C EF               [12]  635 	mov	a,r7
+      00013D C3               [12]  636 	clr	c
+      00013E 13               [12]  637 	rrc	a
+      00013F FF               [12]  638 	mov	r7,a
+                                    639 ;	main.c:56: for (j = 0; j < 7; j++) {
+      000140 05*02            [12]  640 	inc	_j
+      000142 E4               [12]  641 	clr	a
+      000143 B5*02 02         [24]  642 	cjne	a,_j,00137$
+      000146 05*03            [12]  643 	inc	(_j + 1)
+      000148                        644 00137$:
+      000148 C3               [12]  645 	clr	c
+      000149 E5*02            [12]  646 	mov	a,_j
+      00014B 94 07            [12]  647 	subb	a,#0x07
+      00014D E5*03            [12]  648 	mov	a,(_j + 1)
+      00014F 64 80            [12]  649 	xrl	a,#0x80
+      000151 94 80            [12]  650 	subb	a,#0x80
+      000153 40 C1            [24]  651 	jc	00109$
+                                    652 ;	main.c:64: }
+      000155 22               [24]  653 	ret
+                                    654 ;------------------------------------------------------------
+                                    655 ;Allocation info for local variables in function 'hieu_ung_2'
+                                    656 ;------------------------------------------------------------
+                                    657 ;giu_hieu_ung              Allocated to registers r7 
+                                    658 ;countled                  Allocated with name '_hieu_ung_2_countled_65537_13'
+                                    659 ;hieu_ung_2                Allocated to registers r4 
+                                    660 ;------------------------------------------------------------
+                                    661 ;	main.c:67: void hieu_ung_2() {
+                                    662 ;	-----------------------------------------
+                                    663 ;	 function hieu_ung_2
+                                    664 ;	-----------------------------------------
+      000156                        665 _hieu_ung_2:
+                                    666 ;	main.c:68: led = 0xFF;  // Tắt tất cả led
+      000156 75 90 FF         [24]  667 	mov	_P1,#0xff
+                                    668 ;	main.c:69: delay_ms(delayms);
+      000159 AC*08            [24]  669 	mov	r4,_delayms
+      00015B E5*09            [12]  670 	mov	a,(_delayms + 1)
+      00015D FD               [12]  671 	mov	r5,a
+      00015E 33               [12]  672 	rlc	a
+      00015F 95 E0            [12]  673 	subb	a,acc
+      000161 FE               [12]  674 	mov	r6,a
+      000162 8C 82            [24]  675 	mov	dpl,r4
+      000164 8D 83            [24]  676 	mov	dph,r5
+      000166 8E F0            [24]  677 	mov	b,r6
+      000168 12r00r00         [24]  678 	lcall	_delay_ms
+                                    679 ;	main.c:72: unsigned char giu_hieu_ung = 0x00;
+                                    680 ;	main.c:77: for (j = 0; j < 8; j++) {
+      00016B E4               [12]  681 	clr	a
+      00016C FF               [12]  682 	mov	r7,a
+      00016D F5*02            [12]  683 	mov	_j,a
+      00016F F5*03            [12]  684 	mov	(_j + 1),a
+      000171 75*0E 08         [24]  685 	mov	_hieu_ung_2_countled_65537_13,#0x08
+      000174 F5*0F            [12]  686 	mov	(_hieu_ung_2_countled_65537_13 + 1),a
+      000176                        687 00113$:
+                                    688 ;	main.c:78: unsigned char hieu_ung_2 = 0x01;  // bật sáng led đầu tiên
+      000176 7C 01            [12]  689 	mov	r4,#0x01
+                                    690 ;	main.c:80: for (k = 0; k < countled; k++) {
+      000178 E4               [12]  691 	clr	a
+      000179 F5*04            [12]  692 	mov	_k,a
+      00017B F5*05            [12]  693 	mov	(_k + 1),a
+      00017D E5*0E            [12]  694 	mov	a,_hieu_ung_2_countled_65537_13
+      00017F 24 FF            [12]  695 	add	a,#0xff
+      000181 FA               [12]  696 	mov	r2,a
+      000182 E5*0F            [12]  697 	mov	a,(_hieu_ung_2_countled_65537_13 + 1)
+      000184 34 FF            [12]  698 	addc	a,#0xff
+      000186 FB               [12]  699 	mov	r3,a
+      000187                        700 00111$:
+      000187 C3               [12]  701 	clr	c
+      000188 E5*04            [12]  702 	mov	a,_k
+      00018A 95*0E            [12]  703 	subb	a,_hieu_ung_2_countled_65537_13
+      00018C E5*05            [12]  704 	mov	a,(_k + 1)
+      00018E 64 80            [12]  705 	xrl	a,#0x80
+      000190 85*0F F0         [24]  706 	mov	b,(_hieu_ung_2_countled_65537_13 + 1)
+      000193 63 F0 80         [24]  707 	xrl	b,#0x80
+      000196 95 F0            [12]  708 	subb	a,b
+      000198 50 4C            [24]  709 	jnc	00105$
+                                    710 ;	main.c:82: if (hieu_ung_hien_tai != 2) return;
+      00019A 74 02            [12]  711 	mov	a,#0x02
+      00019C B5*06 06         [24]  712 	cjne	a,_hieu_ung_hien_tai,00152$
+      00019F E4               [12]  713 	clr	a
+      0001A0 B5*07 02         [24]  714 	cjne	a,(_hieu_ung_hien_tai + 1),00152$
+      0001A3 80 01            [24]  715 	sjmp	00102$
+      0001A5                        716 00152$:
+      0001A5 22               [24]  717 	ret
+      0001A6                        718 00102$:
+                                    719 ;	main.c:85: led = ~(hieu_ung_2 | giu_hieu_ung);
+      0001A6 EF               [12]  720 	mov	a,r7
+      0001A7 4C               [12]  721 	orl	a,r4
+      0001A8 F4               [12]  722 	cpl	a
+      0001A9 F5 90            [12]  723 	mov	_P1,a
+                                    724 ;	main.c:86: delay_ms(delayms);
+      0001AB A8*08            [24]  725 	mov	r0,_delayms
+      0001AD E5*09            [12]  726 	mov	a,(_delayms + 1)
+      0001AF F9               [12]  727 	mov	r1,a
+      0001B0 33               [12]  728 	rlc	a
+      0001B1 95 E0            [12]  729 	subb	a,acc
+      0001B3 FD               [12]  730 	mov	r5,a
+      0001B4 88 82            [24]  731 	mov	dpl,r0
+      0001B6 89 83            [24]  732 	mov	dph,r1
+      0001B8 8D F0            [24]  733 	mov	b,r5
+      0001BA C0 07            [24]  734 	push	ar7
+      0001BC C0 04            [24]  735 	push	ar4
+      0001BE C0 03            [24]  736 	push	ar3
+      0001C0 C0 02            [24]  737 	push	ar2
+      0001C2 12r00r00         [24]  738 	lcall	_delay_ms
+      0001C5 D0 02            [24]  739 	pop	ar2
+      0001C7 D0 03            [24]  740 	pop	ar3
+      0001C9 D0 04            [24]  741 	pop	ar4
+      0001CB D0 07            [24]  742 	pop	ar7
+                                    743 ;	main.c:89: if (k != countled - 1) hieu_ung_2 = hieu_ung_2 << 1;
+      0001CD EA               [12]  744 	mov	a,r2
+      0001CE B5*04 06         [24]  745 	cjne	a,_k,00153$
+      0001D1 EB               [12]  746 	mov	a,r3
+      0001D2 B5*05 02         [24]  747 	cjne	a,(_k + 1),00153$
+      0001D5 80 05            [24]  748 	sjmp	00112$
+      0001D7                        749 00153$:
+      0001D7 8C 06            [24]  750 	mov	ar6,r4
+      0001D9 EE               [12]  751 	mov	a,r6
+      0001DA 2E               [12]  752 	add	a,r6
+      0001DB FC               [12]  753 	mov	r4,a
+      0001DC                        754 00112$:
+                                    755 ;	main.c:80: for (k = 0; k < countled; k++) {
+      0001DC 05*04            [12]  756 	inc	_k
+      0001DE E4               [12]  757 	clr	a
+      0001DF B5*04 A5         [24]  758 	cjne	a,_k,00111$
+      0001E2 05*05            [12]  759 	inc	(_k + 1)
+      0001E4 80 A1            [24]  760 	sjmp	00111$
+      0001E6                        761 00105$:
+                                    762 ;	main.c:92: giu_hieu_ung = hieu_ung_2 | giu_hieu_ung;
+      0001E6 EC               [12]  763 	mov	a,r4
+      0001E7 42 07            [12]  764 	orl	ar7,a
+                                    765 ;	main.c:93: countled--;  // Giảm vòng lặp dịch led
+      0001E9 15*0E            [12]  766 	dec	_hieu_ung_2_countled_65537_13
+      0001EB 74 FF            [12]  767 	mov	a,#0xff
+      0001ED B5*0E 02         [24]  768 	cjne	a,_hieu_ung_2_countled_65537_13,00155$
+      0001F0 15*0F            [12]  769 	dec	(_hieu_ung_2_countled_65537_13 + 1)
+      0001F2                        770 00155$:
+                                    771 ;	main.c:77: for (j = 0; j < 8; j++) {
+      0001F2 05*02            [12]  772 	inc	_j
+      0001F4 E4               [12]  773 	clr	a
+      0001F5 B5*02 02         [24]  774 	cjne	a,_j,00156$
+      0001F8 05*03            [12]  775 	inc	(_j + 1)
+      0001FA                        776 00156$:
+      0001FA C3               [12]  777 	clr	c
+      0001FB E5*02            [12]  778 	mov	a,_j
+      0001FD 94 08            [12]  779 	subb	a,#0x08
+      0001FF E5*03            [12]  780 	mov	a,(_j + 1)
+      000201 64 80            [12]  781 	xrl	a,#0x80
+      000203 94 80            [12]  782 	subb	a,#0x80
+      000205 50 03            [24]  783 	jnc	00157$
+      000207 02r01r76         [24]  784 	ljmp	00113$
+      00020A                        785 00157$:
+                                    786 ;	main.c:97: for (j = 0; j < 8; j++) {
+      00020A E4               [12]  787 	clr	a
+      00020B F5*02            [12]  788 	mov	_j,a
+      00020D F5*03            [12]  789 	mov	(_j + 1),a
+      00020F                        790 00115$:
+                                    791 ;	main.c:99: if (hieu_ung_hien_tai != 2) return;
+      00020F 74 02            [12]  792 	mov	a,#0x02
+      000211 B5*06 06         [24]  793 	cjne	a,_hieu_ung_hien_tai,00158$
+      000214 E4               [12]  794 	clr	a
+      000215 B5*07 02         [24]  795 	cjne	a,(_hieu_ung_hien_tai + 1),00158$
+      000218 80 01            [24]  796 	sjmp	00108$
+      00021A                        797 00158$:
+      00021A 22               [24]  798 	ret
+      00021B                        799 00108$:
+                                    800 ;	main.c:101: led = ~giu_hieu_ung;
+      00021B EF               [12]  801 	mov	a,r7
+      00021C F4               [12]  802 	cpl	a
+      00021D F5 90            [12]  803 	mov	_P1,a
+                                    804 ;	main.c:102: delay_ms(delayms);
+      00021F AB*08            [24]  805 	mov	r3,_delayms
+      000221 E5*09            [12]  806 	mov	a,(_delayms + 1)
+      000223 FC               [12]  807 	mov	r4,a
+      000224 33               [12]  808 	rlc	a
+      000225 95 E0            [12]  809 	subb	a,acc
+      000227 FD               [12]  810 	mov	r5,a
+      000228 8B 82            [24]  811 	mov	dpl,r3
+      00022A 8C 83            [24]  812 	mov	dph,r4
+      00022C 8D F0            [24]  813 	mov	b,r5
+      00022E C0 07            [24]  814 	push	ar7
+      000230 12r00r00         [24]  815 	lcall	_delay_ms
+      000233 D0 07            [24]  816 	pop	ar7
+                                    817 ;	main.c:104: giu_hieu_ung = giu_hieu_ung >> 1;
+      000235 EF               [12]  818 	mov	a,r7
+      000236 C3               [12]  819 	clr	c
+      000237 13               [12]  820 	rrc	a
+      000238 FF               [12]  821 	mov	r7,a
+                                    822 ;	main.c:97: for (j = 0; j < 8; j++) {
+      000239 05*02            [12]  823 	inc	_j
+      00023B E4               [12]  824 	clr	a
+      00023C B5*02 02         [24]  825 	cjne	a,_j,00159$
+      00023F 05*03            [12]  826 	inc	(_j + 1)
+      000241                        827 00159$:
+      000241 C3               [12]  828 	clr	c
+      000242 E5*02            [12]  829 	mov	a,_j
+      000244 94 08            [12]  830 	subb	a,#0x08
+      000246 E5*03            [12]  831 	mov	a,(_j + 1)
+      000248 64 80            [12]  832 	xrl	a,#0x80
+      00024A 94 80            [12]  833 	subb	a,#0x80
+      00024C 40 C1            [24]  834 	jc	00115$
+                                    835 ;	main.c:106: }
+      00024E 22               [24]  836 	ret
+                                    837 ;------------------------------------------------------------
+                                    838 ;Allocation info for local variables in function 'hieu_ung_3'
+                                    839 ;------------------------------------------------------------
+                                    840 ;hieu_ung_3_1              Allocated to registers r7 
+                                    841 ;hieu_ung_3_2              Allocated to registers r6 
+                                    842 ;------------------------------------------------------------
+                                    843 ;	main.c:109: void hieu_ung_3() {
+                                    844 ;	-----------------------------------------
+                                    845 ;	 function hieu_ung_3
+                                    846 ;	-----------------------------------------
+      00024F                        847 _hieu_ung_3:
+                                    848 ;	main.c:110: led = 0xFF;  // Tắt tất cả các led
+      00024F 75 90 FF         [24]  849 	mov	_P1,#0xff
+                                    850 ;	main.c:111: delay_ms(delayms);
+      000252 AC*08            [24]  851 	mov	r4,_delayms
+      000254 E5*09            [12]  852 	mov	a,(_delayms + 1)
+      000256 FD               [12]  853 	mov	r5,a
+      000257 33               [12]  854 	rlc	a
+      000258 95 E0            [12]  855 	subb	a,acc
+      00025A FE               [12]  856 	mov	r6,a
+      00025B 8C 82            [24]  857 	mov	dpl,r4
+      00025D 8D 83            [24]  858 	mov	dph,r5
+      00025F 8E F0            [24]  859 	mov	b,r6
+      000261 12r00r00         [24]  860 	lcall	_delay_ms
+                                    861 ;	main.c:113: unsigned char hieu_ung_3_1 = 0x01;  // Bật led đầu tiên
+      000264 7F 01            [12]  862 	mov	r7,#0x01
+                                    863 ;	main.c:114: unsigned char hieu_ung_3_2 = 0x80;  // Bật led cuối cùng
+      000266 7E 80            [12]  864 	mov	r6,#0x80
+                                    865 ;	main.c:115: for (j = 0; j < 8; j++) {
+      000268 E4               [12]  866 	clr	a
+      000269 F5*02            [12]  867 	mov	_j,a
+      00026B F5*03            [12]  868 	mov	(_j + 1),a
+      00026D                        869 00106$:
+                                    870 ;	main.c:117: if (hieu_ung_hien_tai != 3) return;
+      00026D 74 03            [12]  871 	mov	a,#0x03
+      00026F B5*06 06         [24]  872 	cjne	a,_hieu_ung_hien_tai,00122$
+      000272 E4               [12]  873 	clr	a
+      000273 B5*07 02         [24]  874 	cjne	a,(_hieu_ung_hien_tai + 1),00122$
+      000276 80 01            [24]  875 	sjmp	00102$
+      000278                        876 00122$:
+      000278 22               [24]  877 	ret
+      000279                        878 00102$:
+                                    879 ;	main.c:118: led = ~(hieu_ung_3_1 | hieu_ung_3_2);
+      000279 EE               [12]  880 	mov	a,r6
+      00027A 4F               [12]  881 	orl	a,r7
+      00027B FD               [12]  882 	mov	r5,a
+      00027C F4               [12]  883 	cpl	a
+      00027D F5 90            [12]  884 	mov	_P1,a
+                                    885 ;	main.c:121: if (hieu_ung_3_1 != 0x08) delay_ms(delayms);
+      00027F BF 08 02         [24]  886 	cjne	r7,#0x08,00123$
+      000282 80 1A            [24]  887 	sjmp	00104$
+      000284                        888 00123$:
+      000284 AA*08            [24]  889 	mov	r2,_delayms
+      000286 E5*09            [12]  890 	mov	a,(_delayms + 1)
+      000288 FB               [12]  891 	mov	r3,a
+      000289 33               [12]  892 	rlc	a
+      00028A 95 E0            [12]  893 	subb	a,acc
+      00028C FC               [12]  894 	mov	r4,a
+      00028D 8A 82            [24]  895 	mov	dpl,r2
+      00028F 8B 83            [24]  896 	mov	dph,r3
+      000291 8C F0            [24]  897 	mov	b,r4
+      000293 C0 07            [24]  898 	push	ar7
+      000295 C0 06            [24]  899 	push	ar6
+      000297 12r00r00         [24]  900 	lcall	_delay_ms
+      00029A D0 06            [24]  901 	pop	ar6
+      00029C D0 07            [24]  902 	pop	ar7
+      00029E                        903 00104$:
+                                    904 ;	main.c:123: hieu_ung_3_1 = hieu_ung_3_1 << 1;
+      00029E 8F 05            [24]  905 	mov	ar5,r7
+      0002A0 ED               [12]  906 	mov	a,r5
+      0002A1 2D               [12]  907 	add	a,r5
+      0002A2 FF               [12]  908 	mov	r7,a
+                                    909 ;	main.c:124: hieu_ung_3_2 = hieu_ung_3_2 >> 1;
+      0002A3 EE               [12]  910 	mov	a,r6
+      0002A4 C3               [12]  911 	clr	c
+      0002A5 13               [12]  912 	rrc	a
+      0002A6 FE               [12]  913 	mov	r6,a
+                                    914 ;	main.c:115: for (j = 0; j < 8; j++) {
+      0002A7 05*02            [12]  915 	inc	_j
+      0002A9 E4               [12]  916 	clr	a
+      0002AA B5*02 02         [24]  917 	cjne	a,_j,00124$
+      0002AD 05*03            [12]  918 	inc	(_j + 1)
+      0002AF                        919 00124$:
+      0002AF C3               [12]  920 	clr	c
+      0002B0 E5*02            [12]  921 	mov	a,_j
+      0002B2 94 08            [12]  922 	subb	a,#0x08
+      0002B4 E5*03            [12]  923 	mov	a,(_j + 1)
+      0002B6 64 80            [12]  924 	xrl	a,#0x80
+      0002B8 94 80            [12]  925 	subb	a,#0x80
+      0002BA 40 B1            [24]  926 	jc	00106$
+                                    927 ;	main.c:126: }
+      0002BC 22               [24]  928 	ret
+                                    929 ;------------------------------------------------------------
+                                    930 ;Allocation info for local variables in function 'initExtInterrupt'
+                                    931 ;------------------------------------------------------------
+                                    932 ;	main.c:129: void initExtInterrupt() {
+                                    933 ;	-----------------------------------------
+                                    934 ;	 function initExtInterrupt
+                                    935 ;	-----------------------------------------
+      0002BD                        936 _initExtInterrupt:
+                                    937 ;	main.c:130: P3_2 = 1;
+                                    938 ;	assignBit
+      0002BD D2 B2            [12]  939 	setb	_P3_2
+                                    940 ;	main.c:131: P3_3 = 1;
+                                    941 ;	assignBit
+      0002BF D2 B3            [12]  942 	setb	_P3_3
+                                    943 ;	main.c:132: IT0 = 1;
+                                    944 ;	assignBit
+      0002C1 D2 88            [12]  945 	setb	_IT0
+                                    946 ;	main.c:133: IT1 = 1;
+                                    947 ;	assignBit
+      0002C3 D2 8A            [12]  948 	setb	_IT1
+                                    949 ;	main.c:134: IE = 0x85;
+      0002C5 75 A8 85         [24]  950 	mov	_IE,#0x85
+                                    951 ;	main.c:135: }
+      0002C8 22               [24]  952 	ret
+                                    953 ;------------------------------------------------------------
+                                    954 ;Allocation info for local variables in function 'ISR0'
+                                    955 ;------------------------------------------------------------
+                                    956 ;	main.c:138: void ISR0() __interrupt(0) {
+                                    957 ;	-----------------------------------------
+                                    958 ;	 function ISR0
+                                    959 ;	-----------------------------------------
+      0002C9                        960 _ISR0:
+      0002C9 C0 E0            [24]  961 	push	acc
+      0002CB C0 D0            [24]  962 	push	psw
+                                    963 ;	main.c:139: EA = 0;  // Che toàn bộ các ngắt
+                                    964 ;	assignBit
+      0002CD C2 AF            [12]  965 	clr	_EA
+                                    966 ;	main.c:141: if (hieu_ung_hien_tai == 1)
+      0002CF 74 01            [12]  967 	mov	a,#0x01
+      0002D1 B5*06 06         [24]  968 	cjne	a,_hieu_ung_hien_tai,00110$
+      0002D4 14               [12]  969 	dec	a
+      0002D5 B5*07 02         [24]  970 	cjne	a,(_hieu_ung_hien_tai + 1),00110$
+      0002D8 80 02            [24]  971 	sjmp	00111$
+      0002DA                        972 00110$:
+      0002DA 80 08            [24]  973 	sjmp	00102$
+      0002DC                        974 00111$:
+                                    975 ;	main.c:142: hieu_ung_hien_tai = 3;
+      0002DC 75*06 03         [24]  976 	mov	_hieu_ung_hien_tai,#0x03
+      0002DF 75*07 00         [24]  977 	mov	(_hieu_ung_hien_tai + 1),#0x00
+      0002E2 80 09            [24]  978 	sjmp	00103$
+      0002E4                        979 00102$:
+                                    980 ;	main.c:144: hieu_ung_hien_tai--;
+      0002E4 15*06            [12]  981 	dec	_hieu_ung_hien_tai
+      0002E6 74 FF            [12]  982 	mov	a,#0xff
+      0002E8 B5*06 02         [24]  983 	cjne	a,_hieu_ung_hien_tai,00112$
+      0002EB 15*07            [12]  984 	dec	(_hieu_ung_hien_tai + 1)
+      0002ED                        985 00112$:
+      0002ED                        986 00103$:
+                                    987 ;	main.c:145: EA = 1;  // Cho phép ngắt
+                                    988 ;	assignBit
+      0002ED D2 AF            [12]  989 	setb	_EA
+                                    990 ;	main.c:146: }
+      0002EF D0 D0            [24]  991 	pop	psw
+      0002F1 D0 E0            [24]  992 	pop	acc
+      0002F3 32               [24]  993 	reti
+                                    994 ;	eliminated unneeded mov psw,# (no regs used in bank)
+                                    995 ;	eliminated unneeded push/pop dpl
+                                    996 ;	eliminated unneeded push/pop dph
+                                    997 ;	eliminated unneeded push/pop b
+                                    998 ;------------------------------------------------------------
+                                    999 ;Allocation info for local variables in function 'ISR1'
+                                   1000 ;------------------------------------------------------------
+                                   1001 ;	main.c:149: void ISR1() __interrupt(2) {
+                                   1002 ;	-----------------------------------------
+                                   1003 ;	 function ISR1
+                                   1004 ;	-----------------------------------------
+      0002F4                       1005 _ISR1:
+      0002F4 C0 E0            [24] 1006 	push	acc
+      0002F6 C0 D0            [24] 1007 	push	psw
+                                   1008 ;	main.c:150: EA = 0;  // Che toàn bộ các ngắt
+                                   1009 ;	assignBit
+      0002F8 C2 AF            [12] 1010 	clr	_EA
+                                   1011 ;	main.c:152: if (hieu_ung_hien_tai == 3)
+      0002FA 74 03            [12] 1012 	mov	a,#0x03
+      0002FC B5*06 06         [24] 1013 	cjne	a,_hieu_ung_hien_tai,00110$
+      0002FF E4               [12] 1014 	clr	a
+      000300 B5*07 02         [24] 1015 	cjne	a,(_hieu_ung_hien_tai + 1),00110$
+      000303 80 02            [24] 1016 	sjmp	00111$
+      000305                       1017 00110$:
+      000305 80 08            [24] 1018 	sjmp	00102$
+      000307                       1019 00111$:
+                                   1020 ;	main.c:153: hieu_ung_hien_tai = 1;
+      000307 75*06 01         [24] 1021 	mov	_hieu_ung_hien_tai,#0x01
+      00030A 75*07 00         [24] 1022 	mov	(_hieu_ung_hien_tai + 1),#0x00
+      00030D 80 08            [24] 1023 	sjmp	00103$
+      00030F                       1024 00102$:
+                                   1025 ;	main.c:155: hieu_ung_hien_tai++;
+      00030F 05*06            [12] 1026 	inc	_hieu_ung_hien_tai
+      000311 E4               [12] 1027 	clr	a
+      000312 B5*06 02         [24] 1028 	cjne	a,_hieu_ung_hien_tai,00112$
+      000315 05*07            [12] 1029 	inc	(_hieu_ung_hien_tai + 1)
+      000317                       1030 00112$:
+      000317                       1031 00103$:
+                                   1032 ;	main.c:156: EA = 1;  // Cho phép ngắt
+                                   1033 ;	assignBit
+      000317 D2 AF            [12] 1034 	setb	_EA
+                                   1035 ;	main.c:157: }
+      000319 D0 D0            [24] 1036 	pop	psw
+      00031B D0 E0            [24] 1037 	pop	acc
+      00031D 32               [24] 1038 	reti
+                                   1039 ;	eliminated unneeded mov psw,# (no regs used in bank)
+                                   1040 ;	eliminated unneeded push/pop dpl
+                                   1041 ;	eliminated unneeded push/pop dph
+                                   1042 ;	eliminated unneeded push/pop b
+                                   1043 ;------------------------------------------------------------
+                                   1044 ;Allocation info for local variables in function 'main'
+                                   1045 ;------------------------------------------------------------
+                                   1046 ;	main.c:159: int main() {
+                                   1047 ;	-----------------------------------------
+                                   1048 ;	 function main
+                                   1049 ;	-----------------------------------------
+      00031E                       1050 _main:
+                                   1051 ;	main.c:161: initExtInterrupt();
+      00031E 12r02rBD         [24] 1052 	lcall	_initExtInterrupt
+                                   1053 ;	main.c:162: while (1) {
+      000321                       1054 00110$:
+                                   1055 ;	main.c:163: if (hieu_ung_hien_tai == 1) {
+      000321 74 01            [12] 1056 	mov	a,#0x01
+      000323 B5*06 06         [24] 1057 	cjne	a,_hieu_ung_hien_tai,00130$
+      000326 14               [12] 1058 	dec	a
+      000327 B5*07 02         [24] 1059 	cjne	a,(_hieu_ung_hien_tai + 1),00130$
+      00032A 80 02            [24] 1060 	sjmp	00131$
+      00032C                       1061 00130$:
+      00032C 80 05            [24] 1062 	sjmp	00107$
+      00032E                       1063 00131$:
+                                   1064 ;	main.c:164: hieu_ung_1();
+      00032E 12r00rB3         [24] 1065 	lcall	_hieu_ung_1
+      000331 80 EE            [24] 1066 	sjmp	00110$
+      000333                       1067 00107$:
+                                   1068 ;	main.c:165: } else if (hieu_ung_hien_tai == 2) {
+      000333 74 02            [12] 1069 	mov	a,#0x02
+      000335 B5*06 06         [24] 1070 	cjne	a,_hieu_ung_hien_tai,00132$
+      000338 E4               [12] 1071 	clr	a
+      000339 B5*07 02         [24] 1072 	cjne	a,(_hieu_ung_hien_tai + 1),00132$
+      00033C 80 02            [24] 1073 	sjmp	00133$
+      00033E                       1074 00132$:
+      00033E 80 05            [24] 1075 	sjmp	00104$
+      000340                       1076 00133$:
+                                   1077 ;	main.c:166: hieu_ung_2();
+      000340 12r01r56         [24] 1078 	lcall	_hieu_ung_2
+      000343 80 DC            [24] 1079 	sjmp	00110$
+      000345                       1080 00104$:
+                                   1081 ;	main.c:167: } else if (hieu_ung_hien_tai == 3) {
+      000345 74 03            [12] 1082 	mov	a,#0x03
+      000347 B5*06 06         [24] 1083 	cjne	a,_hieu_ung_hien_tai,00134$
+      00034A E4               [12] 1084 	clr	a
+      00034B B5*07 02         [24] 1085 	cjne	a,(_hieu_ung_hien_tai + 1),00134$
+      00034E 80 02            [24] 1086 	sjmp	00135$
+      000350                       1087 00134$:
+      000350 80 CF            [24] 1088 	sjmp	00110$
+      000352                       1089 00135$:
+                                   1090 ;	main.c:168: hieu_ung_3();
+      000352 12r02r4F         [24] 1091 	lcall	_hieu_ung_3
+                                   1092 ;	main.c:171: }
+      000355 80 CA            [24] 1093 	sjmp	00110$
+                                   1094 	.area CSEG    (CODE)
+                                   1095 	.area CONST   (CODE)
+                                   1096 	.area XINIT   (CODE)
+                                   1097 	.area CABS    (ABS,CODE)

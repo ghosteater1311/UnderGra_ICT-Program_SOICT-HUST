@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">567</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">4a2baae1-d090-4377-a03f-1fd79c9675a6</dc:identifier>
+        <dc:title>Story Physics</dc:title>
+        <dc:creator opf:file-as="Brooks, Larry" opf:role="aut">Larry Brooks</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (1.1.0) [http://calibre-ebook.com]</dc:contributor>
+        <dc:date>2013-09-20T18:30:00+00:00</dc:date>
+        <dc:description>&lt;p&gt;&lt;h2&gt;Learn how to make your story soar!&lt;/h2&gt;&lt;p&gt;In the physical world, gravity, force, and other elements of physics govern your abilities and can be utilized to enhance your every movement. In the world of writing, &lt;i&gt;story&lt;/i&gt; physics can be harnessed in much the same way to make your novel or screenplay the best it can be. In &lt;i&gt;Story Physics&lt;/i&gt;, best-selling author Larry Brooks introduces you to six key literary forces that, when leveraged in just the right way, enable you to craft a story that's primed for success&amp;#8212;and publication.&lt;p&gt;Inside &lt;i&gt;Story Physics&lt;/i&gt;, you'll learn how to:&lt;ul&gt;&lt;li&gt;Understand and harness the six storytelling forces that are constantly at work in your fiction.&lt;li&gt;Transform your story idea into a dramatically compelling concept.&lt;li&gt;Optimize the choices you make in terms of character, conflict, subplot, subtext, and more to render the best possible outcome.&lt;/ul&gt; These literary forces will elevate your story above the competition and help you avoid...</dc:description>
+        <dc:publisher>F+W Media</dc:publisher>
+        <dc:language>eng</dc:language>
+        <meta content="{&quot;Larry Brooks&quot;: &quot;&quot;}" name="calibre:author_link_map"/>
+        <meta content="2013-09-20T20:19:30.140000+00:00" name="calibre:timestamp"/>
+        <meta content="Story Physics" name="calibre:title_sort"/>
+    </metadata>
+    <guide>
+        <reference href="cover.jpg" title="Cover" type="cover"/>
+    </guide>
+</package>

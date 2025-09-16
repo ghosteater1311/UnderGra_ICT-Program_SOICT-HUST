@@ -1,0 +1,96 @@
+ORG 0000h 
+SETB P3.2
+SETB P3.3 
+SETB P3.4
+SETB P3.5
+CLR P3.6
+MAIN:
+    JNB P3.2, ZONE_1
+    JNB P3.3, ZONE_2
+    JNB P3.4, ZONE_3
+    JNB P3.5, ZONE_4
+    JMP MAIN
+
+ 
+
+END_LOOP:
+LJMP END_LOOP ;final endless loop
+
+ 
+
+
+ZONE_1:
+CLR P2.0
+MOV P1, #0xF9
+LCALL BUZZER_ON
+MOV P1, #0xFF
+SETB P2.0
+JMP MAIN
+
+ 
+
+ZONE_2:
+CLR P2.1
+MOV P1, #24h
+LCALL BUZZER_ON
+MOV P1, #0xFF
+SETB P2.1
+JMP MAIN
+
+ 
+
+ZONE_3:
+CLR P2.2
+MOV P1, #30h
+LCALL BUZZER_ON
+MOV P1, #0xFF
+SETB P2.2
+JMP MAIN
+
+ 
+
+ZONE_4:
+CLR P2.3
+MOV P1, #19h
+LCALL BUZZER_ON
+MOV P1, #0xFF
+SETB P2.3
+JMP MAIN
+
+ 
+
+
+BUZZER_ON:
+SETB P3.6    ; turn on buzzer
+
+ 
+
+LCALL ONE_MILLI_SUB    ; delay 10 times
+LCALL ONE_MILLI_SUB
+LCALL ONE_MILLI_SUB
+LCALL ONE_MILLI_SUB
+LCALL ONE_MILLI_SUB
+LCALL ONE_MILLI_SUB
+LCALL ONE_MILLI_SUB
+LCALL ONE_MILLI_SUB
+LCALL ONE_MILLI_SUB
+LCALL ONE_MILLI_SUB
+
+ 
+
+CLR P3.6    ; turn off buzzer
+RET
+
+ 
+
+
+ONE_MILLI_SUB:
+    PUSH 07h ; save R7 to stack
+    MOV R7, #250d ; 
+LOOP_1_MILLI: ; loops 250 times
+    NOP ; two NOPs
+    NOP ;
+    DJNZ R7, LOOP_1_MILLI ; loop until zero
+    POP 07h ; restore R7 
+    RET ; return to caller
+END
