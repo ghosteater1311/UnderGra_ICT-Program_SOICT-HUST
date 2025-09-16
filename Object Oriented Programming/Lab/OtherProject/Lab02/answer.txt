@@ -1,0 +1,22 @@
+10. Creating Constructor Methods
+Question: If you create a constructor method to initialize a DVD object using its title and another constructor to initialize it using its category, does Java permit this?
+
+Answer:
+Yes, Java does permit this approach. Java supports constructor overloading, which means you can define multiple constructors for a single class as long as each constructor has a unique parameter list. 
+
+15. Passing Parameters
+Question 1: Is Java a pass-by-value or pass-by-reference programming language?
+
+Answer:
+Java is a pass-by-value programming language. This implies that when you pass parameters to methods, a copy of the value is made. This mechanism underpins the behavior observed in subsequent parameter passing scenarios.
+
+Question 2: After calling the method swap(jungleDVD, cinderellaDVD), why do the titles of these two objects remain unchanged?
+
+Answer:
+The titles remain unchanged because the swap method receives copies of the original object references. Consequently, swapping these local copies does not affect the actual references held by the original variables. In other words, while the method may swap the local copies of the references, the original references in the calling context remain intact.
+
+Question 3: After calling the method changeTitle(jungleDVD, cinderellaDVD.getTitle()), why does the title of the jungleDVD object change?
+
+Answer:
+In this case, the method changeTitle is likely designed to modify the state of the object that the reference points to. Although Java uses pass-by-value semantics, the value being passed is the reference to the object. When changeTitle is invoked, it directly manipulates the object's internal state (i.e., its title) via that reference. As a result, the title of the jungleDVD object is updated because the actual object’s state is altered, not merely the local copy of the reference.
+

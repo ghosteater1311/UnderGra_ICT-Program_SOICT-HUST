@@ -1,0 +1,62 @@
+1.3
+1. Top-Level Containers
+
+AWT:		Swing:
+Frame		JFrame	      
+Dialog		JDialog
+Window		JWindow
+
+Differences:
+- Swing containers start with "J" prefix.
+- Swing adds JApplet for applets (deprecated in newer Java versions).
+- Swing containers support pluggable look-and-feel; AWT relies on native OS GUI.
+
+2. Class Names of Components
+
+AWT (java.awt):		Swing (javax.swing):
+Button			JButton
+Label			JLabel
+TextField		JTextField
+Checkbox		JCheckBox	
+
+Differences:
+- Swing components are prefixed with "J".
+- Swing offers more advanced components (e.g., JTable, JTree, JTabbedPane).
+- AWT has limited components; Swing extends functionality (e.g., JSpinner).
+- Swing components are lightweight (no native OS dependency).
+
+3. Event-Handling
+
+AWT:
+- Uses the delegation model (listeners).
+- Limited to basic events (e.g., ActionListener for Button).
+- No built-in support for custom rendering.
+
+Swing:
+- Also uses the delegation model.
+- Supports additional specialized listeners (e.g., ChangeListener for sliders).
+- Supports custom rendering (e.g., cell renderers for JTable).
+
+Differences:
+- Core event classes (e.g., ActionEvent, MouseEvent) are shared.
+- Swing components may generate more complex events due to advanced features.
+- Swing allows finer control over component behavior and appearance.
+
+4. Appearance
+
+AWT:
+- Relies on native OS components; appearance varies across platforms.
+- Limited customization options.
+- Heavyweight components (tied to OS peers).
+
+Swing:
+- Uses Java-rendered components; consistent look across platforms.
+- Supports pluggable look-and-feel (e.g., Metal, Nimbus, System).
+- Lightweight components (no OS dependency).
+
+Differences:
+- AWT may be faster for simple GUIs due to native rendering, but Swing offers better flexibility.
+- Swing provides richer components and customization (e.g., borders, icons, tooltips).
+- Mixing AWT and Swing can cause issues (e.g., z-order conflicts between heavyweight/lightweight components).
+- Swing components are easier to subclass and customize.
+

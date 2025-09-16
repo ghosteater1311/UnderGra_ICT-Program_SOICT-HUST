@@ -1,0 +1,805 @@
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.6.8)  10 JUN 2025 23:39
+entering extended mode
+ \write18 enabled.
+ file:line:error style messages enabled.
+ %&-line parsing enabled.
+**"/Volumes/Bi/HUST/SOICT-HUST ICT Program/Object Oriented Programming/Project/Report/template.tex"
+(/Volumes/Bi/HUST/SOICT-HUST ICT Program/Object Oriented Programming/Project/Report/template.tex
+LaTeX2e <2024-11-01> patch level 2
+L3 programming layer <2025-01-18>
+(/usr/local/texlive/2025/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2024/06/29 v1.4n Standard LaTeX document class
+(/usr/local/texlive/2025/texmf-dist/tex/latex/base/size10.clo
+File: size10.clo 2024/06/29 v1.4n Standard LaTeX file (size option)
+)
+\c@part=\count196
+\c@section=\count197
+\c@subsection=\count198
+\c@subsubsection=\count199
+\c@paragraph=\count266
+\c@subparagraph=\count267
+\c@figure=\count268
+\c@table=\count269
+\abovecaptionskip=\skip49
+\belowcaptionskip=\skip50
+\bibindent=\dimen141
+) (/usr/local/texlive/2025/texmf-dist/tex/latex/base/inputenc.sty
+Package: inputenc 2024/02/08 v1.3d Input encoding file
+\inpenc@prehook=\toks17
+\inpenc@posthook=\toks18
+) (/usr/local/texlive/2025/texmf-dist/tex/latex/adjustbox/adjustbox.sty
+Package: adjustbox 2025/02/26 v1.3c Adjusting TeX boxes (trim, clip, ...)
+ (/usr/local/texlive/2025/texmf-dist/tex/latex/xkeyval/xkeyval.sty
+Package: xkeyval 2022/06/16 v2.9 package option processing (HA)
+ (/usr/local/texlive/2025/texmf-dist/tex/generic/xkeyval/xkeyval.tex (/usr/local/texlive/2025/texmf-dist/tex/generic/xkeyval/xkvutils.tex
+\XKV@toks=\toks19
+\XKV@tempa@toks=\toks20
+ (/usr/local/texlive/2025/texmf-dist/tex/generic/xkeyval/keyval.tex))
+\XKV@depth=\count270
+File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
+)) (/usr/local/texlive/2025/texmf-dist/tex/latex/adjustbox/adjcalc.sty
+Package: adjcalc 2012/05/16 v1.1 Provides advanced setlength with multiple back-ends (calc, etex, pgfmath)
+) (/usr/local/texlive/2025/texmf-dist/tex/latex/adjustbox/trimclip.sty
+Package: trimclip 2025/02/21 v1.2a Trim and clip general TeX material
+ (/usr/local/texlive/2025/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
+ (/usr/local/texlive/2025/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2024/08/06 v1.4g Standard LaTeX Graphics (DPC,SPQR)
+ (/usr/local/texlive/2025/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2023/12/02 v1.11 sin cos tan (DPC)
+) (/usr/local/texlive/2025/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 106.
+ (/usr/local/texlive/2025/texmf-dist/tex/latex/graphics-def/pdftex.def
+File: pdftex.def 2024/04/13 v1.2c Graphics/color driver for pdftex
+))
+\Gin@req@height=\dimen142
+\Gin@req@width=\dimen143
+) (/usr/local/texlive/2025/texmf-dist/tex/latex/collectbox/collectbox.sty
+Package: collectbox 2022/10/17 v0.4c Collect macro arguments as boxes
+\collectedbox=\box52
+)
+\tc@llx=\dimen144
+\tc@lly=\dimen145
+\tc@urx=\dimen146
+\tc@ury=\dimen147
+Package trimclip Info: Using driver 'tc-pdftex.def'.
+ (/usr/local/texlive/2025/texmf-dist/tex/latex/adjustbox/tc-pdftex.def
+File: tc-pdftex.def 2025/02/26 v2.3 Clipping driver for pdftex
+))
+\adjbox@Width=\dimen148
+\adjbox@Height=\dimen149
+\adjbox@Depth=\dimen150
+\adjbox@Totalheight=\dimen151
+\adjbox@pwidth=\dimen152
+\adjbox@pheight=\dimen153
+\adjbox@pdepth=\dimen154
+\adjbox@ptotalheight=\dimen155
+ (/usr/local/texlive/2025/texmf-dist/tex/latex/ifoddpage/ifoddpage.sty
+Package: ifoddpage 2022/10/18 v1.2 Conditionals for odd/even page detection
+\c@checkoddpage=\count271
+) (/usr/local/texlive/2025/texmf-dist/tex/latex/varwidth/varwidth.sty
+Package: varwidth 2009/03/30 ver 0.92;  Variable-width minipages
+\@vwid@box=\box53
+\sift@deathcycles=\count272
+\@vwid@loff=\dimen156
+\@vwid@roff=\dimen157
+)) (/usr/local/texlive/2025/texmf-dist/tex/latex/geometry/geometry.sty
+Package: geometry 2020/01/02 v5.9 Page Geometry
+ (/usr/local/texlive/2025/texmf-dist/tex/generic/iftex/ifvtex.sty
+Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
+ (/usr/local/texlive/2025/texmf-dist/tex/generic/iftex/iftex.sty
+Package: iftex 2024/12/12 v1.0g TeX engine tests
+))
+\Gm@cnth=\count273
+\Gm@cntv=\count274
+\c@Gm@tempcnt=\count275
+\Gm@bindingoffset=\dimen158
+\Gm@wd@mp=\dimen159
+\Gm@odd@mp=\dimen160
+\Gm@even@mp=\dimen161
+\Gm@layoutwidth=\dimen162
+\Gm@layoutheight=\dimen163
+\Gm@layouthoffset=\dimen164
+\Gm@layoutvoffset=\dimen165
+\Gm@dimlist=\toks21
+) (/usr/local/texlive/2025/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2024/11/05 v2.17t AMS math features
+\@mathmargin=\skip51
+
+For additional information on amsmath, use the `?' option.
+(/usr/local/texlive/2025/texmf-dist/tex/latex/amsmath/amstext.sty
+Package: amstext 2021/08/26 v2.01 AMS text
+ (/usr/local/texlive/2025/texmf-dist/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks22
+\ex@=\dimen166
+)) (/usr/local/texlive/2025/texmf-dist/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen167
+) (/usr/local/texlive/2025/texmf-dist/tex/latex/amsmath/amsopn.sty
+Package: amsopn 2022/04/08 v2.04 operator names
+)
+\inf@bad=\count276
+LaTeX Info: Redefining \frac on input line 233.
+\uproot@=\count277
+\leftroot@=\count278
+LaTeX Info: Redefining \overline on input line 398.
+LaTeX Info: Redefining \colon on input line 409.
+\classnum@=\count279
+\DOTSCASE@=\count280
+LaTeX Info: Redefining \ldots on input line 495.
+LaTeX Info: Redefining \dots on input line 498.
+LaTeX Info: Redefining \cdots on input line 619.
+\Mathstrutbox@=\box54
+\strutbox@=\box55
+LaTeX Info: Redefining \big on input line 721.
+LaTeX Info: Redefining \Big on input line 722.
+LaTeX Info: Redefining \bigg on input line 723.
+LaTeX Info: Redefining \Bigg on input line 724.
+\big@size=\dimen168
+LaTeX Font Info:    Redeclaring font encoding OML on input line 742.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 743.
+\macc@depth=\count281
+LaTeX Info: Redefining \bmod on input line 904.
+LaTeX Info: Redefining \pmod on input line 909.
+LaTeX Info: Redefining \smash on input line 939.
+LaTeX Info: Redefining \relbar on input line 969.
+LaTeX Info: Redefining \Relbar on input line 970.
+\c@MaxMatrixCols=\count282
+\dotsspace@=\muskip17
+\c@parentequation=\count283
+\dspbrk@lvl=\count284
+\tag@help=\toks23
+\row@=\count285
+\column@=\count286
+\maxfields@=\count287
+\andhelp@=\toks24
+\eqnshift@=\dimen169
+\alignsep@=\dimen170
+\tagshift@=\dimen171
+\tagwidth@=\dimen172
+\totwidth@=\dimen173
+\lineht@=\dimen174
+\@envbody=\toks25
+\multlinegap=\skip52
+\multlinetaggap=\skip53
+\mathdisplay@stack=\toks26
+LaTeX Info: Redefining \[ on input line 2953.
+LaTeX Info: Redefining \] on input line 2954.
+) (/usr/local/texlive/2025/texmf-dist/tex/latex/amsfonts/amssymb.sty
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+ (/usr/local/texlive/2025/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+)) (/usr/local/texlive/2025/texmf-dist/tex/latex/listings/listings.sty
+\lst@mode=\count288
+\lst@gtempboxa=\box56
+\lst@token=\toks27
+\lst@length=\count289
+\lst@currlwidth=\dimen175
+\lst@column=\count290
+\lst@pos=\count291
+\lst@lostspace=\dimen176
+\lst@width=\dimen177
+\lst@newlines=\count292
+\lst@lineno=\count293
+\lst@maxwidth=\dimen178
+ (/usr/local/texlive/2025/texmf-dist/tex/latex/listings/lstpatch.sty
+File: lstpatch.sty 2024/09/23 1.10c (Carsten Heinz)
+) (/usr/local/texlive/2025/texmf-dist/tex/latex/listings/lstmisc.sty
+File: lstmisc.sty 2024/09/23 1.10c (Carsten Heinz)
+\c@lstnumber=\count294
+\lst@skipnumbers=\count295
+\lst@framebox=\box57
+) (/usr/local/texlive/2025/texmf-dist/tex/latex/listings/listings.cfg
+File: listings.cfg 2024/09/23 1.10c listings configuration
+))
+Package: listings 2024/09/23 1.10c (Carsten Heinz)
+ (/usr/local/texlive/2025/texmf-dist/tex/latex/float/float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count296
+\float@exts=\toks28
+\float@box=\box58
+\@float@everytoks=\toks29
+\@floatcapt=\box59
+) (/usr/local/texlive/2025/texmf-dist/tex/latex/booktabs/booktabs.sty
+Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
+\heavyrulewidth=\dimen179
+\lightrulewidth=\dimen180
+\cmidrulewidth=\dimen181
+\belowrulesep=\dimen182
+\belowbottomsep=\dimen183
+\aboverulesep=\dimen184
+\abovetopsep=\dimen185
+\cmidrulesep=\dimen186
+\cmidrulekern=\dimen187
+\defaultaddspace=\dimen188
+\@cmidla=\count297
+\@cmidlb=\count298
+\@aboverulesep=\dimen189
+\@belowrulesep=\dimen190
+\@thisruleclass=\count299
+\@lastruleclass=\count300
+\@thisrulewidth=\dimen191
+) (/usr/local/texlive/2025/texmf-dist/tex/latex/hyperref/hyperref.sty
+Package: hyperref 2024-11-05 v7.01l Hypertext links for LaTeX
+ (/usr/local/texlive/2025/texmf-dist/tex/latex/kvsetkeys/kvsetkeys.sty
+Package: kvsetkeys 2022-10-05 v1.19 Key value parser (HO)
+) (/usr/local/texlive/2025/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty
+Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
+) (/usr/local/texlive/2025/texmf-dist/tex/generic/pdfescape/pdfescape.sty
+Package: pdfescape 2019/12/09 v1.15 Implements pdfTeX's escape features (HO)
+ (/usr/local/texlive/2025/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty
+Package: ltxcmds 2023-12-04 v1.26 LaTeX kernel commands for general use (HO)
+) (/usr/local/texlive/2025/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty
+Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO)
+ (/usr/local/texlive/2025/texmf-dist/tex/generic/infwarerr/infwarerr.sty
+Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
+)
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+)) (/usr/local/texlive/2025/texmf-dist/tex/latex/hycolor/hycolor.sty
+Package: hycolor 2020-01-27 v1.10 Color options for hyperref/bookmark (HO)
+) (/usr/local/texlive/2025/texmf-dist/tex/latex/hyperref/nameref.sty
+Package: nameref 2023-11-26 v2.56 Cross-referencing by name of section
+ (/usr/local/texlive/2025/texmf-dist/tex/latex/refcount/refcount.sty
+Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
+) (/usr/local/texlive/2025/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
+Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
+ (/usr/local/texlive/2025/texmf-dist/tex/latex/kvoptions/kvoptions.sty
+Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
+))
+\c@section@level=\count301
+) (/usr/local/texlive/2025/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+Package: etoolbox 2025/02/11 v2.5l e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count302
+) (/usr/local/texlive/2025/texmf-dist/tex/generic/stringenc/stringenc.sty
+Package: stringenc 2019/11/29 v1.12 Convert strings between diff. encodings (HO)
+)
+\@linkdim=\dimen192
+\Hy@linkcounter=\count303
+\Hy@pagecounter=\count304
+ (/usr/local/texlive/2025/texmf-dist/tex/latex/hyperref/pd1enc.def
+File: pd1enc.def 2024-11-05 v7.01l Hyperref: PDFDocEncoding definition (HO)
+Now handling font encoding PD1 ...
+... no UTF-8 mapping file for font encoding PD1
+) (/usr/local/texlive/2025/texmf-dist/tex/generic/intcalc/intcalc.sty
+Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
+)
+\Hy@SavedSpaceFactor=\count305
+ (/usr/local/texlive/2025/texmf-dist/tex/latex/hyperref/puenc.def
+File: puenc.def 2024-11-05 v7.01l Hyperref: PDF Unicode definition (HO)
+Now handling font encoding PU ...
+... no UTF-8 mapping file for font encoding PU
+)
+Package hyperref Info: Hyper figures OFF on input line 4157.
+Package hyperref Info: Link nesting OFF on input line 4162.
+Package hyperref Info: Hyper index ON on input line 4165.
+Package hyperref Info: Plain pages OFF on input line 4172.
+Package hyperref Info: Backreferencing OFF on input line 4177.
+Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
+Package hyperref Info: Bookmarks ON on input line 4424.
+\c@Hy@tempcnt=\count306
+ (/usr/local/texlive/2025/texmf-dist/tex/latex/url/url.sty
+\Urlmuskip=\muskip18
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+LaTeX Info: Redefining \url on input line 4763.
+\XeTeXLinkMargin=\dimen193
+ (/usr/local/texlive/2025/texmf-dist/tex/generic/bitset/bitset.sty
+Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
+ (/usr/local/texlive/2025/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty
+Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO)
+))
+\Fld@menulength=\count307
+\Field@Width=\dimen194
+\Fld@charsize=\dimen195
+Package hyperref Info: Hyper figures OFF on input line 6042.
+Package hyperref Info: Link nesting OFF on input line 6047.
+Package hyperref Info: Hyper index ON on input line 6050.
+Package hyperref Info: backreferencing OFF on input line 6057.
+Package hyperref Info: Link coloring OFF on input line 6062.
+Package hyperref Info: Link coloring with OCG OFF on input line 6067.
+Package hyperref Info: PDF/A mode OFF on input line 6072.
+ (/usr/local/texlive/2025/texmf-dist/tex/latex/base/atbegshi-ltx.sty
+Package: atbegshi-ltx 2021/01/10 v1.0c Emulation of the original atbegshi
+package with kernel methods
+)
+\Hy@abspage=\count308
+\c@Item=\count309
+\c@Hfootnote=\count310
+)
+Package hyperref Info: Driver (autodetected): hpdftex.
+ (/usr/local/texlive/2025/texmf-dist/tex/latex/hyperref/hpdftex.def
+File: hpdftex.def 2024-11-05 v7.01l Hyperref driver for pdfTeX
+ (/usr/local/texlive/2025/texmf-dist/tex/latex/base/atveryend-ltx.sty
+Package: atveryend-ltx 2020/08/19 v1.0a Emulation of the original atveryend package
+with kernel methods
+)
+\Fld@listcount=\count311
+\c@bookmark@seq@number=\count312
+ (/usr/local/texlive/2025/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
+Package: rerunfilecheck 2022-07-10 v1.10 Rerun checks for auxiliary files (HO)
+ (/usr/local/texlive/2025/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty
+Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
+)
+Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 285.
+)
+\Hy@SectionHShift=\skip54
+) (/usr/local/texlive/2025/texmf-dist/tex/latex/titlesec/titlesec.sty
+Package: titlesec 2025/01/04 v2.17 Sectioning titles
+\ttl@box=\box60
+\beforetitleunit=\skip55
+\aftertitleunit=\skip56
+\ttl@plus=\dimen196
+\ttl@minus=\dimen197
+\ttl@toksa=\toks30
+\titlewidth=\dimen198
+\titlewidthlast=\dimen199
+\titlewidthfirst=\dimen256
+) (/usr/local/texlive/2025/texmf-dist/tex/latex/makecell/makecell.sty
+Package: makecell 2009/08/03 V0.1e Managing of Tab Column Heads and Cells
+ (/usr/local/texlive/2025/texmf-dist/tex/latex/tools/array.sty
+Package: array 2024/10/17 v2.6g Tabular extension package (FMi)
+\col@sep=\dimen257
+\ar@mcellbox=\box61
+\extrarowheight=\dimen258
+\NC@list=\toks31
+\extratabsurround=\skip57
+\backup@length=\skip58
+\ar@cellbox=\box62
+)
+\rotheadsize=\dimen259
+\c@nlinenum=\count313
+\TeXr@lab=\toks32
+) (/usr/local/texlive/2025/texmf-dist/tex/latex/xcolor/xcolor.sty
+Package: xcolor 2024/09/29 v3.02 LaTeX color extensions (UK)
+ (/usr/local/texlive/2025/texmf-dist/tex/latex/graphics-cfg/color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package xcolor Info: Driver file: pdftex.def on input line 274.
+ (/usr/local/texlive/2025/texmf-dist/tex/latex/graphics/mathcolor.ltx)
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1349.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1353.
+Package xcolor Info: Model `RGB' extended on input line 1365.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1367.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1368.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1369.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1370.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1371.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1372.
+) (/usr/local/texlive/2025/texmf-dist/tex/latex/minted/minted.sty
+Package: minted 2025/03/06 v3.6.0 Yet another Pygments shim for LaTeX
+ (/usr/local/texlive/2025/texmf-dist/tex/generic/catchfile/catchfile.sty
+Package: catchfile 2019/12/09 v1.8 Catch the contents of a file (HO)
+ (/usr/local/texlive/2025/texmf-dist/tex/generic/etexcmds/etexcmds.sty
+Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
+)) (/usr/local/texlive/2025/texmf-dist/tex/latex/fvextra/fvextra.sty
+Package: fvextra 2025/03/04 v1.12.0 fvextra - extensions and patches for fancyvrb
+ (/usr/local/texlive/2025/texmf-dist/tex/latex/fancyvrb/fancyvrb.sty
+Package: fancyvrb 2024/01/20 4.5c verbatim text (tvz,hv)
+\FV@CodeLineNo=\count314
+\FV@InFile=\read2
+\FV@TabBox=\box63
+\c@FancyVerbLine=\count315
+\FV@StepNumber=\count316
+\FV@OutFile=\write3
+) (/usr/local/texlive/2025/texmf-dist/tex/latex/upquote/upquote.sty
+Package: upquote 2012/04/19 v1.3 upright-quote and grave-accent glyphs in verbatim
+) (/usr/local/texlive/2025/texmf-dist/tex/latex/lineno/lineno.sty
+Package: lineno 2025/01/29 line numbers on paragraphs v5.4
+\linenopenalty=\count317
+\output=\toks33
+\linenoprevgraf=\count318
+\linenumbersep=\dimen260
+\linenumberwidth=\dimen261
+\c@linenumber=\count319
+\c@pagewiselinenumber=\count320
+\c@LN@truepage=\count321
+\c@internallinenumber=\count322
+\c@internallinenumbers=\count323
+\quotelinenumbersep=\dimen262
+\bframerule=\dimen263
+\bframesep=\dimen264
+\bframebox=\box64
+\@LN@amsmath@ams@eqpen=\count324
+LaTeX Info: Redefining \\ on input line 3187.
+)
+\c@FancyVerbWriteLine=\count325
+\c@FancyVerbBufferLine=\count326
+\c@FV@TrueTabGroupLevel=\count327
+\c@FV@TrueTabCounter=\count328
+\FV@TabBox@Group=\box65
+\FV@bgcolorstructbox=\box66
+\FV@TmpLength=\skip59
+\c@FV@HighlightLinesStart=\count329
+\c@FV@HighlightLinesStop=\count330
+\FV@LoopCount=\count331
+\FV@NCharsBox=\box67
+\FV@BreakIndent=\dimen265
+\FV@BreakIndentNChars=\count332
+\FV@BreakSymbolSepLeft=\dimen266
+\FV@BreakSymbolSepLeftNChars=\count333
+\FV@BreakSymbolSepRight=\dimen267
+\FV@BreakSymbolSepRightNChars=\count334
+\FV@BreakSymbolIndentLeft=\dimen268
+\FV@BreakSymbolIndentLeftNChars=\count335
+\FV@BreakSymbolIndentRight=\dimen269
+\FV@BreakSymbolIndentRightNChars=\count336
+\c@FancyVerbLineBreakLast=\count337
+\FV@LineBox=\box68
+\FV@LineIndentBox=\box69
+\c@FV@BreakBufferDepth=\count338
+\FV@LineWidth=\dimen270
+) (/usr/local/texlive/2025/texmf-dist/tex/latex/latex2pydata/latex2pydata.sty
+Package: latex2pydata 2025/03/03 v0.5.0 latex2pydata - write data to file in Python literal format
+) (/usr/local/texlive/2025/texmf-dist/tex/latex/pgf/utilities/pgfkeys.sty (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex
+\pgfkeys@pathtoks=\toks34
+\pgfkeys@temptoks=\toks35
+ (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/utilities/pgfkeyslibraryfiltered.code.tex
+\pgfkeys@tmptoks=\toks36
+))) (/usr/local/texlive/2025/texmf-dist/tex/latex/pgfopts/pgfopts.sty
+Package: pgfopts 2014/07/10 v2.1a LaTeX package options with pgfkeys
+\pgfopts@list@add@a@toks=\toks37
+\pgfopts@list@add@b@toks=\toks38
+) (/usr/local/texlive/2025/texmf-dist/tex/latex/tools/shellesc.sty
+Package: shellesc 2023/07/08 v1.0d unified shell escape interface for LaTeX
+Package shellesc Info: Unrestricted shell escape enabled on input line 75.
+)
+\c@minted@FancyVerbLineTemp=\count339
+\@float@every@listing=\toks39
+\c@listing=\count340
+)
+Package hyperref Info: Option `colorlinks' set `true' on input line 57.
+ (/usr/local/texlive/2025/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
+File: l3backend-pdftex.def 2024-05-08 L3 backend support: PDF output (pdfTeX)
+\l__color_backend_stack_int=\count341
+\l__pdf_internal_box=\box70
+) (./template.aux)
+\openout1 = `template.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 63.
+LaTeX Font Info:    ... okay on input line 63.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 63.
+LaTeX Font Info:    ... okay on input line 63.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 63.
+LaTeX Font Info:    ... okay on input line 63.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 63.
+LaTeX Font Info:    ... okay on input line 63.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 63.
+LaTeX Font Info:    ... okay on input line 63.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 63.
+LaTeX Font Info:    ... okay on input line 63.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 63.
+LaTeX Font Info:    ... okay on input line 63.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 63.
+LaTeX Font Info:    ... okay on input line 63.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 63.
+LaTeX Font Info:    ... okay on input line 63.
+ (/usr/local/texlive/2025/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count342
+\scratchdimen=\dimen271
+\scratchbox=\box71
+\nofMPsegments=\count343
+\nofMParguments=\count344
+\everyMPshowfont=\toks40
+\MPscratchCnt=\count345
+\MPscratchDim=\dimen272
+\MPnumerator=\count346
+\makeMPintoPDFobject=\count347
+\everyMPtoPDFconversion=\toks41
+) (/usr/local/texlive/2025/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
+ (/usr/local/texlive/2025/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
+))
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: a4paper
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: 
+* h-part:(L,W,R)=(72.26999pt, 452.9679pt, 72.26999pt)
+* v-part:(T,H,B)=(72.26999pt, 700.50687pt, 72.26999pt)
+* \paperwidth=597.50787pt
+* \paperheight=845.04684pt
+* \textwidth=452.9679pt
+* \textheight=700.50687pt
+* \oddsidemargin=0.0pt
+* \evensidemargin=0.0pt
+* \topmargin=-37.0pt
+* \headheight=12.0pt
+* \headsep=25.0pt
+* \topskip=10.0pt
+* \footskip=30.0pt
+* \marginparwidth=65.0pt
+* \marginparsep=11.0pt
+* \columnsep=10.0pt
+* \skip\footins=9.0pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+(/usr/local/texlive/2025/texmf-dist/tex/latex/base/textcomp.sty
+Package: textcomp 2024/04/24 v2.1b Standard LaTeX package
+)
+\c@lstlisting=\count348
+Package hyperref Info: Link coloring ON on input line 63.
+ (./template.out) (./template.out)
+\@outlinefile=\write4
+\openout4 = `template.out'.
+
+</Volumes/Bi/HUST/SOICT-HUST ICT Program/Object Oriented Programming/Project/image/soict.png, id=136, 1027.84pt x 417.56pt>
+File: /Volumes/Bi/HUST/SOICT-HUST ICT Program/Object Oriented Programming/Project/image/soict.png Graphic file (type png)
+<use /Volumes/Bi/HUST/SOICT-HUST ICT Program/Object Oriented Programming/Project/image/soict.png>
+Package pdftex.def Info: /Volumes/Bi/HUST/SOICT-HUST ICT Program/Object Oriented Programming/Project/image/soict.png  used on input line 78.
+(pdftex.def)             Requested size: 362.37569pt x 147.21858pt.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 93.
+ (/usr/local/texlive/2025/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 93.
+ (/usr/local/texlive/2025/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+
+[1
+
+{/usr/local/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map} </Volumes/Bi/HUST/SOICT-HUST ICT Program/Object Oriented Programming/Project/image/soict.png>]
+
+[2{/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}] (./template.toc)
+\tf@toc=\write5
+\openout5 = `template.toc'.
+
+
+
+[3
+
+]
+
+[4
+
+]
+</Volumes/Bi/HUST/SOICT-HUST ICT Program/Object Oriented Programming/Project/image/UseCase.png, id=196, 840.89156pt x 610.53094pt>
+File: /Volumes/Bi/HUST/SOICT-HUST ICT Program/Object Oriented Programming/Project/image/UseCase.png Graphic file (type png)
+<use /Volumes/Bi/HUST/SOICT-HUST ICT Program/Object Oriented Programming/Project/image/UseCase.png>
+Package pdftex.def Info: /Volumes/Bi/HUST/SOICT-HUST ICT Program/Object Oriented Programming/Project/image/UseCase.png  used on input line 216.
+(pdftex.def)             Requested size: 407.66833pt x 295.98604pt.
+
+
+[5 </Volumes/Bi/HUST/SOICT-HUST ICT Program/Object Oriented Programming/Project/image/UseCase.png>]
+</Volumes/Bi/HUST/SOICT-HUST ICT Program/Object Oriented Programming/Project/image/package.png, id=203, 763.85374pt x 450.68375pt>
+File: /Volumes/Bi/HUST/SOICT-HUST ICT Program/Object Oriented Programming/Project/image/package.png Graphic file (type png)
+<use /Volumes/Bi/HUST/SOICT-HUST ICT Program/Object Oriented Programming/Project/image/package.png>
+Package pdftex.def Info: /Volumes/Bi/HUST/SOICT-HUST ICT Program/Object Oriented Programming/Project/image/package.png  used on input line 255.
+(pdftex.def)             Requested size: 452.9679pt x 267.25584pt.
+
+
+[6 </Volumes/Bi/HUST/SOICT-HUST ICT Program/Object Oriented Programming/Project/image/package.png>]
+LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <10> not available
+(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 258.
+</Volumes/Bi/HUST/SOICT-HUST ICT Program/Object Oriented Programming/Project/image/model.png, id=209, 628.3475pt x 327.2225pt>
+File: /Volumes/Bi/HUST/SOICT-HUST ICT Program/Object Oriented Programming/Project/image/model.png Graphic file (type png)
+<use /Volumes/Bi/HUST/SOICT-HUST ICT Program/Object Oriented Programming/Project/image/model.png>
+Package pdftex.def Info: /Volumes/Bi/HUST/SOICT-HUST ICT Program/Object Oriented Programming/Project/image/model.png  used on input line 262.
+(pdftex.def)             Requested size: 452.9679pt x 235.8896pt.
+
+
+[7 </Volumes/Bi/HUST/SOICT-HUST ICT Program/Object Oriented Programming/Project/image/model.png>]
+Overfull \hbox (0.66966pt too wide) in paragraph at lines 315--316
+[]\OT1/cmtt/m/n/10 toString(): String \OT1/cmr/m/n/10 - Over-rides the \OT1/cmtt/m/n/10 Product.toString() \OT1/cmr/m/n/10 method to in-clude laptop-specific
+ []
+
+
+Overfull \hbox (12.1962pt too wide) in paragraph at lines 316--317
+[]\OT1/cmtt/m/n/10 mapToDatabase(): Map<String, Object> \OT1/cmr/m/n/10 - Over-rides the \OT1/cmtt/m/n/10 Product.mapToDatabase() \OT1/cmr/m/n/10 method
+ []
+
+</Volumes/Bi/HUST/SOICT-HUST ICT Program/Object Oriented Programming/Project/image/ui.png, id=216, 783.92876pt x 364.36125pt>
+File: /Volumes/Bi/HUST/SOICT-HUST ICT Program/Object Oriented Programming/Project/image/ui.png Graphic file (type png)
+<use /Volumes/Bi/HUST/SOICT-HUST ICT Program/Object Oriented Programming/Project/image/ui.png>
+Package pdftex.def Info: /Volumes/Bi/HUST/SOICT-HUST ICT Program/Object Oriented Programming/Project/image/ui.png  used on input line 328.
+(pdftex.def)             Requested size: 452.9679pt x 210.53462pt.
+
+
+[8]
+
+[9 </Volumes/Bi/HUST/SOICT-HUST ICT Program/Object Oriented Programming/Project/image/ui.png>]
+Overfull \hbox (0.6966pt too wide) in paragraph at lines 415--416
+[]\OT1/cmtt/m/n/10 navigateToProductDetail(Stage stage, String laptopId)\OT1/cmr/m/n/10 : Nav-i-gates to the prod-uct de-
+ []
+
+
+
+[10]
+</Volumes/Bi/HUST/SOICT-HUST ICT Program/Object Oriented Programming/Project/image/data.png, id=230, 914.41624pt x 543.02875pt>
+File: /Volumes/Bi/HUST/SOICT-HUST ICT Program/Object Oriented Programming/Project/image/data.png Graphic file (type png)
+<use /Volumes/Bi/HUST/SOICT-HUST ICT Program/Object Oriented Programming/Project/image/data.png>
+Package pdftex.def Info: /Volumes/Bi/HUST/SOICT-HUST ICT Program/Object Oriented Programming/Project/image/data.png  used on input line 509.
+(pdftex.def)             Requested size: 452.9679pt x 268.99477pt.
+
+
+[11]
+Overfull \hbox (16.67639pt too wide) in paragraph at lines 525--526
+[]\OT1/cmr/m/n/10 Opens the web-page us-ing Web-Driver, scrolls the page to load all prod-ucts (\OT1/cmtt/m/n/10 loadAllProducts\OT1/cmr/m/n/10 ). 
+ []
+
+
+Overfull \hbox (6.73074pt too wide) in paragraph at lines 533--534
+[]\OT1/cmr/m/n/10 Processes raw data us-ing util-ity meth-ods (\OT1/cmtt/m/n/10 cleanText\OT1/cmr/m/n/10 , \OT1/cmtt/m/n/10 parsePrice\OT1/cmr/m/n/10 , \OT1/cmtt/m/n/10 parseInt\OT1/cmr/m/n/10 , \OT1/cmtt/m/n/10 parseFloat\OT1/cmr/m/n/10 )
+ []
+
+
+
+[12 </Volumes/Bi/HUST/SOICT-HUST ICT Program/Object Oriented Programming/Project/image/data.png>]
+Overfull \hbox (5.35501pt too wide) in paragraph at lines 579--580
+[]\OT1/cmr/m/n/10 If we want to use an-other database type, we just need to write an-other DAO class. In \OT1/cmtt/m/n/10 PostgreSqlDAO\OT1/cmr/m/n/10 ,
+ []
+
+
+Overfull \hbox (20.05815pt too wide) in paragraph at lines 579--580
+\OT1/cmr/m/n/10 we have an at-tribute \OT1/cmtt/m/n/10 ProductFactory<T> productFactory\OT1/cmr/m/n/10 , which helps sep-a-rate logic: \OT1/cmtt/m/n/10 postgresqlDAO
+ []
+
+
+
+[13]
+Overfull \hbox (8.00175pt too wide) in paragraph at lines 582--583
+[]\OT1/cmr/m/n/10 For ex-am-ple, for lap-tops: \OT1/cmtt/m/n/10 ProductDAO<Laptop> admin = new PostgreSqlDAO<Laptop>("laptop",
+ []
+
+</Volumes/Bi/HUST/SOICT-HUST ICT Program/Object Oriented Programming/Project/image/retrieval.png, id=252, 723.70375pt x 342.27875pt>
+File: /Volumes/Bi/HUST/SOICT-HUST ICT Program/Object Oriented Programming/Project/image/retrieval.png Graphic file (type png)
+<use /Volumes/Bi/HUST/SOICT-HUST ICT Program/Object Oriented Programming/Project/image/retrieval.png>
+Package pdftex.def Info: /Volumes/Bi/HUST/SOICT-HUST ICT Program/Object Oriented Programming/Project/image/retrieval.png  used on input line 588.
+(pdftex.def)             Requested size: 452.9679pt x 214.23705pt.
+
+
+[14 </Volumes/Bi/HUST/SOICT-HUST ICT Program/Object Oriented Programming/Project/image/retrieval.png>]
+
+[15]
+LaTeX Font Info:    Trying to load font information for OMS+cmtt on input line 639.
+LaTeX Font Info:    No file OMScmtt.fd. on input line 639.
+
+
+LaTeX Font Warning: Font shape `OMS/cmtt/m/n' undefined
+(Font)              using `OMS/cmsy/m/n' instead
+(Font)              for symbol `textbraceleft' on input line 639.
+
+
+Overfull \hbox (6.11263pt too wide) in paragraph at lines 639--640
+[]\OT1/cmr/m/n/10 Create a JSON string with the for-mat \OMS/cmtt/m/n/10 f\OT1/cmtt/m/n/10 "sentences": ["sentence1", "sentence2", ...]\OMS/cmtt/m/n/10 g\OT1/cmr/m/n/10 . 
+ []
+
+</Volumes/Bi/HUST/SOICT-HUST ICT Program/Object Oriented Programming/Project/image/llm.png, id=263, 392.46625pt x 141.52875pt>
+File: /Volumes/Bi/HUST/SOICT-HUST ICT Program/Object Oriented Programming/Project/image/llm.png Graphic file (type png)
+<use /Volumes/Bi/HUST/SOICT-HUST ICT Program/Object Oriented Programming/Project/image/llm.png>
+Package pdftex.def Info: /Volumes/Bi/HUST/SOICT-HUST ICT Program/Object Oriented Programming/Project/image/llm.png  used on input line 666.
+(pdftex.def)             Requested size: 317.07614pt x 114.34827pt.
+
+
+[16 </Volumes/Bi/HUST/SOICT-HUST ICT Program/Object Oriented Programming/Project/image/llm.png>]
+Overfull \hbox (0.35596pt too wide) in paragraph at lines 696--697
+[]\OT1/cmr/m/it/10 Process re-sponse: \OT1/cmr/m/n/10 Parses the JSON re-sponse to get con-tent from the \OT1/cmtt/m/n/10 choices[0].message.content
+ []
+
+</Volumes/Bi/HUST/SOICT-HUST ICT Program/Object Oriented Programming/Project/image/config.png, id=273, 230.8625pt x 161.60374pt>
+File: /Volumes/Bi/HUST/SOICT-HUST ICT Program/Object Oriented Programming/Project/image/config.png Graphic file (type png)
+<use /Volumes/Bi/HUST/SOICT-HUST ICT Program/Object Oriented Programming/Project/image/config.png>
+Package pdftex.def Info: /Volumes/Bi/HUST/SOICT-HUST ICT Program/Object Oriented Programming/Project/image/config.png  used on input line 708.
+(pdftex.def)             Requested size: 226.48395pt x 158.53827pt.
+
+
+[17 </Volumes/Bi/HUST/SOICT-HUST ICT Program/Object Oriented Programming/Project/image/config.png>]
+Overfull \hbox (17.94992pt too wide) in paragraph at lines 748--749
+[]\OT1/cmr/m/n/10 JavaFX UI Con-trols: \OT1/cmtt/m/n/10 Button\OT1/cmr/m/n/10 , \OT1/cmtt/m/n/10 Label\OT1/cmr/m/n/10 , \OT1/cmtt/m/n/10 TextField\OT1/cmr/m/n/10 , \OT1/cmtt/m/n/10 TextArea\OT1/cmr/m/n/10 , \OT1/cmtt/m/n/10 ComboBox\OT1/cmr/m/n/10 , \OT1/cmtt/m/n/10 ImageView\OT1/cmr/m/n/10 , \OT1/cmtt/m/n/10 GridPane\OT1/cmr/m/n/10 ,
+ []
+
+
+
+[18]
+Overfull \hbox (22.80696pt too wide) in paragraph at lines 776--777
+[]\OT1/cmr/bx/n/10 Java's built-in HTTP Client: \OT1/cmr/m/n/10 (\OT1/cmtt/m/n/10 java.net.HttpURLConnection \OT1/cmr/m/n/10 or \OT1/cmtt/m/n/10 java.net.http.HttpClient\OT1/cmr/m/n/10 )
+ []
+
+
+Overfull \hbox (7.87714pt too wide) in paragraph at lines 787--788
+[]\OT1/cmr/bx/n/10 Service Layer: \OT1/cmr/m/n/10 Im-plied by classes like \OT1/cmtt/m/n/10 EmbeddingService\OT1/cmr/m/n/10 , \OT1/cmtt/m/n/10 ProductSearchService\OT1/cmr/m/n/10 , \OT1/cmtt/m/n/10 AlClient\OT1/cmr/m/n/10 ,
+ []
+
+
+Overfull \hbox (24.33641pt too wide) in paragraph at lines 793--794
+[]\OT1/cmr/bx/n/10 Object-Oriented Pro-gram-ming (OOP): \OT1/cmr/m/n/10 En-cap-su-la-tion, In-her-i-tance (\OT1/cmtt/m/n/10 Laptop \OT1/cmr/m/n/10 ex-tends \OT1/cmtt/m/n/10 Product\OT1/cmr/m/n/10 ),
+ []
+
+
+
+[19]
+Overfull \hbox (6.44157pt too wide) in paragraph at lines 815--816
+[]\OT1/cmr/bx/n/10 Data Clean-ing & Trans-for-ma-tion: \OT1/cmr/m/n/10 Raw scraped data is pro-cessed (\OT1/cmtt/m/n/10 cleanText\OT1/cmr/m/n/10 , \OT1/cmtt/m/n/10 parsePrice\OT1/cmr/m/n/10 ,
+ []
+
+
+Overfull \hbox (26.42522pt too wide) in paragraph at lines 824--825
+[]\OT1/cmr/bx/n/10 Object-Relational Map-ping (Con-cep-tual): \OT1/cmr/m/n/10 The DAO layer and meth-ods like \OT1/cmtt/m/n/10 mapToDatabase()
+ []
+
+
+
+[20]
+</Volumes/Bi/HUST/SOICT-HUST ICT Program/Object Oriented Programming/Project/image/demo1.png, id=309, 1282.7925pt x 720.6925pt>
+File: /Volumes/Bi/HUST/SOICT-HUST ICT Program/Object Oriented Programming/Project/image/demo1.png Graphic file (type png)
+<use /Volumes/Bi/HUST/SOICT-HUST ICT Program/Object Oriented Programming/Project/image/demo1.png>
+Package pdftex.def Info: /Volumes/Bi/HUST/SOICT-HUST ICT Program/Object Oriented Programming/Project/image/demo1.png  used on input line 833.
+(pdftex.def)             Requested size: 452.9679pt x 254.47852pt.
+</Volumes/Bi/HUST/SOICT-HUST ICT Program/Object Oriented Programming/Project/image/demo2.png, id=310, 1281.78876pt x 719.68875pt>
+File: /Volumes/Bi/HUST/SOICT-HUST ICT Program/Object Oriented Programming/Project/image/demo2.png Graphic file (type png)
+<use /Volumes/Bi/HUST/SOICT-HUST ICT Program/Object Oriented Programming/Project/image/demo2.png>
+Package pdftex.def Info: /Volumes/Bi/HUST/SOICT-HUST ICT Program/Object Oriented Programming/Project/image/demo2.png  used on input line 837.
+(pdftex.def)             Requested size: 452.9679pt x 254.32176pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 831--838
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 831--838
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 831--838
+
+ []
+
+
+
+[21 </Volumes/Bi/HUST/SOICT-HUST ICT Program/Object Oriented Programming/Project/image/demo1.png> </Volumes/Bi/HUST/SOICT-HUST ICT Program/Object Oriented Programming/Project/image/demo2.png>]
+
+[22]
+runsystem(latexminted cleantemp  --timestamp 20250610233903 66F6181BCB4CFF4CD38FBC804A036DB6)...executed.
+
+ (./template.aux)
+ ***********
+LaTeX2e <2024-11-01> patch level 2
+L3 programming layer <2025-01-18>
+ ***********
+
+
+LaTeX Font Warning: Some font shapes were not available, defaults substituted.
+
+Package rerunfilecheck Info: File `template.out' has not changed.
+(rerunfilecheck)             Checksum: AAC5B78A5DC7BBAAB611625FDF2A7D3E;5594.
+ ) 
+Here is how much of TeX's memory you used:
+ 18207 strings out of 473190
+ 339210 string characters out of 5715801
+ 857879 words of memory out of 5000000
+ 41140 multiletter control sequences out of 15000+600000
+ 563976 words of font info for 56 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 86i,9n,93p,557b,699s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmitt10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb>
+Output written on template.pdf (22 pages, 2641936 bytes).
+PDF statistics:
+ 386 PDF objects out of 1000 (max. 8388607)
+ 316 compressed objects within 4 object streams
+ 79 named destinations out of 1000 (max. 500000)
+ 320 words of extra memory for PDF output out of 10000 (max. 10000000)
+

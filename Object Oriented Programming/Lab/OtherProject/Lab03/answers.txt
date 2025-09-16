@@ -1,0 +1,26 @@
+1. The Media class should implement Comparable<Media>. This allows all subclasses (e.g., DigitalVideoDisc, Book, CompactDisc) to inherit the natural ordering unless they override compareTo().
+
+2. To sort by title then cost:
+@Override
+public int compareTo(Media other) {
+    int titleCompare = this.getTitle().compareToIgnoreCase(other.getTitle());
+    if (titleCompare != 0) return titleCompare;
+    return Float.compare(other.getCost(), this.getCost()); // Higher cost first
+}
+
+3. No. The Comparable interface defines a single natural ordering. For multiple orderings (e.g., by title/cost or cost/title), use Comparator instead.
+
+4. Override compareTo() in the DigitalVideoDisc class:
+@Override
+public int compareTo(Media other) {
+    if (other instanceof DigitalVideoDisc) {
+        DigitalVideoDisc dvd = (DigitalVideoDisc) other;
+        int titleCompare = this.getTitle().compareToIgnoreCase(dvd.getTitle());
+        if (titleCompare != 0) return titleCompare;
+        int lengthCompare = Integer.compare(dvd.getLength(), this.getLength()); // Descending length
+        if (lengthCompare != 0) return lengthCompare;
+        return Float.compare(dvd.getCost(), this.getCost());
+    }
+    return super.compareTo(other); // Fallback to Media's compareTo
+}
+
