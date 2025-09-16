@@ -1,0 +1,393 @@
+\documentclass[a4paper,12pt]{article}
+
+% PACKAGES
+\usepackage[utf8]{inputenc}       % Input encoding
+\usepackage{amsmath}              % For advanced math environments (like cases)
+\usepackage{amssymb}              % For extra math symbols
+\usepackage{geometry}             % For setting EX margins
+\geometry{a4paper, margin=1in}    % Set margins to 1 inch on all sides
+
+
+\begin{document}
+
+\section*{EX1: Calculate Z-Transform and Region of Convergence}
+\begin{enumerate}
+    \item \textbf{$x(n) = (\frac{1}{2})^n u(n)$}
+        \begin{itemize}
+            \item Using the causal pair with $a=1/2$: $X(z) = \frac{1}{1-\frac{1}{2}z^{-1}}$
+            \item ROC: $|z| > \frac{1}{2}$
+        \end{itemize}
+
+    \item \textbf{$x(n) = -(\frac{1}{2})^n u(-n-1)$}
+        \begin{itemize}
+            \item Using the anti-causal pair with $a=1/2$: $X(z) = \frac{1}{1-\frac{1}{2}z^{-1}}$
+            \item ROC: $|z| < \frac{1}{2}$
+        \end{itemize}
+        
+    \item \textbf{$x(n) = (\frac{1}{2})^n u(-n)$}
+        \begin{itemize}
+            \item By definition: $X(z) = \sum_{n=-\infty}^{0} (\frac{1}{2})^n z^{-n} = \sum_{k=0}^{\infty} (\frac{1}{2})^{-k} z^{k} = \sum_{k=0}^{\infty} (2z)^k$.
+            \item This geometric series converges for $|2z|<1$.
+            \item $X(z) = \frac{1}{1-2z}$
+            \item ROC: $|z| < \frac{1}{2}$
+        \end{itemize}
+
+    \item \textbf{$x(n) = \delta(n)$}
+        \begin{itemize}
+            \item $X(z) = 1$
+            \item ROC: Entire z-plane.
+        \end{itemize}
+
+    \item \textbf{$x(n) = \delta(n-1)$}
+        \begin{itemize}
+            \item $X(z) = z^{-1}$
+            \item ROC: Entire z-plane except $z=0$.
+        \end{itemize}
+
+    \item \textbf{$x(n) = \delta(n+1)$}
+        \begin{itemize}
+            \item $X(z) = z$
+            \item ROC: Entire z-plane except $z=\infty$.
+        \end{itemize}
+        
+    \item \textbf{$x(n) = (\frac{1}{2})^n (u(n) - u(n-10))$}
+        \begin{itemize}
+            \item This is a finite-duration signal, non-zero for $n=0, 1, \dots, 9$.
+            \item $X(z) = \sum_{n=0}^{9} (\frac{1}{2}z^{-1})^n = \frac{1 - (\frac{1}{2}z^{-1})^{10}}{1 - \frac{1}{2}z^{-1}} = \frac{1 - \frac{1}{1024}z^{-10}}{1 - \frac{1}{2}z^{-1}}$
+            \item ROC: Since it is a finite-duration signal, the ROC is the entire z-plane except for poles at $z=0$ (due to $z^{-10}$) and possibly $z=\infty$. The pole at $z=1/2$ is cancelled by a zero.
+            \item ROC: Entire z-plane except $z=0$.
+        \end{itemize}
+\end{enumerate}
+
+
+\section*{EX2: Calculate Z-Transform}
+\textbf{$x(n) = \begin{cases} n, & 0 \le n \le N-1 \\ 0, & \text{otherwise} \end{cases}$}
+\begin{itemize}
+    \item Use the differentiation property: $n g(n) \leftrightarrow -z \frac{dG(z)}{dz}$.
+    \item Let $g(n)$ be a rectangular pulse from $n=0$ to $N-1$. Its transform is $G(z) = \sum_{n=0}^{N-1} z^{-n} = \frac{1-z^{-N}}{1-z^{-1}}$.
+    \item Differentiating $G(z)$:
+    \[ \frac{dG(z)}{dz} = \frac{(Nz^{-N-1})(1-z^{-1}) - (1-z^{-N})(z^{-2})}{(1-z^{-1})^2} \]
+    \item Multiplying by $-z$:
+    \[ X(z) = -z \frac{dG(z)}{dz} = \frac{-Nz^{-N}(1-z^{-1}) + z^{-1}(1-z^{-N})}{(1-z^{-1})^2} = \frac{z^{-1} + (N-1)z^{-N-1} - Nz^{-N}}{(1-z^{-1})^2} \]
+    \item ROC: The signal is finite-duration. The ROC is the entire z-plane except for poles at $z=0$ and $z=1$.
+\end{itemize}
+
+
+\section*{EX3: Calculate Z-Transform and Region of Convergence}
+\begin{enumerate}
+    \item \textbf{$x(n) = a^{|n|}$, $0 < |a| < 1$}
+        \begin{itemize}
+            \item Decompose the signal: $x(n) = a^n u(n) + a^{-n} u(-n-1)$.
+            \item The transform is the sum of a causal part and an anti-causal part.
+            \item $Z\{a^n u(n)\} = \frac{1}{1-az^{-1}}$, ROC: $|z|>|a|$.
+            \item $Z\{a^{-n} u(-n-1)\} = Z\{(1/a)^n u(-n-1)\} = -\frac{1}{1-(1/a)z^{-1}}$, ROC: $|z|<|1/a|$.
+            \item $X(z) = \frac{1}{1-az^{-1}} - \frac{1}{1-a^{-1}z^{-1}} = \frac{(a-a^{-1})z^{-1}}{1-(a+a^{-1})z^{-1}+z^{-2}}$
+            \item The overall ROC is the intersection: $|a| < |z| < 1/|a|$.
+        \end{itemize}
+
+    \item \textbf{$x(n) = \begin{cases} 1, & 0 \le n \le N-1 \\ 0, & \text{otherwise} \end{cases}$}
+        \begin{itemize}
+            \item This is a finite geometric series: $X(z) = \sum_{n=0}^{N-1} z^{-n} = \frac{1-z^{-N}}{1-z^{-1}}$
+            \item ROC: Entire z-plane except $z=0$.
+        \end{itemize}
+\end{enumerate}
+
+
+\section*{EX4: Find the Inverse Z-Transform}
+\begin{enumerate}
+    \item \textbf{$X(z) = (1+2z)(1+3z^{-1})(1-z^{-1})$}
+        \begin{itemize}
+            \item Expand the polynomial:
+            $X(z) = (1+2z)(1+2z^{-1}-3z^{-2}) = 1 + 2z^{-1} - 3z^{-2} + 2z + 4 - 6z^{-1} = 2z + 5 - 4z^{-1} - 3z^{-2}$
+            \item Inverse transform term-by-term:
+            $x(n) = 2\delta(n+1) + 5\delta(n) - 4\delta(n-1) - 3\delta(n-2)$
+        \end{itemize}
+
+    \item \textbf{$X(z) = \frac{1}{1+\frac{1}{2}z^{-1}}$, ROC: $|z| > 1/2$}
+        \begin{itemize}
+            \item This matches the causal form with $a=-1/2$.
+            \item $x(n) = (-\frac{1}{2})^n u(n)$
+        \end{itemize}
+
+    \item \textbf{$X(z) = \frac{1}{1+\frac{1}{2}z^{-1}}$, ROC: $|z| < 1/2$}
+        \begin{itemize}
+            \item This matches the anti-causal form with $a=-1/2$.
+            \item $x(n) = -(-\frac{1}{2})^n u(-n-1)$
+        \end{itemize}
+
+    \item \textbf{$X(z) = \frac{1-\frac{1}{2}z^{-1}}{1+\frac{3}{4}z^{-1}+\frac{1}{8}z^{-2}}$, ROC: $|z| > 1/2$}
+        \begin{itemize}
+            \item Factor the denominator: $1+\frac{3}{4}z^{-1}+\frac{1}{8}z^{-2} = (1+\frac{1}{2}z^{-1})(1+\frac{1}{4}z^{-1})$.
+            \item Use partial fraction expansion: $X(z) = \frac{A}{1+\frac{1}{2}z^{-1}} + \frac{B}{1+\frac{1}{4}z^{-1}}$.
+            \item $A = \left. \frac{1-\frac{1}{2}z^{-1}}{1+\frac{1}{4}z^{-1}} \right|_{z^{-1}=-2} = 4$. $B = \left. \frac{1-\frac{1}{2}z^{-1}}{1+\frac{1}{2}z^{-1}} \right|_{z^{-1}=-4} = -3$.
+            \item $X(z) = \frac{4}{1+\frac{1}{2}z^{-1}} - \frac{3}{1+\frac{1}{4}z^{-1}}$. Since ROC is $|z|>1/2$, both terms are causal.
+            \item $x(n) = 4(-\frac{1}{2})^n u(n) - 3(-\frac{1}{4})^n u(n)$
+        \end{itemize}
+
+    \item \textbf{$X(z) = \frac{1-\frac{1}{2}z^{-1}}{1-\frac{1}{4}z^{-2}}$, ROC: $|z| > 1/2$}
+        \begin{itemize}
+            \item Factor and cancel: $X(z) = \frac{1-\frac{1}{2}z^{-1}}{(1-\frac{1}{2}z^{-1})(1+\frac{1}{2}z^{-1})} = \frac{1}{1+\frac{1}{2}z^{-1}}$.
+            \item Given ROC $|z|>1/2$, the signal is causal.
+            \item $x(n) = (-\frac{1}{2})^n u(n)$
+        \end{itemize}
+
+    \item \textbf{$X(z) = \frac{1-az^{-1}}{z^{-1}-a}$, ROC: $|z| > |1/a|$}
+        \begin{itemize}
+            \item Rewrite: $X(z) = \frac{1-az^{-1}}{-a(1-\frac{1}{a}z^{-1})}$.
+            \item Perform long division: $\frac{1-az^{-1}}{1-\frac{1}{a}z^{-1}} = a + \frac{1-a^2}{1-\frac{1}{a}z^{-1}}$.
+            \item $X(z) = -\frac{1}{a} \left[ a + \frac{1-a^2}{1-\frac{1}{a}z^{-1}} \right] = -1 - \frac{1-a^2}{a} \frac{1}{1-\frac{1}{a}z^{-1}}$.
+            \item The ROC $|z|>|1/a|$ makes the second term causal.
+            \item $x(n) = -\delta(n) - \frac{1-a^2}{a} (\frac{1}{a})^n u(n)$
+        \end{itemize}
+\end{enumerate}
+
+
+\section*{EX7: An LTI and Causal System}
+Given:
+\begin{itemize}
+    \item $x(n) = u(-n-1) + (\frac{1}{2})^n u(n)$
+    \item $Y(z) = \frac{-\frac{1}{2}z^{-1}}{(1-\frac{1}{2}z^{-1})(1+z^{-1})}$
+    \item System is causal.
+\end{itemize}
+\begin{enumerate}
+    \item \textbf{Find H(z) and its ROC:}
+        \begin{itemize}
+            \item First find $X(z)$:
+            $X(z) = Z\{u(-n-1)\} + Z\{(\frac{1}{2})^n u(n)\} = \frac{-1}{1-z^{-1}} + \frac{1}{1-\frac{1}{2}z^{-1}}$.
+            \item Combining terms: $X(z) = \frac{-(1-\frac{1}{2}z^{-1}) + (1-z^{-1})}{(1-z^{-1})(1-\frac{1}{2}z^{-1})} = \frac{-\frac{1}{2}z^{-1}}{(1-z^{-1})(1-\frac{1}{2}z^{-1})}$.
+            \item The ROC of X(z) is the intersection of $|z|<1$ and $|z|>1/2$, so $1/2 < |z| < 1$.
+            \item Now find $H(z) = Y(z)/X(z)$:
+            \[ H(z) = \frac{\frac{-\frac{1}{2}z^{-1}}{(1-\frac{1}{2}z^{-1})(1+z^{-1})}}{\frac{-\frac{1}{2}z^{-1}}{(1-z^{-1})(1-\frac{1}{2}z^{-1})}} = \frac{1-z^{-1}}{1+z^{-1}} \]
+            \item Since the system is causal, its ROC must be outside the outermost pole. The pole is at $z=-1$.
+            \item So, the ROC of H(z) is $|z|>1$.
+        \end{itemize}
+    \item \textbf{What is the ROC of Y(z)?}
+        \begin{itemize}
+            \item The ROC of the output is the intersection of the ROCs of the input and the system:
+            $ROC(Y) = ROC(X) \cap ROC(H) = \{ z \mid 1/2 < |z| < 1 \} \cap \{ z \mid |z| > 1 \}$.
+            \item The intersection is the empty set, $\emptyset$.
+        \end{itemize}
+    \item \textbf{Calculate y(n):}
+        \begin{itemize}
+            \item Since the ROC is the empty set, the Z-transform does not converge, and the output signal is zero for all n.
+            \item $y(n) = 0$.
+        \end{itemize}
+\end{enumerate}
+
+
+\section*{EX8: Causal LTI System with Transfer Function}
+Given:
+\begin{itemize}
+    \item $H(z) = \frac{1-z^{-1}}{1+\frac{3}{4}z^{-1}}$
+    \item $x(n) = (\frac{1}{3})^n u(n) + u(-n-1)$
+\end{itemize}
+\begin{enumerate}
+    \item \textbf{Find h(n) and y(n):}
+        \begin{itemize}
+            \item \textbf{h(n):} System is causal, pole at $z=-3/4$. ROC is $|z|>3/4$.
+            $H(z) = \frac{1}{1+\frac{3}{4}z^{-1}} - \frac{z^{-1}}{1+\frac{3}{4}z^{-1}}$.
+            $h(n) = (-\frac{3}{4})^n u(n) - (-\frac{3}{4})^{n-1} u(n-1)$.
+            \item \textbf{y(n):} First find $X(z)$ as in the previous problem: $X(z) = \frac{-\frac{2}{3}z^{-1}}{(1-\frac{1}{3}z^{-1})(1-z^{-1})}$, with ROC $1/3 < |z| < 1$.
+            \item $Y(z) = H(z)X(z) = \frac{1-z^{-1}}{1+\frac{3}{4}z^{-1}} \cdot \frac{-\frac{2}{3}z^{-1}}{(1-\frac{1}{3}z^{-1})(1-z^{-1})} = \frac{-\frac{2}{3}z^{-1}}{(1+\frac{3}{4}z^{-1})(1-\frac{1}{3}z^{-1})}$.
+            \item The ROC of Y(z) is $ROC(H) \cap ROC(X) = \{|z|>3/4\} \cap \{1/3<|z|<1\} = \{3/4 < |z| < 1\}$.
+            \item Partial fraction expansion: $Y(z) = \frac{A}{1+\frac{3}{4}z^{-1}} + \frac{B}{1-\frac{1}{3}z^{-1}}$. We find $A=8/13$ and $B=-8/13$.
+            \item $Y(z) = \frac{8/13}{1+\frac{3}{4}z^{-1}} - \frac{8/13}{1-\frac{1}{3}z^{-1}}$.
+            \item Based on the ROC $3/4 < |z| < 1$:
+            The first term (pole at $-3/4$) is causal. The second term (pole at $1/3$) is also causal.
+            \item $y(n) = \frac{8}{13}(-\frac{3}{4})^n u(n) - \frac{8}{13}(\frac{1}{3})^n u(n)$.
+        \end{itemize}
+    \item \textbf{Is the system stable?}
+        \begin{itemize}
+            \item The ROC of H(z) is $|z|>3/4$. Since this region includes the unit circle $|z|=1$, the system is stable.
+        \end{itemize}
+\end{enumerate}
+
+\section*{EX9: Causal LTI System with Transfer Function}
+Given:
+\begin{itemize}
+    \item $H(z) = \frac{1+z^{-1}}{(1-\frac{1}{2}z^{-1})(1+\frac{1}{4}z^{-1})}$ and system is causal.
+    \item $y(n) = -\frac{1}{3}(-\frac{1}{4})^n u(n) - \frac{4}{3}(2)^n u(-n-1)$
+\end{itemize}
+\begin{enumerate}
+    \item \textbf{Find ROC of H(z):} System is causal, poles at $z=1/2$ and $z=-1/4$. ROC is outside the outermost pole.
+        \textbf{ROC of H(z) is $|z|>1/2$}.
+    \item \textbf{Is the system stable?} Yes, the ROC $|z|>1/2$ includes the unit circle $|z|=1$.
+    \item \textbf{Find the Z-Transform of x(n):}
+        \begin{itemize}
+            \item First find $Y(z)$ from $y(n)$. It is a sum of a causal and anti-causal part.
+            $Y(z) = -\frac{1}{3}\frac{1}{1+\frac{1}{4}z^{-1}} + \frac{4}{3}\frac{1}{1-2z^{-1}}$. The ROC is $1/4 < |z| < 2$.
+            \item Combining terms gives $Y(z) = \frac{1+z^{-1}}{(1+\frac{1}{4}z^{-1})(1-2z^{-1})}$.
+            \item Find $X(z) = Y(z)/H(z)$:
+            \[ X(z) = \frac{\frac{1+z^{-1}}{(1+\frac{1}{4}z^{-1})(1-2z^{-1})}}{\frac{1+z^{-1}}{(1-\frac{1}{2}z^{-1})(1+\frac{1}{4}z^{-1})}} = \frac{1-\frac{1}{2}z^{-1}}{1-2z^{-1}} \]
+        \end{itemize}
+    \item \textbf{Find h(n):}
+        \begin{itemize}
+            \item Use partial fractions on $H(z) = \frac{A}{1-\frac{1}{2}z^{-1}} + \frac{B}{1+\frac{1}{4}z^{-1}}$.
+            \item We find $A=2$ and $B=-1$. So, $H(z) = \frac{2}{1-\frac{1}{2}z^{-1}} - \frac{1}{1+\frac{1}{4}z^{-1}}$.
+            \item Since the system is causal, $h(n) = 2(\frac{1}{2})^n u(n) - (-\frac{1}{4})^n u(n)$.
+        \end{itemize}
+\end{enumerate}
+
+
+\section*{EX10: Find H(z) and ROC for an LTI system}
+Given:
+\begin{itemize}
+    \item $x(n) = (\frac{1}{3})^n u(n) + 2^n u(-n - 1)$
+    \item $y(n) = 5(\frac{1}{3})^n u(n) - 5(\frac{2}{3})^n u(n)$
+\end{itemize}
+\begin{enumerate}
+    \item \textbf{Find H(z) and ROC:}
+        \begin{itemize}
+            \item $X(z) = \frac{1}{1-1/3 z^{-1}} - \frac{1}{1-2z^{-1}} = \frac{-5/3 z^{-1}}{(1-1/3 z^{-1})(1-2z^{-1})}$. ROC(X): $1/3 < |z| < 2$.
+            \item $Y(z) = \frac{5}{1-1/3 z^{-1}} - \frac{5}{1-2/3 z^{-1}} = \frac{-5/3 z^{-1}}{(1-1/3 z^{-1})(1-2/3 z^{-1})}$. ROC(Y): $|z|>2/3$.
+            \item $H(z) = Y(z)/X(z) = \frac{1-2z^{-1}}{1-2/3 z^{-1}}$.
+            \item The ROC of H(z) must satisfy $ROC(X) \cap ROC(H) \subseteq ROC(Y)$. The only possibility is \textbf{ROC(H): $|z|>2/3$}.
+        \end{itemize}
+    \item \textbf{Calculate h(n):} Since H(z) is causal, $h(n) = (\frac{2}{3})^n u(n) - 2(\frac{2}{3})^{n-1} u(n-1)$.
+    \item \textbf{Determine the Difference Equation:} From $Y(z)(1-2/3 z^{-1}) = X(z)(1-2z^{-1})$, we get
+        $y(n) - \frac{2}{3}y(n-1) = x(n) - 2x(n-1)$.
+    \item \textbf{Is the system stable, causal?} The system is \textbf{causal} (ROC is outside pole). It is \textbf{stable} because the ROC $|z|>2/3$ includes the unit circle.
+\end{enumerate}
+
+
+\section*{EX11: Causal LTI System with Transfer Function}
+Given:
+\begin{itemize}
+    \item $H(z) = \frac{1+2z^{-1}+z^{-2}}{(1+\frac{1}{2}z^{-1})(1-z^{-1})}$ and system is causal.
+    \item Input $x(n) = e^{j(\pi/2)n}$.
+\end{itemize}
+\begin{enumerate}
+    \item \textbf{Find h(n):}
+        \begin{itemize}
+            \item $H(z) = \frac{(1+z^{-1})^2}{(1+\frac{1}{2}z^{-1})(1-z^{-1})}$. The degree of numerator and denominator are equal, so we can use long division or PFE with a constant term.
+            \item $H(z) = A + \frac{B}{1+1/2 z^{-1}} + \frac{C}{1-z^{-1}}$.
+            \item $A=H(\infty)=-2$. $B = H(z)(1+1/2 z^{-1}) |_{z^{-1}=-2} = 1/3$. $C = H(z)(1-z^{-1}) |_{z^{-1}=1} = 8/3$.
+            \item $H(z) = -2 + \frac{1/3}{1+1/2 z^{-1}} + \frac{8/3}{1-z^{-1}}$.
+            \item Since the system is causal (ROC is $|z|>1$),
+            $h(n) = -2\delta(n) + \frac{1}{3}(-\frac{1}{2})^n u(n) + \frac{8}{3}(1)^n u(n)$.
+        \end{itemize}
+    \item \textbf{Calculate y(n):}
+        \begin{itemize}
+            \item For an LTI system, a complex exponential input is an eigenfunction. $y(n) = H(e^{j\omega_0}) x(n)$. Here $\omega_0=\pi/2$.
+            \item We need to evaluate $H(z)$ at $z=e^{j\pi/2}=j$.
+            \item $H(j) = \frac{(1+j^{-1})^2}{(1+\frac{1}{2}j^{-1})(1-j^{-1})} = \frac{(1-j)^2}{(1-j/2)(1+j)}$.
+            \item $H(j) = \frac{1-j}{1-j/2} = \frac{2(1-j)}{2-j} = \frac{2(1-j)(2+j)}{|2-j|^2} = \frac{2(2-j-j^2)}{5} = \frac{2(3-j)}{5} = \frac{6}{5} - \frac{2}{5}j$.
+            \item $y(n) = (\frac{6}{5} - \frac{2}{5}j) e^{j(\pi/2)n}$.
+        \end{itemize}
+\end{enumerate}
+
+
+\section*{EX15: Determine the ROC of H(z)}
+Rule: $ROC(Y) \supseteq ROC(X) \cap ROC(H)$. If no pole-zero cancellation, equality holds.
+\begin{enumerate}
+    \item Given: $ROC(X): |z|>3/4$, $ROC(Y): |z|>2/3$.
+        $H(z) = Y(z)/X(z) = \frac{1-3/4 z^{-1}}{1+2/3 z^{-1}}$. No pole-zero cancellation occurred.
+        Thus, we must have $ROC(Y) = ROC(X) \cap ROC(H)$.
+        $\{|z|>2/3\} = \{|z|>3/4\} \cap ROC(H)$.
+        This equality is impossible, because $\{|z|>3/4\}$ is a subset of $\{|z|>2/3\}$, so their intersection cannot be equal to the larger set. The problem is stated incorrectly. \textbf{Invalid problem}.
+        
+    \item Given: $ROC(X): |z|<1/3$, $ROC(Y): 1/6 < |z| < 1/3$.
+        $H(z) = Y(z)/X(z) = \frac{1}{1-1/6 z^{-1}}$.
+        We need $\{1/6 < |z| < 1/3\} = \{|z|<1/3\} \cap ROC(H)$.
+        This equality holds if and only if $ROC(H) = \{|z|>1/6\}$.
+        \textbf{ROC of H(z) is $|z|>1/6$}.
+\end{enumerate}
+
+
+\section*{EX16: LTI System Problem}
+Given: $h(n) = a^n u(n)$ and $x(n) = u(n) - u(n-N)$.
+\begin{enumerate}
+    \item \textbf{Calculate y(n) using convolution:}
+    $y(n) = \sum_{k=0}^{N-1} h(n-k) = \sum_{k=0}^{N-1} a^{n-k}u(n-k)$.
+        \begin{itemize}
+            \item For $n < 0$: $y(n)=0$.
+            \item For $0 \le n < N$: $y(n) = \sum_{k=0}^{n} a^{n-k} = \frac{1-a^{n+1}}{1-a}$.
+            \item For $n \ge N$: $y(n) = \sum_{k=0}^{N-1} a^{n-k} = a^{n-(N-1)}\frac{1-a^N}{1-a}$.
+        \end{itemize}
+    \item \textbf{Calculate y(n) using Z-transform:}
+        $Y(z) = H(z)X(z) = \frac{1}{1-az^{-1}} \cdot \frac{1-z^{-N}}{1-z^{-1}}$.
+        Let $G(z) = \frac{1}{(1-az^{-1})(1-z^{-1})} = \frac{1/(1-a)}{1-az^{-1}} - \frac{1/(1-a)}{1-z^{-1}}$.
+        $g(n) = \frac{1}{1-a}(a^n - 1)u(n)$.
+        $y(n) = g(n) - g(n-N) = \frac{1}{1-a}[(a^n-1)u(n) - (a^{n-N}-1)u(n-N)]$.
+\end{enumerate}
+
+
+\section*{EX17: LTI System Problem}
+Given: $H(z) = \frac{3}{1+\frac{1}{3}z^{-1}}$ and input is a unit impulse, $x(n)=\delta(n)$.
+\begin{itemize}
+    \item \textbf{Using convolution:} $y(n) = x(n)*h(n) = \delta(n)*h(n)=h(n)$. We need to find $h(n)$. Assuming a causal system, ROC is $|z|>1/3$. Then $h(n) = 3(-\frac{1}{3})^n u(n)$. So, $y(n)=3(-\frac{1}{3})^n u(n)$.
+    \item \textbf{Using Z-transform:} $X(z)=1$. $Y(z)=H(z)X(z)=H(z)$.
+    $Y(z) = \frac{3}{1+\frac{1}{3}z^{-1}}$. The inverse transform gives $y(n)=3(-\frac{1}{3})^n u(n)$ (assuming causality).
+\end{itemize}
+
+
+\section*{EX18: LTI System Problem}
+Given: $H(z) = \frac{1-\frac{1}{2}z^{-2}}{(1-\frac{1}{2}z^{-1})(1-\frac{1}{4}z^{-1})}$, ROC: $|z|>1/2$.
+\begin{enumerate}
+    \item \textbf{Find the impulse response h(n):}
+        \begin{itemize}
+            \item Partial fraction expansion: $H(z) = \frac{A}{1-\frac{1}{2}z^{-1}} + \frac{B}{1-\frac{1}{4}z^{-1}}$.
+            \item $A = \left.\frac{1-1/2 z^{-2}}{1-1/4 z^{-1}}\right|_{z^{-1}=2} = -2$.
+            \item $B = \left.\frac{1-1/2 z^{-2}}{1-1/2 z^{-1}}\right|_{z^{-1}=4} = 7$.
+            \item $H(z) = \frac{-2}{1-\frac{1}{2}z^{-1}} + \frac{7}{1-\frac{1}{4}z^{-1}}$. Since ROC is $|z|>1/2$, both terms are causal.
+            \item $h(n) = -2(\frac{1}{2})^n u(n) + 7(\frac{1}{4})^n u(n)$.
+        \end{itemize}
+    \item \textbf{Find the difference equation:}
+        \begin{itemize}
+            \item $H(z) = \frac{Y(z)}{X(z)} = \frac{1-1/2 z^{-2}}{1-3/4 z^{-1} + 1/8 z^{-2}}$.
+            \item Cross-multiply: $Y(z)(1-3/4 z^{-1} + 1/8 z^{-2}) = X(z)(1-1/2 z^{-2})$.
+            \item Inverse transform: $y(n) - \frac{3}{4}y(n-1) + \frac{1}{8}y(n-2) = x(n) - \frac{1}{2}x(n-2)$.
+        \end{itemize}
+\end{enumerate}
+
+
+\section*{EX19: Find Z-Transform and ROC}
+\begin{enumerate}
+    \item \textbf{$x(n) = \sum_{k=-\infty}^{\infty} \delta(n-4k)$}
+        \begin{itemize}
+            \item This is an impulse train. Its Z-transform is $X(z) = \sum_{k=-\infty}^{\infty} z^{-4k}$.
+            \item This two-sided geometric series only converges if $|z^{-4}|=1$.
+            \item ROC: $|z|=1$. The transform does not converge in a region, only on the unit circle.
+        \end{itemize}
+    \item \textbf{$x(n) = \frac{1}{2} (e^{j\pi n} + \cos(\frac{\pi}{2}n) + \sin(\frac{\pi}{2}+2\pi n))u(n)$}
+        \begin{itemize}
+            \item Simplify: $\sin(\pi/2+2\pi n) = 1$.
+            \item $x(n) = [\frac{1}{2}(-1)^n + \frac{1}{4}(e^{j\pi/2})^n + \frac{1}{4}(e^{-j\pi/2})^n + \frac{1}{2}(1)^n] u(n)$.
+            \item This is a sum of four causal exponential terms. The poles are at $-1, e^{j\pi/2}, e^{-j\pi/2}, 1$. All have magnitude 1.
+            \item The ROC is outside the outermost pole. ROC: $|z|>1$.
+            \item $X(z) = \frac{1/2}{1+z^{-1}} + \frac{1/4}{1-e^{j\pi/2}z^{-1}} + \frac{1/4}{1-e^{-j\pi/2}z^{-1}} + \frac{1/2}{1-z^{-1}}$.
+        \end{itemize}
+\end{enumerate}
+
+
+\section*{EX20: Find the Inverse Z-Transform}
+\textbf{$X(z) = \ln(1 - 2z)$, ROC: $|z| < 1/2$}
+\begin{itemize}
+    \item Use the Maclaurin series for logarithm: $\ln(1-x) = -\sum_{k=1}^{\infty} \frac{x^k}{k}$ for $|x|<1$.
+    \item With $x=2z$: $X(z) = -\sum_{k=1}^{\infty} \frac{(2z)^k}{k} = -\sum_{k=1}^{\infty} \frac{2^k}{k} z^k$.
+    \item The Z-transform definition is $X(z) = \sum_{n=-\infty}^{\infty} x(n) z^{-n}$. Let $k=-n$.
+    \item $X(z) = -\sum_{n=-\infty}^{-1} \frac{2^{-n}}{-n} z^{-n} = \sum_{n=-\infty}^{-1} \frac{2^{-n}}{n} z^{-n}$.
+    \item By comparing coefficients, we get:
+    \[ x(n) = \begin{cases} \frac{2^{-n}}{n}, & n \le -1 \\ 0, & n \ge 0 \end{cases} \]
+\end{itemize}
+
+
+\section*{EX21: A signal x(n) has the following poles and zeros}
+\begin{itemize}
+    \item \textbf{From the plot:} $X(z)$ has one pole at $p=1/2$ and two zeros at $z = \pm j$.
+    \item \textbf{New signal:} $y(n) = (\frac{1}{2})^n x(n)$.
+    \item \textbf{Scaling Property:} $a^n x(n) \leftrightarrow X(z/a)$.
+    \item \textbf{Z-Transform of y(n):} With $a=1/2$, we have $Y(z) = X(z/(1/2)) = X(2z)$.
+    \item This means all pole and zero locations of $X(z)$ are scaled by $a=1/2$.
+        \begin{itemize}
+            \item \textbf{New pole of Y(z):} $p' = p \cdot a = (1/2) \cdot (1/2) = 1/4$.
+            \item \textbf{New zeros of Y(z):} $z' = (\pm j) \cdot a = \pm j/2$.
+        \end{itemize}
+    \item \textbf{Pole-Zero Plot of Y(z):}
+        \begin{itemize}
+            \item A pole ('x') at position $1/4$ on the real axis.
+            \item Two zeros ('o') at positions $+j/2$ and $-j/2$ on the imaginary axis.
+        \end{itemize}
+\end{itemize}
+
+\end{document}
