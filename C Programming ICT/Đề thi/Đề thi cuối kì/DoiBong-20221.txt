@@ -1,0 +1,101 @@
+    MENU
+Nhan 1, 2, 3, 4 hoac 5
+1. Nhap thong tin 2 bang
+2. Hien thi 2 bang dau
+3. Sap xep moi bang dau diem so giam dan
+4. Thong tin tran BK, CK va vo dich
+5. Thoat
+-------------------
+Su lua chon cua ban la: 1
+Nhap so doi cua 1 bang: 8
+Nhap so doi cua 1 bang: 1
+Nhap so doi cua 1 bang: 3
+
+Bang 1
+a 3 0
+b 6 2
+c 0 -2
+
+Bang 2
+d 2 0
+e 4 1
+f 1 -1
+
+
+    MENU
+Nhan 1, 2, 3, 4 hoac 5
+1. Nhap thong tin 2 bang
+2. Hien thi 2 bang dau
+3. Sap xep moi bang dau diem so giam dan
+4. Thong tin tran BK, CK va vo dich
+5. Thoat
+-------------------
+Su lua chon cua ban la: 2
+Bang 1
+a        3       0
+b        6       2
+c        0      -2
+Bang 2
+d        2       0
+e        4       1
+f        1      -1
+
+    MENU
+Nhan 1, 2, 3, 4 hoac 5
+1. Nhap thong tin 2 bang
+2. Hien thi 2 bang dau
+3. Sap xep moi bang dau diem so giam dan
+4. Thong tin tran BK, CK va vo dich
+5. Thoat
+-------------------
+Su lua chon cua ban la: 3
+
+Sap xep moi bang dau theo diem so giam dan
+Bang 1
+b        6       2
+a        3       0
+c        0      -2
+Bang 2
+e        4       1
+d        2       0
+f        1      -1
+
+    MENU
+Nhan 1, 2, 3, 4 hoac 5
+1. Nhap thong tin 2 bang
+2. Hien thi 2 bang dau
+3. Sap xep moi bang dau diem so giam dan
+4. Thong tin tran BK, CK va vo dich
+5. Thoat
+-------------------
+Su lua chon cua ban la: 4
+
+Nhap vao 6 so cach nhau boi dau cach:
+1 2 3 2 3 2
+
+BK1: b  d
+BK2: e  a
+CK: d  e
+CHAMPION: d
+
+    MENU
+Nhan 1, 2, 3, 4 hoac 5
+1. Nhap thong tin 2 bang
+2. Hien thi 2 bang dau
+3. Sap xep moi bang dau diem so giam dan
+4. Thong tin tran BK, CK va vo dich
+5. Thoat
+-------------------
+Su lua chon cua ban la: 9
+Ban can nhap 1, 2, 3, 4 hoac 5
+
+
+    MENU
+Nhan 1, 2, 3, 4 hoac 5
+1. Nhap thong tin 2 bang
+2. Hien thi 2 bang dau
+3. Sap xep moi bang dau diem so giam dan
+4. Thong tin tran BK, CK va vo dich
+5. Thoat
+-------------------
+Su lua chon cua ban la: 5

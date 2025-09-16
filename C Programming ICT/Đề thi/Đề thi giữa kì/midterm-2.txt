@@ -1,0 +1,60 @@
+
+ MENU
+-----------------
+Nhan 1, 2, 3 hoac 4
+1. Nhap so luong va thong tin cac xe
+2. Hien thi danh sach xe
+3. Hien thi so luong xe theo chung nhan kiem dinh
+4. Ket thuc
+----------------
+Su lua chon cua ban la: 1
+Nhap vao so luong xe: 4
+Moi nhap thong tin xe:
+AB1 2023 Kia
+CD2 2008 Lambo
+AG4 2021 Santa
+GH1 2018 Porc
+
+
+ MENU
+-----------------
+Nhan 1, 2, 3 hoac 4
+1. Nhap so luong va thong tin cac xe
+2. Hien thi danh sach xe
+3. Hien thi so luong xe theo chung nhan kiem dinh
+4. Ket thuc
+----------------
+Su lua chon cua ban la: 2
+
+Thong tin cac xe
+AB1     2023    Kia
+CD2     2008    Lambo
+AG4     2021    Santa
+GH1     2018    Porc
+
+
+ MENU
+-----------------
+Nhan 1, 2, 3 hoac 4
+1. Nhap so luong va thong tin cac xe
+2. Hien thi danh sach xe
+3. Hien thi so luong xe theo chung nhan kiem dinh
+4. Ket thuc
+----------------
+Su lua chon cua ban la: 3
+
+Chung nhan kiem dinh theo thoi han:
+24 months: 1
+18 months: 1
+12 months: 1
+6 months: 1
+
+ MENU
+-----------------
+Nhan 1, 2, 3 hoac 4
+1. Nhap so luong va thong tin cac xe
+2. Hien thi danh sach xe
+3. Hien thi so luong xe theo chung nhan kiem dinh
+4. Ket thuc
+----------------
+Su lua chon cua ban la:
